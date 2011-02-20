@@ -8,7 +8,7 @@ gem 'devise'
 gem "nifty-generators", :group => :development
 
 #for uploading files
-#gem "paperclip", "~> 2.3"
+gem "paperclip", "~> 2.3"
 
 
 # Bundle edge Rails instead:
