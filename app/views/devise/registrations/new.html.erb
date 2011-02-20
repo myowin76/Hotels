@@ -1,0 +1,34 @@
+
+
+<div class="center">
+	<div class="login-box">
+		<h2 title="sign-in">Sign up</h2>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+			<div class="fields">
+				<div class="field">
+					<div class="label"><label><%= f.label :email %></label></div>
+					<div class="input"><%= f.text_field :email %></div>
+				</div>
+				<div class="field">							
+					<div class="label"><label><%= f.label :password %></label></div>
+					<div class="input">  <%= f.password_field :password %></div>							
+				</div>
+				<div class="field">							
+					<div class="label"><label><%= f.label :password_confirmation %></label></div>
+					<div class="input">  <%= f.password_field :password_confirmation %></div>							
+				</div>
+				<div class="buttons">
+          <%= f.submit "Sign up" %>
+					<a href="index.html">Cancel</a>							
+				</div>
+				
+			</div>
+		</form>
+		<% end %>
+		<div class="links">
+			<%= render :partial => "devise/shared/links" %>
+		</div>
+	</div>
+</div>
