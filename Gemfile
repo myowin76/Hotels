@@ -2,7 +2,8 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
 gem 'ruby-mysql'
-gem 'devise'
+gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'devise', '1.1.4'
 
 #for layout and helpers generations
 gem "nifty-generators", :group => :development
@@ -14,7 +15,7 @@ gem "paperclip", "~> 2.3"
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
