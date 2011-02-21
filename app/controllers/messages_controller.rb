@@ -14,7 +14,8 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(params[:message])
     if @message.save
-      redirect_to @message, :notice => "Successfully created message."
+      redirect_to thankyou_path
+#      redirect_to @message, :notice => "Successfully created message."
     else
       render :action => 'new'
     end
@@ -37,5 +38,9 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
     @message.destroy
     redirect_to messages_url, :notice => "Successfully destroyed message."
+  end
+
+  def thankyou
+    
   end
 end

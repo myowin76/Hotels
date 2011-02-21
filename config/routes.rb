@@ -15,7 +15,7 @@ Hotels::Application.routes.draw do
 
   get "home/index"
   match "/contact-us" => "messages#new"
-
+  match "/thankyou" => "messages#thankyou"
   root :to => "home#index"
   
 end
