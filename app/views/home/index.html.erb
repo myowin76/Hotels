@@ -21,13 +21,18 @@
       		</a>
       	</div>
       </div>
+      
       <div class="search-box">
       	<h2 title="Search for Hotels">Search for Hotels</h2>
-      	<form id="contactForm" action="">
+      	
+      	<% form_tag hotels_path, :action => 'search', :method => 'get' do %>
+
+    			
       		<ul>
       			<li>
       				<label>Location</label>
-      				<input name="location" id="location" type="text" class="txtfield" />
+		    			<%= text_field_tag :location, params[:location], :class=>'txtfield' %>
+
       			</li>
       			<li>
       				<label>Arrival Date</label>
@@ -53,10 +58,10 @@
       			</li>
 			
       			<li class="send-enquiry">
-      				<input type="submit" class="submit-button" value="" name="Submit" />
+      			  <%= submit_tag 'Search', :name => :nil, :class => 'submit-button' %>
       			</li>
       		</ul>
-      	</form>				
+    		<% end %>			
       </div>
 
       </div>

@@ -1,0 +1,16 @@
+<% title "Facility" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @facility.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @facility.description %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_facility_path(@facility) %> |
+  <%= link_to "Destroy", @facility, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", facilities_path %>
+</p>

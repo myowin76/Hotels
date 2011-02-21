@@ -43,6 +43,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mocha (0.9.12)
     nifty-generators (0.4.5)
     paperclip (2.3.8)
       activerecord
@@ -77,14 +78,17 @@ GEM
     tzinfo (0.3.24)
     warden (1.0.3)
       rack (>= 1.0.0)
+    will_paginate (3.0.pre2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   devise (= 1.1.4)
+  mocha
   nifty-generators
   paperclip (~> 2.3)
   rails (= 3.0.3)
   ruby-mysql
   sqlite3-ruby
+  will_paginate (~> 3.0.beta)

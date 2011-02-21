@@ -52,9 +52,9 @@
   				<div class="advert">
 				
   				</div>
-  				<div class="main-nav" id="smoothmenu1">
+  				<div class="main-nav">
   					<ul>
-  						<li><a href="#" title="Home">Home</a></li>
+  						<li><%= link_to 'Home', root_url %></li>
   						<li><a href="#" title="Deals">Deals</a></li>
   						<li><a href="#" title="Travel Guides">Travel Guides</a></li>
   						<li><a href="/contact-us" title="Contact us">Contact Us</a></li>																							
@@ -74,7 +74,7 @@
     		<div class="left">
     			<div class="footer-nav">
     				<ul>
-    					<li><a href="login.html" title="Add Hotels">Add Hotels</a></li>
+    					<li><%= link_to 'Add Hotels', new_hotel_path %></li>
     					<li><a href="login.html" title="Agents">Agents</a></li>						
     					<li><a href="#" title="Privacy">Privacy</a></li>
     					<li><a href="#" title="Terms">Terms</a></li>						

@@ -4,6 +4,7 @@ gem 'rails', '3.0.3'
 gem 'ruby-mysql'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'devise', '1.1.4'
+gem 'will_paginate', '~> 3.0.beta'
 
 #for layout and helpers generations
 gem "nifty-generators", :group => :development
@@ -39,3 +40,4 @@ gem "paperclip", "~> 2.3"
 # group :development, :test do
 #   gem 'webrat'
 # end
+gem "mocha", :group => :test

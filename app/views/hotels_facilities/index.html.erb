@@ -1,0 +1,19 @@
+<% title "Hotels Facilities" %>
+
+<table>
+  <tr>
+    <th>Hotel</th>
+    <th>Facility</th>
+  </tr>
+  <% for hotels_facilities in @hotels_facilities %>
+    <tr>
+      <td><%= hotels_facilities.hotel_id %></td>
+      <td><%= hotels_facilities.facility_id %></td>
+      <td><%= link_to "Show", hotels_facilities %></td>
+      <td><%= link_to "Edit", edit_hotels_facilities_path(hotels_facilities) %></td>
+      <td><%= link_to "Destroy", hotels_facilities, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Hotels Facilities", new_hotels_facilities_path %></p>

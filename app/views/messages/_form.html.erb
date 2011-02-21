@@ -1,0 +1,56 @@
+<%= javascript 'jquery.validationEngine_w' %>
+<div class="left-area">
+	<div class="win-box">
+		<div class="contact-addr">
+			<h2>Office</h2>
+			<p>
+				Unit 1, WorldStreet<br />
+				Essex, London<br />
+				UB6 8ZZ<br />
+				Tel: +44(0)845 222 222<br />
+				Fax: +44(0)845 222 333<br />
+				email:info@hotelintown.com<br />					
+				<a href="#" title="view map">View Map</a>
+				<br /><br />
+			</p>
+		</div>
+		<div class="info">	
+			<h2>Information</h2>
+			<ul>
+				<li><a href="#" title="FAQ">FAQ</a></li>
+				<li><a href="#" title="How to make a reservation?">How to make a reservation?</a></li>
+				<li><a href="#" title="Additional information">Additional information</a></li>
+				<li><a href="#" title="Payment options">Payment options</a></li>
+				<li><a href="#" title="Booking tips">Booking tips</a></li>
+				<li><a href="#" title="Site feedback">Site feedback</a></li>
+			</ul>
+
+		</div>
+	</div>
+
+</div>
+<div class="main-content">
+	<h2>Contact Us</h2>
+	<div class="contact-form">
+		<%= form_for @message do |f| %>
+      <%= f.error_messages %>
+			<ul class="left">
+				<li>Name <span>*</span></li>
+				<li> <%= f.text_field :name,  :class =>"validate[required] txtfield" %></li>
+				<li>Email <span>*</span></li>
+				<li><%= f.text_field :email, :class =>"validate[required,custom[email]] txtfield" %></li>
+			</ul>
+			<ul class="right">
+				<li>Phone <span>*</span></li>
+				<li><%= f.text_field :phone, :class =>"validate[required] txtfield" %></li>
+			</ul>
+			<ul>
+				<li>Message <span>*</span></li>
+				<li><%= f.text_area :body, :class =>"validate[required,length[6,300]] txtfield" %></li>
+				<li class="send-enquiry">
+					<%= f.submit "", :class => "submit-button" %>
+				</li>
+			</ul>
+    <% end %>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+one:
+  name: MyString
+  address: MyString
+  postcode: MyString
+  phone: MyString
+  fax: MyString
+  star: MyString
+  no_of_rooms: MyString
+  overview: MyString
+  terms: MyText
+  direction: MyText
+
+two:
+  name: MyString
+  address: MyString
+  postcode: MyString
+  phone: MyString
+  fax: MyString
+  star: MyString
+  no_of_rooms: MyString
+  overview: MyString
+  terms: MyText
+  direction: MyText

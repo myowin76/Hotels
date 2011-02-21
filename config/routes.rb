@@ -1,8 +1,20 @@
 Hotels::Application.routes.draw do
+  resources :messages
+
+  resources :reviews
+
+  resources :hotels_facilities
+
+  resources :hotels
+
+  resources :room_types
+
+  resources :facilities
+
   devise_for :users
 
   get "home/index"
-  match "/contact-us" => "home#contact"
+  match "/contact-us" => "messages#new"
 
   root :to => "home#index"
   

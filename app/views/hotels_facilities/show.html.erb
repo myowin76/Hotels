@@ -1,0 +1,16 @@
+<% title "Hotels Facilities" %>
+
+<p>
+  <strong>Hotel:</strong>
+  <%= @hotels_facilities.hotel_id %>
+</p>
+<p>
+  <strong>Facility:</strong>
+  <%= @hotels_facilities.facility_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_hotels_facilities_path(@hotels_facilities) %> |
+  <%= link_to "Destroy", @hotels_facilities, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", hotels_facilities_path %>
+</p>

@@ -10,7 +10,77 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110220180120) do
+ActiveRecord::Schema.define(:version => 20110221021726) do
+
+  create_table "facilities", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hotels", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "postcode"
+    t.string   "area"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "star"
+    t.string   "no_of_rooms"
+    t.string   "overview"
+    t.text     "terms"
+    t.text     "direction"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hotels_facilities", :force => true do |t|
+    t.integer  "hotel_id"
+    t.integer  "facility_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hotels_room_types", :force => true do |t|
+    t.integer  "hotel_id"
+    t.integer  "room_type_id"
+    t.integer  "no_of_rooms"
+    t.integer  "no_of_available"
+    t.text     "description"
+    t.string   "price"
+    t.string   "offer_price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "hotels_room_types", ["hotel_id"], :name => "index_hotels_room_types_on_hotel_id"
+  add_index "hotels_room_types", ["room_type_id"], :name => "index_hotels_room_types_on_room_type_id"
+
+  create_table "messages", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reviews", :force => true do |t|
+    t.integer  "hotel_id"
+    t.text     "comment"
+    t.string   "rating"
+    t.boolean  "recommand"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "room_types", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false

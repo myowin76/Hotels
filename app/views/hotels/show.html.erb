@@ -1,0 +1,48 @@
+<% title "Hotel" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @hotel.name %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @hotel.address %>
+</p>
+<p>
+  <strong>Postcode:</strong>
+  <%= @hotel.postcode %>
+</p>
+<p>
+  <strong>Phone:</strong>
+  <%= @hotel.phone %>
+</p>
+<p>
+  <strong>Fax:</strong>
+  <%= @hotel.fax %>
+</p>
+<p>
+  <strong>Star:</strong>
+  <%= @hotel.star %>
+</p>
+<p>
+  <strong>No Of Rooms:</strong>
+  <%= @hotel.no_of_rooms %>
+</p>
+<p>
+  <strong>Overview:</strong>
+  <%= @hotel.overview %>
+</p>
+<p>
+  <strong>Terms:</strong>
+  <%= @hotel.terms %>
+</p>
+<p>
+  <strong>Direction:</strong>
+  <%= @hotel.direction %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_hotel_path(@hotel) %> |
+  <%= link_to "Destroy", @hotel, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", hotels_path %>
+</p>

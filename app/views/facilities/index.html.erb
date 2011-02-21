@@ -1,0 +1,19 @@
+<% title "Facilities" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+  <% for facility in @facilities %>
+    <tr>
+      <td><%= facility.name %></td>
+      <td><%= facility.description %></td>
+      <td><%= link_to "Show", facility %></td>
+      <td><%= link_to "Edit", edit_facility_path(facility) %></td>
+      <td><%= link_to "Destroy", facility, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Facility", new_facility_path %></p>

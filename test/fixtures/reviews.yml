@@ -1,0 +1,9 @@
+one:
+  comment: MyText
+  rating: MyString
+  recommand: false
+
+two:
+  comment: MyText
+  rating: MyString
+  recommand: false
