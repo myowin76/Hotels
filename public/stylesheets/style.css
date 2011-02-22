@@ -24,7 +24,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .logo a{background:url(../images/logo.jpg) no-repeat;float:left;height:0;overflow:hidden;padding-top:110px; width:270px;}
 .header-right{float:left;width:675px;}
 /* Generic */
-.login-box h2, .search-box h2, .small-box h2, .info h2, .win-box h2{height:30px;padding-bottom:8px; background:url(../images/backgrounds/down-shadow2.jpg) repeat-x center bottom;}
+.login-box h2, .search-box h2, .small-box h2, .info h2, .win-box h2{height:30px;padding-bottom:8px; background:url(../images/backgrounds/down-shadow.jpg) repeat-x center bottom;}
 .center{width:412px;margin:0 auto;}
 
 /* Navigations */
