@@ -1,5 +1,6 @@
 class Hotel < ActiveRecord::Base
   attr_accessible :name, :address, :postcode, :phone, :fax, :star, :no_of_rooms, :overview, :terms, :direction
+  has_many :photos
   
   # Room Types (many-to-many)
   has_many :hotels_room_types

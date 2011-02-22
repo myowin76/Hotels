@@ -3,13 +3,21 @@
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= stylesheet_link_tag 'style','print','validationEngine.jquery','blitzer/jquery-ui-1.8.9.custom' %>
-    <%= javascript_include_tag 'cufon-yui','cufon','Rockwell_Std_400.font', 'jquery-1.4.4.min','jquery-ui-1.8.9.custom.min','jquery.cycle.all.min','application' %>
+    <%= javascript_include_tag 'jquery-1.4.4.min','jquery-ui-1.8.9.custom.min','jquery.cycle.all.min','application' %>
+
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+
+    <!--[if !IE]>--> 
+      <%= javascript_include_tag 'cufon-yui','cufon','Rockwell_Std_400.font' %>
+    <!--<![endif]-->
+    <!--[if !gt IE 7]>    
+      <%= javascript_include_tag 'cufon-yui','cufon','Rockwell_Std_400.font' %>
+  	<![endif]-->    
     <!--[if IE 6]>
   			<link rel="stylesheet" type="text/css" href="/css/ie-6.css" />
   	<![endif]-->
-    <%= csrf_meta_tag %>
-    <%= yield(:head) %>
-    
+  	
   </head>
   
   <body>

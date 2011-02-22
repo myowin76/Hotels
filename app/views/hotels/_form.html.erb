@@ -1,4 +1,5 @@
-<%= form_for @hotel do |f| %>
+<div class="main-content">
+<%= form_for @hotel, :html => {:multipart => true} do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :name %><br />
@@ -34,12 +35,15 @@
   </p>
   <p>
     <%= f.label :terms %><br />
-    <%= f.text_area :terms %>
+    <%= f.text_area :terms, :rows => 10, :cols => 60 %>
   </p>
   <p>
     <%= f.label :direction %><br />
-    <%= f.text_area :direction %>
+    <%= f.text_area :direction, :rows => 10, :cols => 60 %>
   </p>
+  <%= f.label :hotel_photo, "File" %>
+  <%= f.file_field :hotel_photo %>
+
   <h3>Hotels Features and Services</h3>
 	<ul>
 	<% @all_facilities.each do |facility| %>
@@ -50,5 +54,9 @@
 	<% end %>
 	</ul>
   
+  
+  
   <p><%= f.submit %></p>
 <% end %>
+
+</div>

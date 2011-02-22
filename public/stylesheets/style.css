@@ -24,7 +24,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .logo a{background:url(../images/logo.jpg) no-repeat;float:left;height:0;overflow:hidden;padding-top:110px; width:270px;}
 .header-right{float:left;width:675px;}
 /* Generic */
-.login-box h2, .search-box h2, .small-box h2, .info h2, .win-box h2{height:30px;line-height:30px; padding-bottom:8px; background:url(../images/backgrounds/down-shadow2.jpg) repeat-x center bottom;line-height:38px;}
+.login-box h2, .search-box h2, .small-box h2, .info h2, .win-box h2{height:30px;padding-bottom:8px; background:url(../images/backgrounds/down-shadow2.jpg) repeat-x center bottom;}
 .center{width:412px;margin:0 auto;}
 
 /* Navigations */
@@ -51,6 +51,9 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 /* Content*/
 .content {background:url(../images/backgrounds/down-shadow2.jpg) repeat-x center top;float:left;min-height:400px;padding-top:15px;color:#282828;width:100%;}
 .content h2{font-size:18px;}
+.content .heading{float:left;width:100%;padding-bottom:8px;height:16px;
+background:url(../images/backgrounds/down-shadow2.jpg) repeat-x center bottom;height:30px;}
+
 .main-content h1{font-size:20px;}
 .main-content, .banner .images{width:615px;float:left;}
 .main-content{padding-left:35px;padding-top:24px;}
@@ -74,8 +77,8 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 
 .info-box{width:100%;margin:12px 0;float:left;background: none repeat #DBF6BE;border:1px solid #FDD845;border-color:#9BBF65;color:#3C4E27;}
 .info-box .cont{border-top: 1px solid #FFFFFF;font-weight: bold; padding: 10px;text-align: center;}
+.small-box ul, .info ul{padding-left:16px;float:left;}
 
-.small-box ul, .info ul{padding-left:16px;}
 .small-box{-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;
 background:none;border:1px solid #cdcdcd;height:auto;padding:18px;height:160px;}
 
@@ -133,14 +136,18 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
 
 /* listing page*/
 .list{float:left;padding-left:12px;width:664px;}
-.list-block{float:left;width:100%;}
-.list-block .box, .list-block .feature{background-color:#ffffff;border:2px solid #3DB2CC;-moz-border-radius:10px; display:block;padding:15px;float:left;width:420px; margin-bottom:12px;}
+.list-block{float:left;width:100%;margin-bottom:12px;}
+
+.list-block .box, .list-block .feature{background-color:#ffffff;border:2px solid #3DB2CC;-webkit-border-radius:10px;border-radius:10px;-moz-border-radius:10px; display:block;padding:15px;float:left;width:630px; }
 .list-block .feature{background-color:#fffff0;}
-.list-block .box .thumb{float:left;width:100px;height:75px;}
+.list-block .box .thumb{float:left;width:100px;height:75px;border:1px solid #cdcdcd;padding:2px;}
 .list-block .desc{width:100%;float:left;padding-top:8px;line-height:16px;height:65px;overflow:hidden;}
-.list-block .box .details{float:left;margin-left:10px;}
-.list-block .box .details h3{font-size:14px;font-weight:bold;}
+.list-block .box .details{float:left;margin-left:10px;width:511px;min-height:75px;}
+.list-block .box .details h3{font-size:14px;width:100%;border-bottom:1px solid #cdcdcd;padding-bottom:4px;margin-bottom:2px;}
 .list-block .box .details h3 a{color:#F07A07;}
+.list-block .loc{float:left;width:100%;}
+.list-block .price{float:right;font-weight:bold;}
+.list-block .right{float:right;width:200px;}
 
 .pagination{float:left;}
 .pagination li{float:left;margin-right:10px;}

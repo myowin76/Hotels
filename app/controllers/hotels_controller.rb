@@ -16,7 +16,17 @@ class HotelsController < ApplicationController
 
   def create
     @hotel = Hotel.new(params[:hotel])
+    @all_facilities = Facility.all
+    
+  	checked_h_facilities = get_hotel_facilities_from(params[:hotel_facility_list])
+  	removed_h_facilities = @all_facilities - checked_h_facilities
+  	
+    
     if @hotel.save
+      
+	    checked_h_facilities.each {|h_facility|@hotel.facilities<< h_facility if !@hotel.facilities.include?(h_facility)}
+	    removed_h_facilities.each {|h_facility|@hotel.facilities.delete(h_facility) if @hotel.facilities.include?(h_facility)}
+
       redirect_to @hotel, :notice => "Successfully created hotel."
     else
       render :action => 'new'
@@ -48,14 +58,20 @@ class HotelsController < ApplicationController
   	else
   		@hotels = Hotel.search(params[:search])
       render "search_list"
-#  		redirect_to "hotels#index"
+      #redirect_to "hotels#index"
 
   	end
-  	def list
-  	  
-  	 
-  	end
-
-	
   end
+  
+  def list
+	  
+	 
+	end
+  
+  private
+	def get_hotel_facilities_from(facility_list)
+		facility_list = [] if facility_list.blank?
+		return facility_list.collect{|fid| Facility.find_by_id(fid.to_i)}.compact
+	end
+ 
 end
