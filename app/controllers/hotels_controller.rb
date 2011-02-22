@@ -1,12 +1,7 @@
 class HotelsController < ApplicationController
   def index
     @hotels = Hotel.all
-    if params[:location].blank?
-        redirect_to root_url
-  	else
-  		@hotels = Hotel.search(params[:location],params[:page])
-  		render 'index'
-  	end
+    
   	
   end
 
@@ -16,6 +11,7 @@ class HotelsController < ApplicationController
 
   def new
     @hotel = Hotel.new
+    @all_facilities = Facility.all
   end
 
   def create
@@ -47,11 +43,17 @@ class HotelsController < ApplicationController
   end
   
   def search
-  	if params[:location].blank?
+  	if params[:search].blank?
         redirect_to root_url
   	else
-  		@hotels = Hotel.search(params[:location],params[:page])
-  		render 'index'
+  		@hotels = Hotel.search(params[:search])
+      render "search_list"
+#  		redirect_to "hotels#index"
+
+  	end
+  	def list
+  	  
+  	 
   	end
 
 	

@@ -38,6 +38,8 @@
     							<% if user_signed_in? %>
           		   	 	Logged in as: <%= current_user.email  %> 
           				|
+          				<%= link_to "My Account", root_path %>
+          				|
           				<%= link_to "Sign out", destroy_user_session_path %>
           		    <% else %>
           		    	<em>Not Signed in.</em>
@@ -64,9 +66,6 @@
   		</div>
       
       <div class="content">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <% end %>
       <%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
       

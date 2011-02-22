@@ -1,54 +1,49 @@
 require 'test_helper'
 
 class HotelsFacilitiesControllerTest < ActionController::TestCase
-  def test_index
+  setup do
+    @hotels_facility = hotels_facilities(:one)
+  end
+
+  test "should get index" do
     get :index
-    assert_template 'index'
+    assert_response :success
+    assert_not_nil assigns(:hotels_facilities)
   end
 
-  def test_show
-    get :show, :id => HotelsFacilities.first
-    assert_template 'show'
-  end
-
-  def test_new
+  test "should get new" do
     get :new
-    assert_template 'new'
+    assert_response :success
   end
 
-  def test_create_invalid
-    HotelsFacilities.any_instance.stubs(:valid?).returns(false)
-    post :create
-    assert_template 'new'
+  test "should create hotels_facility" do
+    assert_difference('HotelsFacility.count') do
+      post :create, :hotels_facility => @hotels_facility.attributes
+    end
+
+    assert_redirected_to hotels_facility_path(assigns(:hotels_facility))
   end
 
-  def test_create_valid
-    HotelsFacilities.any_instance.stubs(:valid?).returns(true)
-    post :create
-    assert_redirected_to hotels_facilities_url(assigns(:hotels_facilities))
+  test "should show hotels_facility" do
+    get :show, :id => @hotels_facility.to_param
+    assert_response :success
   end
 
-  def test_edit
-    get :edit, :id => HotelsFacilities.first
-    assert_template 'edit'
+  test "should get edit" do
+    get :edit, :id => @hotels_facility.to_param
+    assert_response :success
   end
 
-  def test_update_invalid
-    HotelsFacilities.any_instance.stubs(:valid?).returns(false)
-    put :update, :id => HotelsFacilities.first
-    assert_template 'edit'
+  test "should update hotels_facility" do
+    put :update, :id => @hotels_facility.to_param, :hotels_facility => @hotels_facility.attributes
+    assert_redirected_to hotels_facility_path(assigns(:hotels_facility))
   end
 
-  def test_update_valid
-    HotelsFacilities.any_instance.stubs(:valid?).returns(true)
-    put :update, :id => HotelsFacilities.first
-    assert_redirected_to hotels_facilities_url(assigns(:hotels_facilities))
-  end
+  test "should destroy hotels_facility" do
+    assert_difference('HotelsFacility.count', -1) do
+      delete :destroy, :id => @hotels_facility.to_param
+    end
 
-  def test_destroy
-    hotels_facilities = HotelsFacilities.first
-    delete :destroy, :id => hotels_facilities
-    assert_redirected_to hotels_facilities_url
-    assert !HotelsFacilities.exists?(hotels_facilities.id)
+    assert_redirected_to hotels_facilities_path
   end
 end

@@ -11,12 +11,16 @@ class Hotel < ActiveRecord::Base
   # Hotel Facilities (many-to-many)
   has_many :hotels_facilities, :dependent => :destroy
   has_many :facilities, :through => :hotels_facilities
+  
 	validates_presence_of :name, :address, :postcode, :phone, :star, :no_of_rooms
 
-	def self.search(search, page)
-		paginate :per_page =>5, :page => page,
-								:conditions => ['address like ?',"%#{search}%"],
-								:order => 'created_at DESC'
+	def self.search(search)
+	#	paginate :per_page =>5, :page => page,
+	#							:conditions => ['address like ?',"%#{search}%"],
+	#							:order => 'created_at DESC'
+	search_condition = "%" + search + "%"
+    find(:all, :conditions => ['address LIKE ? OR area LIKE ?', search_condition, search_condition])
+  
 	end
 
 	def photo_attributes=(photo_attributes)

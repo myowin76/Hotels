@@ -1,16 +1,15 @@
-<% title "Hotels Facilities" %>
+<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Hotel:</strong>
-  <%= @hotels_facilities.hotel_id %>
-</p>
-<p>
-  <strong>Facility:</strong>
-  <%= @hotels_facilities.facility_id %>
+  <b>Hotel:</b>
+  <%= @hotels_facility.hotel_id %>
 </p>
 
 <p>
-  <%= link_to "Edit", edit_hotels_facilities_path(@hotels_facilities) %> |
-  <%= link_to "Destroy", @hotels_facilities, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", hotels_facilities_path %>
+  <b>Facility:</b>
+  <%= @hotels_facility.facility_id %>
 </p>
+
+
+<%= link_to 'Edit', edit_hotels_facility_path(@hotels_facility) %> |
+<%= link_to 'Back', hotels_facilities_path %>

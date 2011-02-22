@@ -1,19 +1,25 @@
-<% title "Hotels Facilities" %>
+<h1>Listing hotels_facilities</h1>
 
 <table>
   <tr>
     <th>Hotel</th>
     <th>Facility</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
-  <% for hotels_facilities in @hotels_facilities %>
-    <tr>
-      <td><%= hotels_facilities.hotel_id %></td>
-      <td><%= hotels_facilities.facility_id %></td>
-      <td><%= link_to "Show", hotels_facilities %></td>
-      <td><%= link_to "Edit", edit_hotels_facilities_path(hotels_facilities) %></td>
-      <td><%= link_to "Destroy", hotels_facilities, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
+
+<% @hotels_facilities.each do |hotels_facility| %>
+  <tr>
+    <td><%= hotels_facility.hotel_id %></td>
+    <td><%= hotels_facility.facility_id %></td>
+    <td><%= link_to 'Show', hotels_facility %></td>
+    <td><%= link_to 'Edit', edit_hotels_facility_path(hotels_facility) %></td>
+    <td><%= link_to 'Destroy', hotels_facility, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
 </table>
 
-<p><%= link_to "New Hotels Facilities", new_hotels_facilities_path %></p>
+<br />
+
+<%= link_to 'New Hotels facility', new_hotels_facility_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110221021726) do
+ActiveRecord::Schema.define(:version => 20110221150256) do
 
   create_table "facilities", :force => true do |t|
     t.string   "name"
@@ -82,6 +82,13 @@ ActiveRecord::Schema.define(:version => 20110221021726) do
     t.datetime "updated_at"
   end
 
+  create_table "user_types", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
     t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
@@ -95,6 +102,7 @@ ActiveRecord::Schema.define(:version => 20110221021726) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "name"
+    t.integer  "user_type_id",                        :default => 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end

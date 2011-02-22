@@ -3,6 +3,7 @@ class CreateHotelsFacilities < ActiveRecord::Migration
     create_table :hotels_facilities do |t|
       t.integer :hotel_id
       t.integer :facility_id
+
       t.timestamps
     end
   end

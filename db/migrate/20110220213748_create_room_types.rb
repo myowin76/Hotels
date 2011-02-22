@@ -36,5 +36,6 @@ class CreateRoomTypes < ActiveRecord::Migration
 
   def self.down
     drop_table :room_types
+    drop_table :hotels_room_types
   end
 end

@@ -1,12 +1,25 @@
-<%= form_for @hotels_facilities do |f| %>
-  <%= f.error_messages %>
-  <p>
+<%= form_for(@hotels_facility) do |f| %>
+  <% if @hotels_facility.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hotels_facility.errors.count, "error") %> prohibited this hotels_facility from being saved:</h2>
+
+      <ul>
+      <% @hotels_facility.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
     <%= f.label :hotel_id %><br />
     <%= f.text_field :hotel_id %>
-  </p>
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :facility_id %><br />
     <%= f.text_field :facility_id %>
-  </p>
-  <p><%= f.submit %></p>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

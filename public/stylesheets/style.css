@@ -24,7 +24,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .logo a{background:url(../images/logo.jpg) no-repeat;float:left;height:0;overflow:hidden;padding-top:110px; width:270px;}
 .header-right{float:left;width:675px;}
 /* Generic */
-.login-box h2, .search-box h2, .small-box h2, .info h2, .contact-addr h2{height:30px;padding-bottom:8px; background:url(../images/backgrounds/down-shadow2.jpg) repeat-x center bottom;}
+.login-box h2, .search-box h2, .small-box h2, .info h2, .win-box h2{height:30px;line-height:30px; padding-bottom:8px; background:url(../images/backgrounds/down-shadow2.jpg) repeat-x center bottom;line-height:38px;}
 .center{width:412px;margin:0 auto;}
 
 /* Navigations */
@@ -38,7 +38,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .top-nav .right{float:right;width:445px;}
 .top-nav .right li a{color:#FFFFFF;}
 
-.language-links,.account-links{float:right;width:350px;}
+.language-links,.account-links{float:right;}
 .account-links li{float:left;height:25px;line-height:25px;padding:0 6px;color:#ffffff;}
 .advert{height:52px;float:left;width:100%;}
 
@@ -96,6 +96,8 @@ background:none;border:1px solid #cdcdcd;height:auto;padding:18px;height:160px;}
 .login-box form .fields .buttons input{cursor:pointer;}
 .login-box .links{float:left;width:100%;height:24px;line-height:24px;}
 .login-box a:hover{text-decoration:underline;}
+.login-box .flash_alert{}
+
 /* Footer */
 #footer{float:left;padding-top:15px;width:948px;}
 #footer .left{width:615px;float:left;}
@@ -130,8 +132,203 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
 
 
 /* listing page*/
+.list{float:left;padding-left:12px;width:664px;}
+.list-block{float:left;width:100%;}
+.list-block .box, .list-block .feature{background-color:#ffffff;border:2px solid #3DB2CC;-moz-border-radius:10px; display:block;padding:15px;float:left;width:420px; margin-bottom:12px;}
+.list-block .feature{background-color:#fffff0;}
+.list-block .box .thumb{float:left;width:100px;height:75px;}
+.list-block .desc{width:100%;float:left;padding-top:8px;line-height:16px;height:65px;overflow:hidden;}
+.list-block .box .details{float:left;margin-left:10px;}
+.list-block .box .details h3{font-size:14px;font-weight:bold;}
+.list-block .box .details h3 a{color:#F07A07;}
+
 .pagination{float:left;}
 .pagination li{float:left;margin-right:10px;}
 .pagination li a{border:1px solid #CDCDCD;display:block;padding:5px 10px;text-align:center;text-decoration:none;
 -moz-border-radius:3px 3px 3px 3px;}
 .pagination li.selected a{background:none #CDCDCD;border-color:#CDCDCD;color:#FFFFFF;}
+
+/* details page */
+.details .hotel-name h1{display:inline;font-size:18px;font-weight:bold;overflow:hidden;padding-right:110px;}
+.s1, .s2, .s3, .s4, .s5{background:url(../images/star-sprite.png) no-repeat;height:20px;width:96px;}
+.s1{background-position:right -110px;}
+.s2{background-position:right -85px;}
+.s3{background-position:right -60px;}
+.s4{background-position:right -35px;}
+.s5{background-position:right -10px;}
+.details .left-gallary{float:left;width:346px;border:1px solid #cdcdcd; padding:10px;}
+
+.details .hotel-details{margin-left:20px;float:left;width:560px;}
+.details .hotel-addr{float:left;width:100%;padding-top:10px;}
+.details .hotel-addr .hotel-name{float:left;height:30px;display:block;width:100%;}
+.details .hotel-addr .address{float:left;background:url(../images/backgrounds/down-shadow.jpg) repeat-x center top;width:100%;padding:10px 0;}
+
+/* Ad-Gallery */
+.ad-gallery {
+  width: 346px;
+}
+.ad-gallery, .ad-gallery * {
+  margin: 0;
+  padding: 0;
+}
+  .ad-gallery .ad-image-wrapper {
+    width: 100%;
+    height: 240px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+    .ad-gallery .ad-image-wrapper .ad-loader {
+      position: absolute;
+      z-index: 10;
+      top: 48%;
+      left: 48%;
+      border: 1px solid #CCC;
+    }
+    .ad-gallery .ad-image-wrapper .ad-next {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 25%;
+      height: 100%;
+      cursor: pointer;
+      display: block;
+      z-index: 100;
+    }
+    .ad-gallery .ad-image-wrapper .ad-prev {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 25%;
+      height: 100%;
+      cursor: pointer;
+      display: block;
+      z-index: 100;
+    }
+    .ad-gallery .ad-image-wrapper .ad-prev, .ad-gallery .ad-image-wrapper .ad-next {
+      /* Or else IE will hide it */
+      background: url(non-existing.jpg)\9
+    }
+      .ad-gallery .ad-image-wrapper .ad-prev .ad-prev-image, .ad-gallery .ad-image-wrapper .ad-next .ad-next-image {
+        background: url(ad_prev.png);
+        width: 30px;
+        height: 30px;
+        display: none;
+        position: absolute;
+        top: 47%;
+        left: 0;
+        z-index: 101;
+      }
+      .ad-gallery .ad-image-wrapper .ad-next .ad-next-image {
+        background: url(ad_next.png);
+        width: 30px;
+        height: 30px;
+        right: 0;
+        left: auto;
+      }
+    .ad-gallery .ad-image-wrapper .ad-image {
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      z-index: 9;
+    }
+      .ad-gallery .ad-image-wrapper .ad-image a img {
+        border: 0;
+      }
+      .ad-gallery .ad-image-wrapper .ad-image .ad-image-description {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        padding: 7px;
+        text-align: left;
+        width: 100%;
+        z-index: 2;
+        background: url(opa75.png);
+        color: #000;
+      }
+      * html .ad-gallery .ad-image-wrapper .ad-image .ad-image-description {
+        background: none;
+        filter:progid:DXImageTransform.Microsoft.AlphaImageLoader (enabled=true, sizingMethod=scale, src='opa75.png');
+      }
+        .ad-gallery .ad-image-wrapper .ad-image .ad-image-description .ad-description-title {
+          display: block;
+        }
+  .ad-gallery .ad-controls {
+    height: 20px;
+  }
+    .ad-gallery .ad-info {
+      float: left;
+    }
+    .ad-gallery .ad-slideshow-controls {
+      float: right;
+    }
+      .ad-gallery .ad-slideshow-controls .ad-slideshow-start, .ad-gallery .ad-slideshow-controls .ad-slideshow-stop {
+        padding-left: 5px;
+        cursor: pointer;
+      }
+      .ad-gallery .ad-slideshow-controls .ad-slideshow-countdown {
+        padding-left: 5px;
+        font-size: 0.9em;
+      }
+    .ad-gallery .ad-slideshow-running .ad-slideshow-start {
+      cursor: default;
+      font-style: italic;
+    }
+  .ad-gallery .ad-nav {
+    width: 100%;
+    position: relative;
+  }
+    .ad-gallery .ad-forward, .ad-gallery .ad-back {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      z-index: 10;
+    }
+    /* IE 6 doesn't like height: 100% */
+    * html .ad-gallery .ad-forward, .ad-gallery .ad-back {
+      height: 100px;
+    }
+    .ad-gallery .ad-back {
+      cursor: pointer;
+      left: -40px;
+      width: 13px;
+      display: block;
+      background: url(ad_scroll_back.png) 0px 22px no-repeat;
+    }
+    .ad-gallery .ad-forward {
+      cursor: pointer;
+      display: block;
+      right: -20px;
+      width: 13px;
+      background: url(ad_scroll_forward.png) 0px 22px no-repeat;
+    }
+    .ad-gallery .ad-nav .ad-thumbs {
+      overflow: hidden;
+      width: 100%;
+    }
+      .ad-gallery .ad-thumbs .ad-thumb-list {
+        float: left;
+        width: 9000px;
+        list-style: none;
+      }
+        .ad-gallery .ad-thumbs li {
+          float: left;
+          padding-right: 5px;
+        }
+          .ad-gallery .ad-thumbs li a {
+            display: block;
+          }
+            .ad-gallery .ad-thumbs li a img {
+              border: 3px solid #CCC;
+              display: block;
+            }
+            .ad-gallery .ad-thumbs li a.ad-active img {
+              border: 3px solid #616161;
+            }
+/* Can't do display none, since Opera won't load the images then */
+.ad-preloads {
+  position: absolute;
+  left: -9000px;
+  top: -9000px;
+}

@@ -40,5 +40,15 @@
     <%= f.label :direction %><br />
     <%= f.text_area :direction %>
   </p>
+  <h3>Hotels Features and Services</h3>
+	<ul>
+	<% @all_facilities.each do |facility| %>
+		<li>
+		  <%= check_box_tag "hotel_facility_list[]", facility.id, @hotel.facilities.map{|f| f.id}.include?(facility.id) %>
+		  <%= facility.name %>
+		</li>
+	<% end %>
+	</ul>
+  
   <p><%= f.submit %></p>
 <% end %>
