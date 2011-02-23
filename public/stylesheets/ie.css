@@ -1,3 +1,4 @@
+.content .heading {padding-bottom:0;}
 .content .heading h2.smart-filters {float:left;background:url(../images/headings/smart-filters.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
 .content .heading h2.information{float:left;background:url(../images/headings/information.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
 .content .heading h2.guest-box{float:left;background:url(../images/headings/guest-box.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:20px;}
