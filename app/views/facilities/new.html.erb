@@ -1,5 +1,18 @@
-<% title "New Facility" %>
+<div class="left-area">
+	<div class="win-box">
+      <div class="admin">
+        <h2>Admin</h2>
+          <ul>
+    				<li><%= link_to "Back to List", facilities_path %></li>
+    			</ul>  			
+      </div>			
+		</div>
+  <%= render :partial => 'shared/admin_menu' %>      
+</div>
+<div class="main-content">
+<h2>New Facility</h2>
 
 <%= render 'form' %>
 
-<p><%= link_to "Back to List", facilities_path %></p>
+<p></p>
+</div>

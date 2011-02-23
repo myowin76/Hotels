@@ -1,6 +1,8 @@
 <div class="center">
 	<div class="login-box">
-		<h2 title="Forgot your password?">Forgot your password?</h2>
+	  <div class="heading">
+		  <h2 class="forgot-your-pwd" title="Forgot your password?">Forgot your password?</h2>
+		</div>
     <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
       <%= devise_error_messages! %>
 

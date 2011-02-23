@@ -1,4 +1,16 @@
-<% title "Reviews" %>
+<div class="left-area">
+	<div class="win-box">
+      <div class="admin">
+        <h2>Admin</h2>
+          <ul>
+    				<li><%= link_to "New Review", new_review_path %></li>
+    			</ul>  			
+      </div>			
+		</div>
+  <%= render :partial => 'shared/admin_menu' %>      
+</div>
+<div class="main-content">
+<h2>Reviews</h2>
 
 <table>
   <tr>
@@ -17,5 +29,5 @@
     </tr>
   <% end %>
 </table>
+</div>
 
-<p><%= link_to "New Review", new_review_path %></p>

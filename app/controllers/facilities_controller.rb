@@ -1,4 +1,6 @@
 class FacilitiesController < ApplicationController
+  before_filter :authenticate_user!
+
   def index
     @facilities = Facility.all
   end
