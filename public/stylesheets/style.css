@@ -92,7 +92,7 @@ background:none;border:1px solid #cdcdcd;height:auto;padding:18px;height:160px;}
 .login-box form .fields .field{float:left;width:100%;padding-bottom:10px;}
 .login-box form .fields .label{line-height:24px;width:164px;padding: 0 10px 0 0;float:left;text-align:right;}
 .login-box form .fields .input{float:left;}
-.login-box form .fields .checkbox{margin-left:172px;}
+.login-box form .fields .checkbox{margin-left:172px;background-color:none;}
 .login-box form .fields .checkbox input{width:16px;height:16px;margin:2px;}
 .login-box form .fields .input input{width:180px;padding:5px 5px 4px;}
 .login-box form .fields .buttons{clear:both;padding:0px 0;text-align:right;}
