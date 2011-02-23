@@ -51,7 +51,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .main-nav{float:left;width:450px;height:31px;}
 .main-nav ul{float:left;}
 .main-nav li{float:left;line-height:31px;position:relative;}
-.main-nav li a{text-transform:uppercase;padding-left:35px;color:#282828;font-family:"Rockwell std", Arial;font-size:13px;}
+.main-nav li a{text-transform:uppercase;padding-left:35px;color:#282828;font-family:"Rockwell", Arial;font-size:13px;}
 .main-nav li a:hover{text-decoration:underline;}
 
 /* Content*/
@@ -113,7 +113,7 @@ background:none;border:1px solid #cdcdcd;height:auto;padding:18px;height:160px;}
 .footer-nav{float:left;height:25px;line-height:25px;padding-left:10px;width:550px;}
 .footer-nav ul{float:left;width:100%;}
 .footer-nav ul li{float:left;}
-.footer-nav ul li a{padding-right:25px;color:#282828;font-family:"Rockwell std", Helvetica, Arial;}
+.footer-nav ul li a{padding-right:25px;color:#282828;font-family:"Rockwell", Helvetica, Arial;}
 #footer .right{width:270px;float:right;}
 .copyright{float:left;height:30px;width:100%;text-align:center;color:#999;border-top:1px solid #cdcdcd;
 background:url(../images/backgrounds/down-shadow.jpg) repeat-x;line-height:30px;}
