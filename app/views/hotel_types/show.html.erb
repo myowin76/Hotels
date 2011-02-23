@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @hotel_type.name %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @hotel_type.desc %>
+</p>
+
+
+<%= link_to 'Edit', edit_hotel_type_path(@hotel_type) %> |
+<%= link_to 'Back', hotel_types_path %>

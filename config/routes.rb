@@ -1,4 +1,6 @@
 Hotels::Application.routes.draw do
+  resources :hotel_types
+
   resources :photos
 
   resources :user_types
