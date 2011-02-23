@@ -30,27 +30,33 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 /* Navigations */
 .top-nav{height:27px;float:left;width:100%;background:url(../images/backgrounds/top-nav-bg.jpg) repeat-x;}
 .top-nav .left{float:left;width:230px;position:relative;z-index:5;}
-.top-nav .left .language{float:left;height:0;overflow:hidden;padding-top:28px;width:150px;}
-.top-nav .left .language-links{float:left;position:absolute;top:30px;width:145px;z-index:5;}
-.top-nav .left .language-list{float:left;width:120px;padding:2px;}
-.top-nav .left .language-list .name{float:left;height:26px;width:26px;margin: 6px 4px 0 0;}
-.top-nav .left .language-list .name a{cursor:pointer;display:block;height:26px;width:26px;visibility:visible;}
+.header-right .language{padding:5px 12px 5px 35px;}
+.header-right .language a{float:left;height:28px;width:150px;color:#ffffff;}
+.header-right .language-links{float:right;width:90px;height:31px;}
+.header-right .language-list{float:left;width:90px;padding-top:6px;height:25px;}
+
+.header-right .language-list li{cursor:pointer;display:block;height:15px;width:24px;float:left;padding-right:4px;}
+.header-right .language-list li a{float:left;height:0;padding-top:15px;overflow:hidden;width:24px;}
+.header-right .language-list li.english a{background:url(../images/english.gif) no-repeat;}
+.header-right .language-list li.france a{background:url(../images/france.png) no-repeat;}
+.header-right .language-list li.spanish a{background:url(../images/spanish.gif) no-repeat;}
+
 .top-nav .right{float:right;width:445px;}
 .top-nav .right li a{color:#FFFFFF;}
 
 .language-links,.account-links{float:right;}
 .account-links li{float:left;height:25px;line-height:25px;padding:0 6px;color:#ffffff;}
 .advert{height:52px;float:left;width:100%;}
-
-.main-nav{float:left;width:590px;height:31px;}
+.nav-wrap{float:left;width:100%;height:31px;}
+.main-nav{float:left;width:450px;height:31px;}
 .main-nav ul{float:left;}
 .main-nav li{float:left;line-height:31px;position:relative;}
-.main-nav li a{text-transform:uppercase;padding-left:35px;color:#282828;}
+.main-nav li a{text-transform:uppercase;padding-left:35px;color:#282828;font-family:"Rockwell std", Arial;font-size:13px;}
 .main-nav li a:hover{text-decoration:underline;}
 
 /* Content*/
 .content {background:url(../images/backgrounds/down-shadow2.jpg) repeat-x center top;float:left;min-height:400px;padding-top:15px;color:#282828;width:100%;}
-.content h2{font-size:18px;}
+.content h2{font-size:18px;font-family:"Rockwell Std", Helvetica, Arial;}
 .content .heading{float:left;width:100%;padding-bottom:8px;height:16px;
 background:url(../images/backgrounds/down-shadow2.jpg) repeat-x center bottom;height:30px;}
 
@@ -107,14 +113,16 @@ background:none;border:1px solid #cdcdcd;height:auto;padding:18px;height:160px;}
 .footer-nav{float:left;height:25px;line-height:25px;padding-left:10px;width:550px;}
 .footer-nav ul{float:left;width:100%;}
 .footer-nav ul li{float:left;}
-.footer-nav ul li a{padding-right:25px;color:#282828;}
+.footer-nav ul li a{padding-right:25px;color:#282828;font-family:"Rockwell std", Helvetica, Arial;}
 #footer .right{width:270px;float:right;}
 .copyright{float:left;height:30px;width:100%;text-align:center;color:#999;border-top:1px solid #cdcdcd;
 background:url(../images/backgrounds/down-shadow.jpg) repeat-x;line-height:30px;}
+
 /* Contact Page, Contact Form */
 .left-area{float:left;width:272px;}
 
 input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; background-color: #F2F2F2; border-style: solid;border-width: 1px;padding: 4px 0;}
+#hotel_facility_list_{background-color:none;}
 .contact-form{float:left;width:600px;padding-top:40px;}
 .contact-form  form input, .contact-form form textarea {width:380px;}
 .contact-form form{width:545px;float:left;}

@@ -9,14 +9,14 @@
     <%= yield(:head) %>
 
     <!--[if !IE]>--> 
-      <%= javascript_include_tag 'cufon-yui','cufon','Rockwell_Std_400.font' %>
+      <%#= javascript_include_tag 'cufon-yui','cufon','Rockwell_Std_400.font' %>
     <!--<![endif]-->
-    <!--[if gt IE 7]>    
-      <%= javascript_include_tag 'cufon-yui','cufon','Rockwell_Std_400.font' %>
-  	<![endif]-->    
     <!--[if IE]>
       <%= stylesheet_link_tag 'ie' %>
   	<![endif]-->
+    <!--[if gt IE 7]>    
+      <%= javascript_include_tag 'cufon-yui','cufon','Rockwell_Std_400.font' %>
+  	<![endif]-->    
   	
   </head>
   
@@ -30,16 +30,6 @@
   			</div>
   			<div class="header-right">
   				<div class="top-nav">
-  					<div class="left">
-  						<a href="#" class="language" title="Language">Language</a>
-  						<div class="language-links" style="display:none;">
-  							<ul class="language-list">
-  								<li class="name"><a href="#" title="English">English</a></li>
-  								<li class="name"><a href="#" title="English">Chinese</a></li>
-  								<li class="name"><a href="#" title="English">Spanish</a></li>
-  							</ul>
-  						</div>
-  					</div>
   					<div class="right">
   						<ul class="account-links">
   							<li>
@@ -62,14 +52,24 @@
   				<div class="advert">
 				
   				</div>
-  				<div class="main-nav">
-  					<ul>
-  						<li><%= link_to 'Home', root_url %></li>
-  						<li><a href="#" title="Deals">Deals</a></li>
-  						<li><a href="#" title="Travel Guides">Travel Guides</a></li>
-  						<li><a href="/contact-us" title="Contact us">Contact Us</a></li>																							
-  					</ul>
-  				</div>
+  				<div class="nav-wrap">
+    				<div class="main-nav">
+    					<ul>
+    						<li><%= link_to 'Home', root_url %></li>
+    						<li><a href="#" title="Deals">Deals</a></li>
+    						<li><a href="#" title="Travel Guides">Travel Guides</a></li>
+    						<li><a href="/contact-us" title="Contact us">Contact Us</a></li>																							
+    					</ul>
+    				</div>
+  				
+    				<div class="language-links" style="display:block;">
+  						<ul class="language-list">
+  							<li class="english"><a href="#" title="English">English</a></li>
+  							<li class="france"><a href="#" title="France">France</a></li>
+  							<li class="spanish"><a href="#" title="Spanish">Spanish</a></li>
+  						</ul>
+  					</div>
+					</div>
   			</div>
   		</div>
       

@@ -1,4 +1,20 @@
-<%= render :partial => 'left_side' %>
-<%= render 'form' %>
+<div class="left-area">
+	<div class="win-box">
+      <div class="admin">
+        <h2>Admin</h2>
+          <ul>
+    				<li><%= link_to "Back to List", hotels_path %></li>
+    			</ul>  			
+      </div>
+		</div>
+		<div class="admin">
+      <%= render :partial => 'shared/admin_menu' %>      
+    </div>
+    
+</div>
 
-<%#= link_to "Back to List", hotels_path %>
+<div class="main-content">
+  <%= render 'form' %>
+</div>
+
+

@@ -1,5 +1,16 @@
-<% title "Hotels" %>
-
+<div class="left-area">
+	<div class="win-box">
+		<div class="contact-addr">
+      <div class="admin">
+        <h2>Admin</h2>
+          <ul>
+    				<li><%= link_to "Add New Hotel", new_hotel_path %></li>
+    			</ul>  			
+      </div>			
+		</div>
+	</div>
+</div>
+<div class="main-content">
 <table>
   <tr>
     <th>Name</th>
@@ -31,5 +42,5 @@
     </tr>
   <% end %>
 </table>
+</div>
 
-<p><%= link_to "New Hotel", new_hotel_path %></p>
