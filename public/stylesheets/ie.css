@@ -1,8 +1,8 @@
-.content .heading {padding-bottom:0;}
+.content .heading {height:20px;}
 .content .heading h2.smart-filters {float:left;background:url(../images/headings/smart-filters.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
 .content .heading h2.information{float:left;background:url(../images/headings/information.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
-.content .heading h2.guest-box{float:left;background:url(../images/headings/guest-box.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:20px;}
-.content .heading h2.customer-service{float:left;background:url(../images/headings/customer-service.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:20px;}
+.content .heading h2.guest-box{float:left;background:url(../images/headings/guest-box.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:26px;}
+.content .heading h2.customer-service{float:left;background:url(../images/headings/customer-service.jpg) no-repeat;height:0;width:185px;overflow:hidden;padding-top:20px;}
 .content .heading h2.newsletter{float:left;background:url(../images/headings/newsletter.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:20px;}
 .content .heading h2.search-for-hotels{float:left;background:url(../images/headings/search-for-hotels.jpg) no-repeat;height:0;width:176px;overflow:hidden;padding-top:20px;}
 .content .heading h2.register{float:left;background:url(../images/headings/register.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
