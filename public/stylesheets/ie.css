@@ -1,0 +1,5 @@
+.content h2.smart-filters {float:left;background:url(../images/headings/smart-filters.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
+.content h2.information{float:left;background:url(../images/headings/information.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
+.win-box .filters, .win-box .info{float:left;width:100%;}
+.search-box{float:right;background:url(../images/backgrounds/search-box.jpg) no-repeat;width:278px;height:327px;display:block;
+border:none;}
