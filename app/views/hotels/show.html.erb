@@ -1,4 +1,19 @@
-<% title "Hotel" %>
+<div class="left-area">
+	<div class="win-box">
+      <div class="admin">
+        <h2>Admin</h2>
+          <ul>
+            <li>  <%= link_to "Edit", edit_hotel_path(@hotel) %></li>
+    				<li><%= link_to "Add New Hotel", new_hotel_path %></li>
+    				<li><%= link_to "Destroy", @hotel, :confirm => 'Are you sure?', :method => :delete %></li>
+            <li><%= link_to "View All", hotels_path %></li>
+    			</ul>  			
+      </div>			
+	</div>
+  <%= render :partial => 'shared/admin_menu' %>      
+</div>
+
+<div class="main-content">
 
 <p>
   <strong>Name:</strong>
@@ -41,8 +56,4 @@
   <%= @hotel.direction %>
 </p>
 
-<p>
-  <%= link_to "Edit", edit_hotel_path(@hotel) %> |
-  <%= link_to "Destroy", @hotel, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", hotels_path %>
-</p>
+</div>

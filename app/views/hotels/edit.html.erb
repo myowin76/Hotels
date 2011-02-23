@@ -1,4 +1,16 @@
-<% title "Edit Hotel" %>
+<div class="left-area">
+	<div class="win-box">
+      <div class="admin">
+        <h2>Admin</h2>
+          <ul>
+    				<li><%= link_to "Add New Facility", new_facility_path %></li>
+    			</ul>  			
+      </div>			
+		</div>
+  <%= render :partial => 'shared/admin_menu' %>      
+</div>
+<div class="main-content">
+<h2>Edit Hotel</h2>
 
 <%= render 'form' %>
 
@@ -6,3 +18,4 @@
   <%= link_to "Show", @hotel %> |
   <%= link_to "View All", hotels_path %>
 </p>
+</div>

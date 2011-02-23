@@ -78,7 +78,7 @@ background:url(../images/backgrounds/down-shadow2.jpg) repeat-x center bottom;he
 .search-box form .submit-button{background:url(../images/buttons/search.jpg) no-repeat; height:36px;width:114px;float:right;cursor:pointer;border:none;}
 .search-box form .submit-button:hover{background-position:0 -37px;}
 
-.win-box{float:left;width:222px;padding:22px;border:2px solid #3DB2CC;display:block;-moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;}
+.win-box{float:left;width:222px;padding:22px;border:2px solid #3DB2CC;display:block;-moz-border-radius:10px; -webkit-border-radius:10px;border-radius:10px;margin-bottom:12px;}
 .win-box .contact-addr{line-height:1.5;}
 
 .info-box{width:100%;margin:12px 0;float:left;background: none repeat #DBF6BE;border:1px solid #FDD845;border-color:#9BBF65;color:#3C4E27;}

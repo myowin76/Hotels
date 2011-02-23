@@ -1,15 +1,15 @@
 <div class="left-area">
 	<div class="win-box">
-		<div class="contact-addr">
       <div class="admin">
         <h2>Admin</h2>
           <ul>
     				<li><%= link_to "Add New Hotel", new_hotel_path %></li>
     			</ul>  			
       </div>			
-		</div>
 	</div>
+  <%= render :partial => 'shared/admin_menu' %>      
 </div>
+
 <div class="main-content">
 <table>
   <tr>

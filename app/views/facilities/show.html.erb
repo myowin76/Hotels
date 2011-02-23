@@ -1,4 +1,20 @@
-<% title "Facility" %>
+<div class="left-area">
+	<div class="win-box">
+      <div class="admin">
+        <h2>Admin</h2>
+          <ul>
+            <li>  <%= link_to "Edit", edit_facility_path(@facility) %></li>
+    				<li><%= link_to "Destroy", @facility, :confirm => 'Are you sure?', :method => :delete %> </li>
+            <li><%= link_to "View All", facilities_path %></li>
+    				<li><%= link_to "Add New Hotel", new_facility_path %></li>
+    			</ul>  			
+      </div>			
+	</div>
+  <%= render :partial => 'shared/admin_menu' %>      
+</div>
+
+<div class="main-content">
+
 
 <p>
   <strong>Name:</strong>
@@ -8,9 +24,4 @@
   <strong>Description:</strong>
   <%= @facility.description %>
 </p>
-
-<p>
-  <%= link_to "Edit", edit_facility_path(@facility) %> |
-  <%= link_to "Destroy", @facility, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", facilities_path %>
-</p>
+</div>

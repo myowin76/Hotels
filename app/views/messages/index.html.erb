@@ -1,4 +1,15 @@
-<% title "Messages" %>
+<div class="left-area">
+	<div class="win-box">
+      <div class="admin">
+        <h2>Admin</h2>
+          <ul>
+    				<li><%= link_to "Message List", messages_path %></li>
+    			</ul>  			
+      </div>			
+		</div>
+  <%= render :partial => 'shared/admin_menu' %>      
+</div>
+<div class="main-content">
 
 <table>
   <tr>
@@ -20,4 +31,5 @@
   <% end %>
 </table>
 
-<p><%= link_to "New Message", new_message_path %></p>
+<%#= link_to "New Message", new_message_path %>
+</div>

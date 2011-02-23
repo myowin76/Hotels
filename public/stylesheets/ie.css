@@ -1,6 +1,23 @@
-.content h2.smart-filters {float:left;background:url(../images/headings/smart-filters.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
-.content h2.information{float:left;background:url(../images/headings/information.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
+.content .heading h2.smart-filters {float:left;background:url(../images/headings/smart-filters.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
+.content .heading h2.information{float:left;background:url(../images/headings/information.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
+.content .heading h2.guest-box{float:left;background:url(../images/headings/guest-box.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
+.content .heading h2.customer-service{float:left;background:url(../images/headings/customer-service.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
+.content .heading h2.newsletter{float:left;background:url(../images/headings/newsletter.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
+.content .heading h2.search-for-hotels{float:left;background:url(../images/headings/search-for-hotels.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
+.content .heading h2.register{float:left;background:url(../images/headings/register.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
+.content .heading h2.signin{float:left;background:url(../images/headings/signin.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
+.content .heading h2.admin{float:left;background:url(../images/headings/admin.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
+.content .heading h2.manage{float:left;background:url(../images/headings/manage.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
+
+
+
+
+
+
+
+
 .win-box .filters, .win-box .info{float:left;width:100%;}
 .search-box{float:right;background:url(../images/backgrounds/search-box.jpg) no-repeat;width:278px;height:327px;display:block;
 border:none;}
+.search-box h2{float:left;background:url(../images/headings/search-for-hotels.jpg) no-repeat;width:278px;height:327px;}
 .login-box{background:url(../images/backgrounds/login-box-bg.jpg) no-repeat;width:372px;margin:50px auto;padding:22px 22px 12px;float:left;border:none;}
