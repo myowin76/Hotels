@@ -10,5 +10,9 @@ class Photo < ActiveRecord::Base
         
   validates_attachment_size :hotel_photo, :less_than => 10.megabytes  
   validates_attachment_presence :hotel_photo
+	validates_attachment_content_type :hotel_photo, 
+	:content_type => ['image/jpeg', 'image/pjpeg', 
+								   'image/jpg', 'image/png']
+	
   
 end

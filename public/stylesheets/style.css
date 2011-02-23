@@ -27,6 +27,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .login-box h2, .search-box h2, .small-box h2, .info h2, .win-box h2{height:30px;padding-bottom:8px; background:url(../images/backgrounds/down-shadow.jpg) repeat-x center bottom;}
 .center{width:412px;margin:0 auto;}
 
+
 /* Navigations */
 .top-nav{height:27px;float:left;width:100%;background:url(../images/backgrounds/top-nav-bg.jpg) repeat-x;}
 .top-nav .left{float:left;width:230px;position:relative;z-index:5;}
@@ -117,6 +118,12 @@ background:none;border:1px solid #cdcdcd;height:auto;padding:18px;height:160px;}
 #footer .right{width:270px;float:right;}
 .copyright{float:left;height:30px;width:100%;text-align:center;color:#999;border-top:1px solid #cdcdcd;
 background:url(../images/backgrounds/down-shadow.jpg) repeat-x;line-height:30px;}
+#footer .socials{float:right;width:83px;}
+#footer .socials li{margin-left:5px;width:22px;height:22px;float:left;}
+#footer .socials li a{background:url(../images/socials.jpg) no-repeat;float:left;padding-top:22px;height:0;overflow:hidden;width:22px;}
+#footer .socials .twitter a{background-position:0 0;}
+#footer .socials .facebook a{background-position:-31px 0;}
+#footer .socials .rss a{background-position:-61px 0}
 
 /* Contact Page, Contact Form */
 .left-area{float:left;width:272px;}
@@ -164,7 +171,7 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
 .pagination li.selected a{background:none #CDCDCD;border-color:#CDCDCD;color:#FFFFFF;}
 
 /* details page */
-.details .hotel-name h1{display:inline;font-size:18px;font-weight:bold;overflow:hidden;padding-right:110px;}
+.details .hotel-name h1{display:inline;font-size:18px;overflow:hidden;padding-right:110px;font-family: Rockwell, Arial;}
 .s1, .s2, .s3, .s4, .s5{background:url(../images/star-sprite.png) no-repeat;height:20px;width:96px;}
 .s1{background-position:right -110px;}
 .s2{background-position:right -85px;}
