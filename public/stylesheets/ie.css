@@ -1,4 +1,4 @@
-.small-box h2{float:left;height:20px;width:100%;background:none;}
+.small-box h2{float:left;height:20px;width:100%;background:none;padding-bottom:0;}
 .content .heading {height:20px;float:left;padding-bottom:8px;}
 .content .heading h2.smart-filters {float:left;background:url(../images/headings/smart-filters.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
 .content .heading h2.information{float:left;background:url(../images/headings/information.jpg) no-repeat;height:0;width:130px;overflow:hidden;padding-top:16px;}
