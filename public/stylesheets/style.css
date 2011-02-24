@@ -156,6 +156,8 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
 .list-block .box, .list-block .feature{background-color:#ffffff;border:2px solid #3DB2CC;-webkit-border-radius:10px;border-radius:10px;-moz-border-radius:10px; display:block;padding:15px;float:left;width:630px; }
 .list-block .feature{background-color:#fffff0;}
 .list-block .box .thumb{float:left;width:100px;height:75px;border:1px solid #cdcdcd;padding:2px;}
+.list-block .box .thumb a{-moz-box-shadow:0 1px 3px #777777;display:inline-block;}
+.list-block .box .thumb img{border:1px solid #7C7C7C;}
 .list-block .desc{width:100%;float:left;padding-top:8px;line-height:16px;height:65px;overflow:hidden;}
 .list-block .box .details{float:left;margin-left:10px;width:511px;min-height:75px;}
 .list-block .box .details h3{font-size:14px;width:100%;border-bottom:1px solid #cdcdcd;padding-bottom:4px;margin-bottom:2px;}
