@@ -8,7 +8,7 @@ class CreateUserTypes < ActiveRecord::Migration
     end
     
     UserType.create(:name => 'User')
-    UserType.create(:name => 'Administrator')
+    UserType.create(:name => 'Admin')
     UserType.create(:name => 'Owner')
   end
 

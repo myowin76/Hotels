@@ -1,26 +1,26 @@
       <div class="banner">
       	<div class="images"  id="pics" style="position:relative;">
-      	<div class="cycle">	
-      		<a href="/seaviewinn" title="Sea View Inn">
-      			<img src="media/seaviewinn/01.jpg" alt="Sea View Inn" />
-      		</a>
-      	</div>
-      	<div class="cycle">
-      		<a href="/homely-house" title="Homely House">
-      			<img src="media/HomelyHouse/01.jpg" alt="homely house" />
-      		</a>
-      	</div>
-      	<div class="cycle">
-      		<a href="/" title="Homely House">
-      			<img src="media/hotel_01.jpg" alt="hotels" />
-      		</a>
-      	</div>
-      	<div class="cycle">
-      		<a href="/" title="Majestic Inns">
-      			<img src="media/MajesticInns/01.jpg" alt="MajesticInns" />
-      		</a>
-      	</div>
-      </div>
+					<div class="cycle">	
+						<a href="/seaviewinn" title="Sea View Inn">
+							<img src="media/seaviewinn/01.jpg" alt="Sea View Inn" />
+						</a>
+					</div>
+					<div class="cycle">
+						<a href="/homely-house" title="Homely House">
+							<img src="media/HomelyHouse/01.jpg" alt="homely house" />
+						</a>
+					</div>
+					<div class="cycle">
+						<a href="/" title="Homely House">
+							<img src="media/hotel_01.jpg" alt="hotels" />
+						</a>
+					</div>
+					<div class="cycle">
+						<a href="/" title="Majestic Inns">
+							<img src="media/MajesticInns/01.jpg" alt="MajesticInns" />
+						</a>
+					</div>
+				</div>
       
       <div class="search-box">
         <div class="heading">
@@ -64,41 +64,123 @@
       </div>
 
       </div>
-      <div class="info-box">
-        <div class="cont">
-        	Another box example. 
+
+			<div class="browse-by">
+				<div class="hotel-types">
+					<div class="heading">
+						<h2 class="" title="Browse by Hotel Types">Browse by Hotel Types</h2>
+					</div>
+
+					<ul>
+					  <% @hotel_types.each do |hotel_type|%>  					
+						  <li><%= link_to hotel_type.name , hotel_types_path %></li>
+					  <% end %>
+					</ul>
+
+				</div>
+			</div>
+      
+
+  			<div class="top-rated">
+  				<div class="heading">			
+  					<h2>Top rated hotels</h2>
+  				</div>	
+
+        	<div class="list">
+        		<div class="hotel-box">
+        			<div id="01" class="hotel">
+        				<div class="thumb">
+        					<a href="#" title=""><img src="/media/HomelyHouse/thumbs/02.jpg" title="Title for 1.jpg" /></a>
+        				</div>
+        				<div class="details">
+        					<h3><a href="#">Sea View Inn</a></h3>
+        					<div class="s4"></div>
+        					<div class="loc">Henden, Middlesex</div>
+
+        					<div class="price">From &pound; <span>76</span></div>
+        				</div>
+        			</div>
+        		</div>
+        		
+        		<div class="hotel-box">
+        			<div id="01" class="hotel">
+        				<div class="thumb">
+        					<a href="#" title=""><img src="/media/CapitolHotel/thumbs/01.jpg" title="Title for 1.jpg" /></a>
+        				</div>
+        				<div class="details">
+        					<h3><a href="#">Capitol Hotel</a></h3>
+        					<div class="s3"></div>
+        					<div class="loc">Henden, Middlesex</div>
+
+        					<div class="price">From &pound; <span>76</span></div>
+        				</div>
+        			</div>
+        		</div>
+
+        		<div class="hotel-box">
+        			<div id="01" class="hotel">
+        				<div class="thumb">
+        					<a href="#" title=""><img src="/media/PremierNights/thumbs/01.jpg" title="Title for 1.jpg" /></a>
+        				</div>
+        				<div class="details">
+        					<h3><a href="#">Premier Nights</a></h3>
+        					<div class="s4"></div>
+        					<div class="loc">Henden, Middlesex</div>
+
+        					<div class="price">From &pound; <span>76</span></div>
+        				</div>
+        			</div>
+        		</div>
+
+        		<div class="hotel-box">
+        			<div id="01" class="hotel">
+        				<div class="thumb">
+        					<a href="#" title=""><img src="/media/MajesticInns/thumbs/01.jpg" title="Title for 1.jpg" /></a>
+        				</div>
+        				<div class="details">
+        					<h3><a href="#">Majastic Inn</a></h3>
+        					<div class="s4"></div>
+        					<div class="loc">Kingston, Surrey</div>
+
+        					<div class="price">From &pound; <span>76</span></div>
+        				</div>
+        			</div>
+        		</div>
+        		
+        	</div>
+
+          
+  			</div>
+
+  		<div class="full-width">
+        <div class="one-third">
+          <div class="small-box">
+            <div class="heading">
+          	  <h2 class="guest-box">Guest Box</h2>
+          	</div>
+          	<ul>
+          		<li><a href="#" title="FAQ">FAQ</a></li>
+          		<li><a href="#" title="How to make a reservation?">How to make a reservation?</a></li>
+          		<li><a href="#" title="Additional information">Additional information</a></li>
+          		<li><a href="#" title="Payment options">Payment options</a></li>
+          		<li><a href="#" title="Booking tips">Booking tips</a></li>
+          		<li><a href="#" title="Site feedback">Site feedback</a></li>
+          	</ul>
+          </div>
         </div>
-      </div>
-      <div class="feature-hotels">
-
-      </div>
-
-      <div class="one-third">
-      <div class="small-box">
-        <div class="heading">
-      	  <h2 class="guest-box">Guest Box</h2>
-      	</div>
-      	<ul>
-      		<li><a href="#" title="FAQ">FAQ</a></li>
-      		<li><a href="#" title="How to make a reservation?">How to make a reservation?</a></li>
-      		<li><a href="#" title="Additional information">Additional information</a></li>
-      		<li><a href="#" title="Payment options">Payment options</a></li>
-      		<li><a href="#" title="Booking tips">Booking tips</a></li>
-      		<li><a href="#" title="Site feedback">Site feedback</a></li>
-      	</ul>
-      </div>
-      </div>
-      <div class="one-third">
-      <div class="small-box">
-				<div class="heading">        
-      	  <h2 class="customer-service">Customer Service</h2>
-        </div>  
-      </div>
-      </div>
-      <div class="one-third last">
-      <div class="small-box">
-				<div class="heading">      
-      	  <h2 class="newsletter">Newsletter</h2>
-      	</div>
-      </div>
+        <div class="one-third">
+          <div class="small-box">
+    				<div class="heading">        
+          	  <h2 class="customer-service">Customer Service</h2>
+            </div>  
+          </div>
+        </div>
+        
+        <div class="one-third last">
+          <div class="small-box">
+    				<div class="heading">      
+          	  <h2 class="newsletter">Newsletter</h2>
+          	</div>
+          </div>
+        </div>
       </div>

@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 	end
 
 	def admin_user?
-		return false if current_user.nil? || current_user.user_type.name != "Administrator"
+		return false if current_user.nil? || current_user.user_type.name != "Admin"
 		true
 	end
 
