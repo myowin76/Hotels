@@ -26,7 +26,8 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 /* Generic */
 .login-box h2, .search-box h2, .small-box h2, .info h2, .win-box h2{height:30px;padding-bottom:8px; background:url(../images/backgrounds/down-shadow.jpg) repeat-x center bottom;}
 .center{width:412px;margin:0 auto;}
-
+#flash_alert{color:#d64646;}
+.full-width:{width:100%;float:left;}
 
 /* Navigations */
 .top-nav{height:27px;float:left;width:100%;background:url(../images/backgrounds/top-nav-bg.jpg) repeat-x;}

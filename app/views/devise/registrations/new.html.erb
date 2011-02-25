@@ -3,9 +3,6 @@
 <div class="center">
 	<div class="login-box">
 		  <div class="heading"><h2 class="register" title="Register">Register</h2></div>
-		<% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id => "flash_#{name}" %>
-    <% end %>
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 

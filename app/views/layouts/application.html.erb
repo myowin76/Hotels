@@ -14,7 +14,7 @@
     <!--[if IE]>
       <%= stylesheet_link_tag 'ie' %>
   	<![endif]-->
-    <!--[if gt IE 7]>    
+    <!--[if gt IE 6]>    
       <%= javascript_include_tag 'cufon-yui','cufon','Rockwell_Std_400.font' %>
   	<![endif]-->    
   	
@@ -36,7 +36,7 @@
     							<% if user_signed_in? %>
           		   	 	Logged in as: <%= current_user.email  %> 
           				|
-          				<%= link_to "My Account", session_path(current_user) %>
+          				<%= link_to "My Account", user_profile_path %>
           				|
           				<%= link_to "Sign out", destroy_user_session_path %>
           		    <% else %>
@@ -61,7 +61,7 @@
     					</ul>
     				</div>
   				
-    				<div class="language-links" style="display:block;">
+    				<div class="language-links">
   						<ul class="language-list">
   							<li class="english"><a href="#" title="English">English</a></li>
   							<li class="france"><a href="#" title="France">France</a></li>

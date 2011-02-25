@@ -26,27 +26,9 @@
     </div>
 
   <!-- rails data -->
-    <%= @hotels.each do |hotel| %>
-      <div class="list-block">
-    		<div class="box">
-    			<div id="01" class="hotel">
-    				<div class="thumb">
-    					<a href="#" title=""><img src="/media/HomelyHouse/thumbs/02.jpg" title="Title for 1.jpg" /></a>
-    				</div>
-    				<div class="details">
-    					<h3><%=link_to hotel.name, hotel_path %></h3>
-    					<div class="s4"></div>
-    					<div class="loc">Henden, Middlesex</div>
-					
-    					<div class="price">From &pound; <span>76</span></div>
-    				</div>
-    				<div class="desc">
-    					<p>Espacio Torrijos is situated on Hermosilla Street next to General Díaz Porlier, in the quarter of Salamanca in the heart of Madrid. The seven storey building provides a range of one, two and three bedroom apartments and spacious penthouses.</p>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-	  <% end %>
+    <% @hotels.each do |hotel| %>
+      <p>TESTING BLOCK</p>
+	  <% end unless @hotels.first.new_record? rescue nil %>
   <!-- end here -->  
   
 	<div class="list-block">

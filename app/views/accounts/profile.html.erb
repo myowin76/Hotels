@@ -1,0 +1,10 @@
+<%= render :partial => 'accounts/left_side' %>      
+
+<div class="main-content">
+<h1>User Profile</h1>
+<%= @user.username %><br />
+<%= @user.email %></br />
+<% @hotels.each do |my_hotel| %>
+  <%= my_hotel.name%>
+<% end %>
+</div>

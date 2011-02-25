@@ -7,4 +7,11 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   validates :email, :presence => true, :uniqueness => true
+  
+  belongs_to :user_type
+  has_many :hotels, :foreign_key => 'owner_id'
+  
+  
+  
+  
 end

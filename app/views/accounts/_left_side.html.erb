@@ -1,0 +1,24 @@
+
+<div class="left-area">
+	<div class="win-box">
+		<div class="contact-addr">
+      <div class="admin">
+
+        <h2>Manage</h2>
+          <% if owner_user? %>
+          <ul>
+    				<li><%= link_to "Hotels", hotels_path %></li>		
+    				<li><%= link_to "Room Types", facilities_path %></li>
+    			</ul> 
+    			<% end %>
+	        <% if customer_user? %> 			
+	          <ul>
+      				<li><%= link_to "Add Hotels", new_hotel_path %></li>		
+      				<li><%= link_to "Bookmarks", hotels_path %></li>		
+      				<li><%= link_to "Reviews", facilities_path %></li>
+      			</ul>
+	        <% end %>  
+      </div>			
+		</div>
+	</div>
+</div>
