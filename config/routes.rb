@@ -11,11 +11,15 @@ Hotels::Application.routes.draw do
   resources :user_types
   resources :hotels_facilities
   resources :messages
-  resources :reviews
-  resources :hotels
+
+  resources :hotels do
+    resources :reviews    
+  end
   resources :room_types
   resources :facilities
   devise_for :users, :path_names => {:sign_up => "register"}
+
+  
 
   get "home/index"
   get "hotels/search"

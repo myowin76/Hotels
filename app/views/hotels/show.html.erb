@@ -1,17 +1,6 @@
+<% javascript 'jquery.ad-gallery.js','gmap' %>
 
-<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=abcdefg&sensor=true_or_false" type="text/javascript"></script>
-<script type="text/javascript">
 
-function initialize() {
-  if (GBrowserIsCompatible()) {
-    var map = new GMap2(document.getElementById("map_canvas"));
-    map.setCenter(new GLatLng(37.4419, -122.1419), 13);
-    map.setUIToDefault();
-  }
-}
-
-</script>
-<% javascript 'jquery.ad-gallery.js'%>
 <script type="text/javascript">
 $(function() {
 
@@ -32,67 +21,6 @@ $(function() {
 </script>
 
 
-<% if admin_user? %>
-<div class="left-area">
-	<div class="win-box">
-      <div class="admin">
-        <h2>Admin</h2>
-          <ul>
-            <li>  <%= link_to "Edit", edit_hotel_path(@hotel) %></li>
-    				<li><%= link_to "Add New Hotel", new_hotel_path %></li>
-    				<li><%= link_to "Destroy", @hotel, :confirm => 'Are you sure?', :method => :delete %></li>
-            <li><%= link_to "View All", hotels_path %></li>
-    			</ul>  			
-      </div>			
-	</div>
-  <%= render :partial => 'shared/admin_menu' %>      
-</div>
-<% end %>
-
-<div class="main-content">
-
-<p>
-  <strong>Name:</strong>
-  <%= @hotel.name %>
-</p>
-<p>
-  <strong>Address:</strong>
-  <%= @hotel.address %>
-</p>
-<p>
-  <strong>Postcode:</strong>
-  <%= @hotel.postcode %>
-</p>
-<p>
-  <strong>Phone:</strong>
-  <%= @hotel.phone %>
-</p>
-<p>
-  <strong>Fax:</strong>
-  <%= @hotel.fax %>
-</p>
-<p>
-  <strong>Star:</strong>
-  <%= @hotel.star %>
-</p>
-<p>
-  <strong>No Of Rooms:</strong>
-  <%= @hotel.no_of_rooms %>
-</p>
-<p>
-  <strong>Overview:</strong>
-  <%= @hotel.overview %>
-</p>
-<p>
-  <strong>Terms:</strong>
-  <%= @hotel.terms %>
-</p>
-<p>
-  <strong>Direction:</strong>
-  <%= @hotel.direction %>
-</p>
-
-</div>
 <div class="details">
 	<div class="left">
 		<div class="left-gallary">
@@ -127,14 +55,54 @@ $(function() {
 			  </div>
 		
 			</div>
-		
-
 
 		</div>
+
 		<div class="customer-reviews">
 			<div class="heading">
 				<h2>Customer Reviews</h2>
 			</div>
+			<% @hotel_reviews.each do |review|%>
+      <div class="box">
+        <div class="rating"><span>Guest Rating:</span> <%= review.rating %> out of 10</div>      
+  			<p>
+  			  <%= review.comment %>
+    			No cheap, and the rooms aren’t huge, but the staff are
+          very pleasent and helpful.pleasent and helpful.pleasent and helpful.pleasent and helpful.pleasent and helpful.pleasent and helpful.pleasent and helpful.
+        </p>
+        <div class="by">Reviewed by P Carney, Jan 2011</div>
+      </div>
+      <% end %>
+      
+      <div class="box">
+        <div class="rating"><span>Guest Rating:</span> 9 out of 10</div>      
+        <p>
+          The room was average size for a city hotel. Everything 
+          was clean and worked so I was very happy.
+        </p>
+        <div class="by">Reviewed by Richard,  Nov 2010</div>
+      </div>
+      <div class="box">
+        <div class="rating"><span>Guest Rating:</span> 9 out of 10</div>      
+        <p>
+          The room was average size for a city hotel. Everything 
+          was clean and worked so I was very happy.
+        </p>  
+        <div class="by">Reviewed by P Carney, Apr 2010</div>
+      </div>
+      <div class="box">
+        <div class="rating"><span>Guest Rating:</span> 9 out of 10</div>      
+        <p>
+          The room was average size for a city hotel. Everything 
+          was clean and worked so I was very happy.
+        </p>
+        <div class="by">Reviewed by P Carney, Feb 2010</div>  
+      </div>
+      <div class="all">
+        <a href="#">Read All Reviews</a> 
+        | 
+        <%= link_to  'Write a Review', new_hotel_review_path(@hotel)%>
+      </div>
 		</div>	
 	</div>
 	<div class="right">
@@ -149,12 +117,12 @@ $(function() {
 				<div class="heading">
 					<h2 title="Overview">Overview</h2>
 				</div>
+				<p>  <%= @hotel.overview %></p>
 				<p>Travel from business to pleasure in just a few paces, and let us demonstrate 2 wonderful extremes of hotel life.
 					The first consists of our fantastic conference and meeting facilities. 
 					With 11 rooms of varying size to choose from, Wifi in all rooms and fully trained staff with the 
 					knowledge and expertise to run your event without a hitch.</p>
 			</div>
-
 
 		<div class="hotel-facilities">
 			<div class="heading">
@@ -166,8 +134,6 @@ $(function() {
 			  </ul>
 		  <% end %>
 			</div>
-	
-
 			<div class="room-types">
 				<div class="heading">
 					<h2 title="Room Types">Room Types</h2>
@@ -195,25 +161,27 @@ $(function() {
 						<li class="avail"><span>available</span></li>
 						<li class="price"><span>&pound;200</span></li>
 						<li class="book"><span>Call 0207 999 999 or <a href="book-online" title="Book online">Book online</a></span></li>														
-					</ul>
-												
+					</ul>											
 				</div>							
 			</div>
 			<div class="direction">
 				<div class="heading">						
 					<h2 title="Direction">Direction</h2>
 				</div>
+				  <p><%= @hotel.direction %></p>
 					<p>	Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
 						tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis 
 						nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
 					</p>	
-				    <!--<div id="map_canvas" style="width: 565px; height: 150px"></div>				-->
+<!--
+		-->		    <div id="map_canvas" style="width: 565px; height: 150px"></div>	
 					
 			</div>	
 			<div class="terms">
 				<div class="heading">
 					<h2 title="Terms &amp; Conditions">Terms &amp; Conditions</h2>
-				</div>	
+				</div>
+					<p><%= @hotel.terms %></p>
 					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
 					tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis 
 					nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 

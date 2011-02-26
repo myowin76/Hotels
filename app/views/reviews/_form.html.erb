@@ -1,4 +1,4 @@
-<%= form_for @review do |f| %>
+<%= form_for [@hotel,@review] do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :comment %><br />
