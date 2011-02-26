@@ -1,3 +1,38 @@
+
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=abcdefg&sensor=true_or_false" type="text/javascript"></script>
+<script type="text/javascript">
+
+function initialize() {
+  if (GBrowserIsCompatible()) {
+    var map = new GMap2(document.getElementById("map_canvas"));
+    map.setCenter(new GLatLng(37.4419, -122.1419), 13);
+    map.setUIToDefault();
+  }
+}
+
+</script>
+<% javascript 'jquery.ad-gallery.js'%>
+<script type="text/javascript">
+$(function() {
+
+  var galleries = $('.ad-gallery').adGallery();
+  $('#switch-effect').change(
+    function() {
+      galleries[0].settings.effect = $(this).val();
+      return false;
+    }
+  );
+  $('#toggle-slideshow').click(
+    function() {
+      galleries[0].slideshow.toggle();
+      return false;
+    }
+  );
+});
+</script>
+
+
+<% if admin_user? %>
 <div class="left-area">
 	<div class="win-box">
       <div class="admin">
@@ -12,6 +47,7 @@
 	</div>
   <%= render :partial => 'shared/admin_menu' %>      
 </div>
+<% end %>
 
 <div class="main-content">
 
@@ -57,3 +93,134 @@
 </p>
 
 </div>
+<div class="details">
+	<div class="left">
+		<div class="left-gallary">
+			<div class="ad-gallery">
+				<div class="ad-image-wrapper"></div>
+			  	<div class="ad-nav">
+			    	<div class="ad-thumbs">
+			      		<ul class="ad-thumb-list">
+			        		<li>
+			          			<a href="media/HomelyHouse/02.jpg">
+			            			<img src="/media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
+			          			</a>
+			        		</li>
+			        		<li>
+			          			<a href="/media/HomelyHouse/02.jpg">
+			            			<img src="/media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
+			          			</a>
+			        		</li>
+			        		<li>
+			          			<a href="/media/HomelyHouse/02.jpg">
+			            			<img src="/media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
+			          			</a>
+			        		</li>
+			        		<li>
+			          			<a href="/media/HomelyHouse/02.jpg">
+			            			<img src="/media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
+			          			</a>
+			        		</li>
+		
+			      		</ul>
+			    	</div>
+			  </div>
+		
+			</div>
+		
+
+
+		</div>
+		<div class="customer-reviews">
+			<div class="heading">
+				<h2>Customer Reviews</h2>
+			</div>
+		</div>	
+	</div>
+	<div class="right">
+		<div class="hotel-details">
+			<div class="hotel-addr">					
+				<div class="hotel-name"><h1 class="s<%= @hotel.star %>"><%= @hotel.name %></h1></div>
+				<div class="fb-like"><iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fko.aty&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe></div>					
+				<div class="address"><%= @hotel.address %>, <%= @hotel.postcode %></div>
+				<div class="phone">  <%= @hotel.phone %></div>
+			</div>
+			<div class="overview">
+				<div class="heading">
+					<h2 title="Overview">Overview</h2>
+				</div>
+				<p>Travel from business to pleasure in just a few paces, and let us demonstrate 2 wonderful extremes of hotel life.
+					The first consists of our fantastic conference and meeting facilities. 
+					With 11 rooms of varying size to choose from, Wifi in all rooms and fully trained staff with the 
+					knowledge and expertise to run your event without a hitch.</p>
+			</div>
+
+
+		<div class="hotel-facilities">
+			<div class="heading">
+				<h2 title="Facilities">Facilities</h2>
+			</div>	
+			<% @hotel_facilities.each do |hotel_facility|%>
+			  <ul>
+			    <li><%= hotel_facility.name %></li>
+			  </ul>
+		  <% end %>
+			</div>
+	
+
+			<div class="room-types">
+				<div class="heading">
+					<h2 title="Room Types">Room Types</h2>
+				</div>
+				<div class="table">
+					<ul class="header">
+						<li class="room-type"><span>Room Types</span></li>
+						<li class="avail"><span>Avail?</span></li>
+						<li class="price"><span>Price</span></li>
+					</ul>
+					<ul class="row">
+						<li class="room-type"><span>Standard Double</span></li>
+						<li class="avail"><span>available</span></li>
+						<li class="price"><span>&pound;180</span></li>
+						<li class="book"><span>Call 0207 999 999 or <a href="book-online" title="Book online">Book online</a></span></li>								
+					</ul>
+					<ul class="row">
+						<li class="room-type"><span>Suite</span></li>
+						<li class="avail"><span>available</span></li>
+						<li class="price"><span>&pound;280</span></li>
+						<li class="book"><span>Call 0207 999 999 or <a href="book-online" title="Book online">Book online</a></span></li>														
+					</ul>
+					<ul class="row">
+						<li class="room-type"><span>Superior Double</span></li>
+						<li class="avail"><span>available</span></li>
+						<li class="price"><span>&pound;200</span></li>
+						<li class="book"><span>Call 0207 999 999 or <a href="book-online" title="Book online">Book online</a></span></li>														
+					</ul>
+												
+				</div>							
+			</div>
+			<div class="direction">
+				<div class="heading">						
+					<h2 title="Direction">Direction</h2>
+				</div>
+					<p>	Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
+						tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis 
+						nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+					</p>	
+				    <!--<div id="map_canvas" style="width: 565px; height: 150px"></div>				-->
+					
+			</div>	
+			<div class="terms">
+				<div class="heading">
+					<h2 title="Terms &amp; Conditions">Terms &amp; Conditions</h2>
+				</div>	
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
+					tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis 
+					nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+					</p>
+				</div>
+			</div>	
+			</div>					
+		</div>
+
+
