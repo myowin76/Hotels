@@ -5,7 +5,7 @@
       <div class="admin">
 
         <h2>Manage</h2>
-          <% if owner_user? %>
+          <% if admin_or_owner?(current_user.id) %>
           <ul>
     				<li><%= link_to "Hotels", hotels_path %></li>		
     				<li><%= link_to "Room Types", facilities_path %></li>

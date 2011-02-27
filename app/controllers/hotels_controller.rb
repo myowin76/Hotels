@@ -1,8 +1,20 @@
 class HotelsController < ApplicationController
-
+#  before_filter :authenticate_user!, :except => [:search]
   def index
-    @hotels = Hotel.all
-  	
+    if params[:search].blank?
+        redirect_to root_url
+  	else
+  		@hotels = Hotel.search(params[:search],params[:page])
+      render "search_list"
+
+  	end
+    
+    if user_signed_in?
+      #@hotels = current_user.hotels.all
+      #redirect_to user_profile_path
+    else
+      #redirect_to new_session_path  
+	  end
   end
 
   def show

@@ -21,7 +21,13 @@ class Hotel < ActiveRecord::Base
   
 	validates_presence_of :name, :address, :postcode, :phone, :star, :no_of_rooms
 
-	def self.search(search)
+  def self.hotel_owner?
+    return false if current_user.nil? || current_user.id != @hotel.owner_id
+		true		
+  end
+
+
+	def self.search(search,page)
 		paginate :per_page =>5, :page => page,
 								:conditions => ['address like ?',"%#{search}%"],
 								:order => 'created_at DESC'

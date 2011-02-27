@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :admin_user?, :owner_user?, :admin_or_owner?, :customer_user?
+  helper_method :admin_user?, :owner_user?, :admin_or_owner?, :customer_user?, :hotel_owner?
   
   def customer_user?
     return false if current_user.nil? || current_user.user_type.name != "User"
@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 		return false if current_user.nil? || current_user.user_type.name != "Owner"
 		true
 	end
-
+  
 	def admin_user?
 		return false if current_user.nil? || current_user.user_type.name != "Admin"
 		true

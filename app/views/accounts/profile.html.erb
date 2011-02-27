@@ -1,10 +1,41 @@
 <%= render :partial => 'accounts/left_side' %>      
 
 <div class="main-content">
-<h2>User Profile</h2>
-<%= @user.username %><br />
-<%= @user.email %></br />
-<% @hotels.each do |my_hotel| %>
-  <%= my_hotel.name%>
-<% end %>
+  <div class="heading">
+    <h2>User Profile</h2>
+  </div>
+  Username:  <%= @user.username %><br />
+  Email: <%= @user.email %></br />
+
+<h2>My Hotels</h2>
+<% @hotels.each do |hotel| %>
+
+  <div class="list-block">
+  	<div class="box">
+  		<div id="01" class="hotel">
+  			<div class="thumb">
+  				<a href="#" title=""><img src="/media/CapitolHotel/thumbs/01.jpg" title="Title for 1.jpg" /></a>
+  			</div>
+  			<div class="details">
+  				<h3><a href="#"><%= hotel.name %></a></h3>
+  				<div class="s<%= hotel.star %>"></div>
+  				<div class="loc"><%= hotel.address %>, <%= hotel.postcode %></div>
+  				<div class="price">From &pound; <span>76</span></div>
+  			</div>
+  			<div class="desc">
+  				<p><%= hotel.overview %>
+  				It is simply that wehave very high standards. There are fine restaurants with wonderful food and friendly service.  People who work for us genuinely enjoy being there;  everyone strives to make your stay a happy one.</p>
+  			</div>
+  		</div>
+  	</div>
+  	
+
+      <td><%= link_to "Show", hotel %></td>
+      <td><%= link_to "Edit", edit_hotel_path(hotel) %></td>
+      <td><%= link_to "Destroy", hotel, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    <% end %>
+    
+  </div>
+
 </div>

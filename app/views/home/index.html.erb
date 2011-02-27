@@ -28,12 +28,12 @@
         <div class="heading">
       	  <h2 class="search-for-hotels" title="Search for Hotels">Search for Hotels</h2>
       	</div>
-          <% form_tag :controller => 'hotels', :action => 'search' do %>
+          <% form_tag hotels_path, :method => 'get' do %>
     			
       		<ul>
       			<li>
       				<label>Location</label>
-		    			<%= text_field_tag :search, params[:search], :class=>'txtfield' %>
+		    			<%= text_field_tag :search, params[:search], :id=> 'search-field', :class=>'txtfield' %>
 
       			</li>
       			<li>

@@ -27,47 +27,32 @@
 
   <!-- rails data -->
     <% @hotels.each do |hotel| %>
-      <p>TESTING BLOCK</p>
+        <div class="list-block">
+      		<div class="box">
+      			<div id="01" class="hotel">
+      				<div class="thumb">
+      				  <% unless hotel.photos.first.nil? %>
+          				<%= image_tag hotel.photos.first.hotel_photo.url(:thumb), :alt => "" %>
+          			<% end %>
+      					<a href="#" title=""><img src="/media/HomelyHouse/thumbs/02.jpg" title="Title for 1.jpg" /></a>
+      				</div>
+      				<div class="details">
+      					<h3><%= link_to hotel.name, @hotels %></h3>
+      					<div class="s<%= hotel.star %>"></div>
+      					<div class="loc"><%= hotel.address %>,<%= hotel.phone %></div>
+
+      					<div class="price">From &pound; <span>76</span></div>
+      				</div>
+      				<div class="desc">
+      					<p><%= hotel.overview %></p>
+      				</div>
+      			</div>
+      		</div>
+      	</div>
 	  <% end unless @hotels.first.new_record? rescue nil %>
   <!-- end here -->  
   
-	<div class="list-block">
-		<div class="box">
-			<div id="01" class="hotel">
-				<div class="thumb">
-					<a href="#" title=""><img src="/media/HomelyHouse/thumbs/02.jpg" title="Title for 1.jpg" /></a>
-				</div>
-				<div class="details">
-					<h3><a href="#">Sea View Inn</a></h3>
-					<div class="s4"></div>
-					<div class="loc">Henden, Middlesex</div>
-					
-					<div class="price">From &pound; <span>76</span></div>
-				</div>
-				<div class="desc">
-					<p>Espacio Torrijos is situated on Hermosilla Street next to General Díaz Porlier, in the quarter of Salamanca in the heart of Madrid. The seven storey building provides a range of one, two and three bedroom apartments and spacious penthouses.</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="list-block">
-		<div class="box">
-			<div id="01" class="hotel">
-				<div class="thumb">
-					<a href="#" title=""><img src="/media/CapitolHotel/thumbs/01.jpg" title="Title for 1.jpg" /></a>
-				</div>
-				<div class="details">
-					<h3><a href="#">Holiday With Us</a></h3>
-					<div class="s5"></div>
-					<div class="loc">Waterloo, London</div>
-					<div class="price">From &pound; <span>76</span></div>
-				</div>
-				<div class="desc">
-					<p>It is simply that wehave very high standards. There are fine restaurants with wonderful food and friendly service.  People who work for us genuinely enjoy being there;  everyone strives to make your stay a happy one.</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 	<div class="list-block">
 		<div class="box feature">
 			<div id="01" class="hotel">

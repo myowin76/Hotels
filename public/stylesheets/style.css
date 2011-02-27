@@ -176,7 +176,7 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
 
 .list-block .box, .list-block .feature{background-color:#ffffff;border:2px solid #3DB2CC;-webkit-border-radius:10px;border-radius:10px;-moz-border-radius:10px; display:block;padding:15px;float:left;width:630px; }
 .list-block .feature{background-color:#fffff0;}
-.list-block .box .thumb{float:left;width:100px;height:75px;border:1px solid #cdcdcd;padding:2px;}
+.list-block .box .thumb{float:left;width:80px;height:50px;border:1px solid #cdcdcd;padding:2px;}
 .list-block .box .thumb a{-moz-box-shadow:0 1px 3px #777777;display:inline-block;}
 .list-block .box .thumb img{border:1px solid #7C7C7C;}
 .list-block .desc{width:100%;float:left;padding-top:8px;line-height:16px;height:65px;overflow:hidden;}
@@ -194,7 +194,7 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
 .pagination li.selected a{background:none #CDCDCD;border-color:#CDCDCD;color:#FFFFFF;}
 
 /* details page */
-.details .hotel-name h1{display:inline;font-size:18px;overflow:hidden;padding-right:110px;font-family: Rockwell, Arial;}
+.details .hotel-name h1{display:inline;font-size:18px;overflow:hidden;padding-right:110px;font-family: "Rockwell Std", Rockwell, Arial;}
 .s1, .s2, .s3, .s4, .s5{background:url(../images/star-sprite.png) no-repeat;height:20px;width:96px;}
 .s1{background-position:right -110px;}
 .s2{background-position:right -85px;}
@@ -226,7 +226,7 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
 .details .room-types .table ul li.avail{width:200px;}
 .details .room-types .table ul li.price{width:100px;}
 .details .room-types .table .row{float:left;width:100%;border-bottom:1px solid #cdcdcd;height:60px;}
-.details .room-types .table .row .book{width:100%;line-height:20px;}
+.details .room-types .table .row .book{width:100%;line-height:20px;color:#F03A3A;}
 .details .room-types .table .row .book a{text-decoration:underline;}
 
 .details .customer-reviews{float:left;margin-top:10px;padding:0 12px;width:335px;}

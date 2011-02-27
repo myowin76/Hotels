@@ -19,14 +19,12 @@ Hotels::Application.routes.draw do
   resources :facilities
   devise_for :users, :path_names => {:sign_up => "register"}
 
-  
-
   get "home/index"
   get "hotels/search"
   match "/contact-us" => "messages#new"
   match "/thankyou" => "messages#thankyou"
   match "/admin" =>"sessions#new"
-  match "hotels/search" => "hotels#search_list"
+#  match "hotels/search" => "hotels#search_list"
   match "user-profile" => "accounts#profile", :as => :user_profile
   root :to => "home#index"
   
