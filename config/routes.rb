@@ -9,6 +9,7 @@ Hotels::Application.routes.draw do
   get "account/profile"
 
   resources :hotel_types
+  resources :room_types  
   resources :photos
   resources :user_types
   resources :hotels_facilities
