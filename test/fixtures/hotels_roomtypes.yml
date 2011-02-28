@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  hotel_id: 1
+  room_type_id: 1
+  no_of_rooms: MyString
+  price: MyString
+  offer_price: MyString
+
+two:
+  hotel_id: 1
+  room_type_id: 1
+  no_of_rooms: MyString
+  price: MyString
+  offer_price: MyString

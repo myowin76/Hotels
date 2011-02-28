@@ -1,5 +1,7 @@
 Hotels::Application.routes.draw do
 
+  resources :hotels_roomtypes
+
   get "accounts/profile"
 
   get "destroy/account"
@@ -13,9 +15,10 @@ Hotels::Application.routes.draw do
   resources :messages
 
   resources :hotels do
-    resources :reviews    
+    resources :reviews
+    resources :hotels_roomtypes
   end
-  resources :room_types
+#  resources :room_types
   resources :facilities
   devise_for :users, :path_names => {:sign_up => "register"}
 

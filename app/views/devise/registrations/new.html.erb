@@ -1,5 +1,3 @@
-
-
 <div class="center">
 	<div class="login-box">
 		  <div class="heading"><h2 class="register" title="Register">Register</h2></div>
@@ -20,10 +18,9 @@
 					<div class="input">  <%= f.password_field :password_confirmation %></div>							
 				</div>
 				<div class="buttons">
-          <%= f.submit "Sign up" %>
-					<a href="index.html">Cancel</a>							
-				</div>
-				
+          <%= f.submit "Sign up", :class => "register"%>
+			
+				</div>	
 			</div>
 		</form>
 		<% end %>

@@ -9,7 +9,7 @@ class CreateHotels < ActiveRecord::Migration
       t.string :fax
       t.string :star
       t.string :no_of_rooms
-      t.string :overview
+      t.text :overview
       t.text :terms
       t.text :direction
       

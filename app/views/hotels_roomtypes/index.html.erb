@@ -1,0 +1,31 @@
+<h1>Listing hotels_roomtypes</h1>
+
+<table>
+  <tr>
+    <th>Hotel</th>
+    <th>Room type</th>
+    <th>No of rooms</th>
+    <th>Price</th>
+    <th>Offer price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @hotels_roomtypes.each do |hotels_roomtype| %>
+  <tr>
+    <td><%= hotels_roomtype.hotel_id %></td>
+    <td><%= hotels_roomtype.room_type_id %></td>
+    <td><%= hotels_roomtype.no_of_rooms %></td>
+    <td><%= hotels_roomtype.price %></td>
+    <td><%= hotels_roomtype.offer_price %></td>
+    <td><%= link_to 'Show', hotels_roomtype %></td>
+    <td><%= link_to 'Edit', edit_hotels_roomtype_path(hotels_roomtype) %></td>
+    <td><%= link_to 'Destroy', hotels_roomtype, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Hotels roomtype', new_hotels_roomtype_path %>

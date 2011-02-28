@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110224222813) do
+ActiveRecord::Schema.define(:version => 20110227044521) do
 
   create_table "facilities", :force => true do |t|
     t.string   "name"
@@ -18,6 +18,21 @@ ActiveRecord::Schema.define(:version => 20110224222813) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "hotel_roomtypes", :force => true do |t|
+    t.integer  "hotel_id"
+    t.integer  "room_type_id"
+    t.integer  "no_of_rooms"
+    t.integer  "no_of_available"
+    t.text     "description"
+    t.string   "price"
+    t.string   "offer_price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "hotel_roomtypes", ["hotel_id"], :name => "index_hotel_roomtypes_on_hotel_id"
+  add_index "hotel_roomtypes", ["room_type_id"], :name => "index_hotel_roomtypes_on_room_type_id"
 
   create_table "hotel_types", :force => true do |t|
     t.string   "name"
@@ -35,13 +50,14 @@ ActiveRecord::Schema.define(:version => 20110224222813) do
     t.string   "fax"
     t.string   "star"
     t.string   "no_of_rooms"
-    t.string   "overview"
+    t.text     "overview"
     t.text     "terms"
     t.text     "direction"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "hotel_type_id"
     t.integer  "owner_id"
+    t.string   "prices_from"
   end
 
   create_table "hotels_facilities", :force => true do |t|
@@ -50,21 +66,6 @@ ActiveRecord::Schema.define(:version => 20110224222813) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "hotels_room_types", :force => true do |t|
-    t.integer  "hotel_id"
-    t.integer  "room_type_id"
-    t.integer  "no_of_rooms"
-    t.integer  "no_of_available"
-    t.text     "description"
-    t.string   "price"
-    t.string   "offer_price"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "hotels_room_types", ["hotel_id"], :name => "index_hotels_room_types_on_hotel_id"
-  add_index "hotels_room_types", ["room_type_id"], :name => "index_hotels_room_types_on_room_type_id"
 
   create_table "messages", :force => true do |t|
     t.string   "name"

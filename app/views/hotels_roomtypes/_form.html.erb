@@ -1,0 +1,35 @@
+<%= form_for(@hotels_roomtype) do |f| %>
+  <% if @hotels_roomtype.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hotels_roomtype.errors.count, "error") %> prohibited this hotels_roomtype from being saved:</h2>
+
+      <ul>
+      <% @hotels_roomtype.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	<%= f.hidden_field :hotel_id, :value => @hotels_roomtype.hotel_id %>
+
+  <div class="field">
+    <%= f.label :room_type_id %><br />
+    <%#= f.text_field :room_type_id %>
+	  <%= f.select(:room_type_id, RoomType.all.collect { |rt| [rt.name, rt.id]}) %>    
+  </div>
+  <div class="field">
+    <%= f.label :no_of_rooms %><br />
+    <%= f.text_field :no_of_rooms %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :offer_price %><br />
+    <%= f.text_field :offer_price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

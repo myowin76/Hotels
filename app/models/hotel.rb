@@ -1,10 +1,10 @@
 class Hotel < ActiveRecord::Base
-  attr_accessible :name, :address, :postcode, :phone, :fax, :star, :no_of_rooms, :overview, :terms, :direction, :hotel_type_id
+  attr_accessible :name, :address, :postcode, :phone, :fax, :star, :no_of_rooms, :overview, :terms, :direction, :hotel_type_id, :photo_ids, :photo_attributes
   has_many :photos
   
   # Room Types (many-to-many)
-  has_many :hotels_room_types
-  has_many :room_types, :through => :hotels_room_types
+  has_many :hotels_roomtypes,  :dependent => :destroy
+  has_many :room_types, :through => :hotels_roomtypes
   
   #Hotel Type
   belongs_to :hotel_type
@@ -26,10 +26,13 @@ class Hotel < ActiveRecord::Base
 		true		
   end
 
+  def top_rated
+#    find(:all,)
+  end
 
 	def self.search(search,page)
 		paginate :per_page =>5, :page => page,
-								:conditions => ['address like ?',"%#{search}%"],
+								:conditions => ['address like ? OR area LIKE ?',"%#{search}%","%#{search}%"],
 								:order => 'created_at DESC'
 #	search_condition = "%" + search + "%"
  #   find(:all, :conditions => ['address LIKE ? OR area LIKE ?', search_condition, search_condition])

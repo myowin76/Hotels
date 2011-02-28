@@ -10,6 +10,11 @@
     <%= f.text_field :address %>
   </p>
   <p>
+    <%= f.label :area %><br />
+    <%= f.text_field :area %>
+  </p>
+
+  <p>
     <%= f.label :postcode %><br />
     <%= f.text_field :postcode %>
   </p>
@@ -27,7 +32,8 @@
 	</p>
   <p>
     <%= f.label :star %><br />
-    <%= f.text_field :star %>
+    <%= f.select :star, star_list %>    
+
   </p>
   <p>
     <%= f.label :no_of_rooms %><br />
@@ -45,9 +51,17 @@
     <%= f.label :direction %><br />
     <%= f.text_area :direction, :rows => 10, :cols => 60 %>
   </p>
-  <%= f.label :hotel_photo, "File" %>
-  <%= f.file_field :hotel_photo %>
+  <%#= f.label :hotel_photo, "File" %>
+  <%#= f.file_field :hotel_photo %>
+  
+  <%= f.fields_for :photos do |p| %>
+	  <p>
+		<%= f.label :hotel_photo, "Photo" %><br />
+		<%= p.file_field :hotel_photo, :index => nil %>
 
+	  </p>
+	<% end %>
+		<%= link_to "Add Photos", '#' %>
   <h3>Hotels Features and Services</h3>
 	<ul>
 	<% @all_facilities.each do |facility| %>

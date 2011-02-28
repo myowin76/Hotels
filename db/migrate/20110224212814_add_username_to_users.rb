@@ -4,6 +4,6 @@ class AddUsernameToUsers < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :users, :usernamd
+    remove_column :users, :username
   end
 end

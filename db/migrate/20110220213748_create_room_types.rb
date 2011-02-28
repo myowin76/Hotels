@@ -7,7 +7,7 @@ class CreateRoomTypes < ActiveRecord::Migration
     end
 
 	  #Create the linked table between room_types and hotels	  
-	  create_table :hotels_room_types do |t|
+	  create_table :hotel_roomtypes do |t|
       t.integer :hotel_id
       t.integer :room_type_id
       t.integer :no_of_rooms      
@@ -18,8 +18,8 @@ class CreateRoomTypes < ActiveRecord::Migration
       t.timestamps
     end
     
-	  	add_index :hotels_room_types, :hotel_id
-	  	add_index :hotels_room_types, :room_type_id
+	  	add_index :hotel_roomtypes, :hotel_id
+	  	add_index :hotel_roomtypes, :room_type_id
 	  	
 	  	RoomType.create(:name => 'Standard Single')
     	RoomType.create(:name => 'Large Single')
@@ -36,6 +36,6 @@ class CreateRoomTypes < ActiveRecord::Migration
 
   def self.down
     drop_table :room_types
-    drop_table :hotels_room_types
+    drop_table :hotel_roomtypes
   end
 end

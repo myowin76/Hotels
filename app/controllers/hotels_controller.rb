@@ -1,7 +1,8 @@
 class HotelsController < ApplicationController
 #  before_filter :authenticate_user!, :except => [:search]
   def index
-    if params[:search].blank?
+
+    if params[:search].blank?        
         redirect_to root_url
   	else
   		@hotels = Hotel.search(params[:search],params[:page])
@@ -19,19 +20,26 @@ class HotelsController < ApplicationController
 
   def show
     @hotel = Hotel.find(params[:id])
+    @all_room_types= RoomType.all
     @hotel_facilities = @hotel.facilities
     @hotel_reviews = @hotel.reviews
+    @hotel_roomtypes = @hotel.hotels_roomtypes
+    @room_type_name= @hotel_roomtypes.find_by_id(@all_room_types)
   end
 
   def new
-    @hotel = Hotel.new
+#    @hotel = Hotel.new
+    @hotel = current_user.hotels.new
     @all_facilities = Facility.all
   end
 
   def create
-    @hotel = Hotel.new(params[:hotel])
+    #can use? 
+    @hotel =current_user.hotels.build(params[:hotel])
+    photos = @hotel.photos.new(params[:hotel_photo])
+    #@hotel = Hotel.new(params[:hotel])
     @all_facilities = Facility.all
-  	@hotel.owner_id = current_user.id if current_user
+  	#@hotel.owner_id = current_user.id if current_user
   	checked_h_facilities = get_hotel_facilities_from(params[:hotel_facility_list])
   	removed_h_facilities = @all_facilities - checked_h_facilities
   	
@@ -41,7 +49,7 @@ class HotelsController < ApplicationController
 	    checked_h_facilities.each {|h_facility|@hotel.facilities<< h_facility if !@hotel.facilities.include?(h_facility)}
 	    removed_h_facilities.each {|h_facility|@hotel.facilities.delete(h_facility) if @hotel.facilities.include?(h_facility)}
 
-      redirect_to @user_profile_path, :notice => "Successfully created hotel."
+      redirect_to user_profile_path, :notice => "Successfully created hotel."
     else
       render :action => 'new'
     end

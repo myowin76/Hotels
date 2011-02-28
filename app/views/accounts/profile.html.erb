@@ -4,7 +4,7 @@
   <div class="heading">
     <h2>User Profile</h2>
   </div>
-  Username:  <%= @user.username %><br />
+  Username: <%= @user.username %><br />
   Email: <%= @user.email %></br />
 
 <h2>My Hotels</h2>
@@ -17,7 +17,7 @@
   				<a href="#" title=""><img src="/media/CapitolHotel/thumbs/01.jpg" title="Title for 1.jpg" /></a>
   			</div>
   			<div class="details">
-  				<h3><a href="#"><%= hotel.name %></a></h3>
+  				<h3><%= link_to hotel.name, hotel %></h3>
   				<div class="s<%= hotel.star %>"></div>
   				<div class="loc"><%= hotel.address %>, <%= hotel.postcode %></div>
   				<div class="price">From &pound; <span>76</span></div>

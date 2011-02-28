@@ -108,6 +108,8 @@ $(function() {
 			  </ul>
 		  <% end %>
 			</div>
+			
+			
 			<div class="room-types">
 				<div class="heading">
 					<h2 title="Room Types">Room Types</h2>
@@ -118,12 +120,14 @@ $(function() {
 						<li class="avail"><span>Avail?</span></li>
 						<li class="price"><span>Price</span></li>
 					</ul>
-					<ul class="row">
-						<li class="room-type"><span>Standard Double</span></li>
-						<li class="avail"><span>available</span></li>
-						<li class="price"><span>&pound;180</span></li>
-						<li class="book"><span>Call 0207 999 999 or <a href="book-online" title="Book online">Book online</a></span></li>								
-					</ul>
+					<% @hotel_roomtypes.each do |room_type|%>				    
+    					<ul class="row">
+    						<li class="room-type"><span><%= @hotel.room_types.find_by_id(room_type.room_type_id).name %></span></li>
+    						<li class="avail"><span>available</span></li>
+    						<li class="price"><span>&pound;<%= room_type.price %></span></li>
+    						<li class="book"><span>Call 0207 999 999 or <a href="book-online" title="Book online">Book online</a></span></li>								
+    					</ul>
+      			<% end %>
 					<ul class="row">
 						<li class="room-type"><span>Suite</span></li>
 						<li class="avail"><span>available</span></li>
@@ -136,7 +140,17 @@ $(function() {
 						<li class="price"><span>&pound;200</span></li>
 						<li class="book"><span>Call 0207 999 999 or <a href="book-online" title="Book online">Book online</a></span></li>														
 					</ul>											
-				</div>							
+				</div>
+				
+  		    <%= link_to "Add Room Types", new_hotel_hotels_roomtype_path(@hotel) %>
+
+  		  <% if admin_or_owner?(current_user) %>
+  		    <ul class="row">
+	        <%#= hidden_field "property[no_of_bedrooms]", :value => @property.no_of_bedrooms %>
+
+  		    </ul>
+  		  <% end %>
+  										
 			</div>
 			<div class="direction">
 				<div class="heading">						
