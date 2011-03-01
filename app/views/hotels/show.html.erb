@@ -131,8 +131,7 @@ $(function() {
       			
       			<% if hotel_owner?(current_user) %>
       			<ul>
-
-  					  <li><span><%= link_to "Add Room Types", new_hotel_hotels_roomtype_path(@hotel), :class=>"add-room-type" %> </span></li>
+  					  <li><span><%= link_to "Add Room Types", new_hotel_hotels_roomtype_path(@hotel.id), :class=>"add-room-type" %> </span></li>
   					</ul>
   					<% end %>
   					

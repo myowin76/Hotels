@@ -46,7 +46,7 @@ class HotelsRoomtypesController < ApplicationController
 
     respond_to do |format|
       if @hotels_roomtype.save
-        format.html { redirect_to(@hotels_roomtype, :notice => 'Hotels roomtype was successfully created.') }
+        format.html { redirect_to( hotel_path(@hotels_roomtype.hotel), :notice => 'Hotels roomtype was successfully created.') }
         format.xml  { render :xml => @hotels_roomtype, :status => :created, :location => @hotels_roomtype }
       else
         format.html { render :action => "new" }

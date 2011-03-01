@@ -69,7 +69,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .main-nav li a:hover{text-decoration:underline;}
 
 /* Home page */
-.top-rated{float:right;padding:18px 0;width:318px;}
+.top-rated{float:right;padding:14px 0;width:318px;}
 .top-rated .list{width:100%;padding-left:0;}
 .top-rated .hotel-box{padding:15px 0;float:left;background:url(../images/backgrounds/down-shadow.jpg) repeat-x center top; width:100%;}
 .top-rated .hotel-box .thumb{float:left;width:80px;height:50px;border:1px solid #cdcdcd;padding:2px;}
@@ -79,7 +79,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .top-rated .hotel-box .details .reviews a{text-decoration:underline;}
 .top-rated .hotel-box  h3{width:100%;padding-bottom:4px;}
 .top-rated .hotel-box .details h3 a{color:#F07A07;}
-.browse-by{width:615px;float:left;padding:18px 0;}
+.browse-by{width:615px;float:left;padding:14px 0;}
 .browse-by .hotel-types ul{float:left;background:url(../images/backgrounds/down-shadow.jpg) repeat-x center top;); padding-top:18px;}
 .browse-by .hotel-types ul li{padding-left:16px;float:left;background:url(../images/square-green.jpg) no-repeat 0 3px;height:28px;width:188px;} 
 /* Content*/
@@ -201,6 +201,9 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
 .pagination li a{border:1px solid #CDCDCD;display:block;padding:5px 10px;text-align:center;text-decoration:none;
 -moz-border-radius:3px 3px 3px 3px;}
 .pagination li.selected a{background:none #CDCDCD;border-color:#CDCDCD;color:#FFFFFF;}
+
+.my-hotels .list-block .box{width:606px;}
+.my-hotels .list-block .box .details{width:501px;}
 
 /* details page */
 

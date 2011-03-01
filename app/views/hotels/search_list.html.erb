@@ -22,37 +22,36 @@
 </div>
 <div class="list">
     <div>
-      Hotels in Cricklewood
+      Hotels List
     </div>
 
-  <!-- rails data -->
     <% @hotels.each do |hotel| %>
         <div class="list-block">
-      		<div class="box">
-      			<div id="01" class="hotel">
-      				<div class="thumb">
-      				  <% unless hotel.photos.first.nil? %>
-          				<%= image_tag hotel.photos.first.hotel_photo.url(:thumb), :alt => "" %>
-          			<% end %>
-      					<a href="#" title=""><img src="/media/HomelyHouse/thumbs/02.jpg" title="Title for 1.jpg" /></a>
-      				</div>
-      				<div class="details">
-      					<h3><%= link_to hotel.name, @hotels %></h3>
-      					<div class="s<%= hotel.star %>"></div>
-      					<div class="loc"><%= hotel.address %>,<%= hotel.phone %></div>
+        	<div class="box">
+        		<div id="01" class="hotel">
+        			<div class="thumb">
+        				<a href="#" title=""><img src="/media/CapitolHotel/thumbs/01.jpg" title="Title for 1.jpg" /></a>
+        			</div>
+        			<div class="details">
+        				<h3><%= link_to hotel.name, hotel %></h3>
+        				<div class="s<%= hotel.star %>"></div>
+        				<div class="loc"><%= hotel.address %>, <%= hotel.postcode %></div>
+        				<div class="price">From &pound; <span>76</span></div>
+        			</div>
+        			<div class="desc">
+        				<p><%= hotel.overview %>
+        				It is simply that wehave very high standards. There are fine restaurants with wonderful food and friendly service.  People who work for us genuinely enjoy being there;  everyone strives to make your stay a happy one.</p>
+        			</div>
+          		<div class="actions">
+          		<%= link_to "Edit", edit_hotel_path(hotel) %> | <%= link_to "Destroy", hotel, :confirm => 'Are you sure?', :method => :delete %>
+          		</div>
 
-      					<div class="price">From &pound; <span>76</span></div>
-      				</div>
-      				<div class="desc">
-      					<p><%= hotel.overview %></p>
-      				</div>
-      			</div>
-      		</div>
-      	</div>
+        		</div>
+        	</div>
+      </div>  	
 	  <% end unless @hotels.first.new_record? rescue nil %>
-  <!-- end here -->  
-  
+
 	
-		
+
 	</div>	
 </div>
