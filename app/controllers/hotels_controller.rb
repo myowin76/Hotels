@@ -3,7 +3,9 @@ class HotelsController < ApplicationController
   def index
 
     if params[:search].blank?        
-        redirect_to root_url
+        #redirect_to root_url
+        @hotels = Hotel.all
+        render "search_list"
   	else
   		@hotels = Hotel.search(params[:search],params[:page])
       render "search_list"

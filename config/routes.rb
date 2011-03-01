@@ -25,7 +25,7 @@ Hotels::Application.routes.draw do
 
   get "home/index"
   get "hotels/search"
-  match "/contact-us" => "messages#new"
+  match "/contact-us" => "messages#new", :as=> "contact_us"
   match "/thankyou" => "messages#thankyou"
   match "/admin" =>"sessions#new"
 #  match "hotels/search" => "hotels#search_list"

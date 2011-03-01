@@ -1,3 +1,3 @@
 
 Cufon.replace('h2, .content h1');
-Cufon.replace('.main-nav ul li a, .footer-nav ul li a');
+Cufon.replace('.main-nav ul li, .footer-nav ul li a');
