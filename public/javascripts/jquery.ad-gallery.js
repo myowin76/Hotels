@@ -17,8 +17,8 @@
                      animation_speed: 400,
                      width: false,
                      height: false,
-                     display_next_and_prev: true,
-                     display_back_and_forward: true,
+                     display_next_and_prev: false,
+                     display_back_and_forward: false,
                      scroll_jump: 0, // If 0, it jumps the width of the container
                      slideshow: {
                        enable: true,
@@ -32,7 +32,7 @@
                        onStart: false,
                        onStop: false
                      },
-                     effect: 'slide-hori', // or 'slide-vert', 'fade', or 'resize', 'none'
+                     effect: 'fade', // or 'slide-vert', 'fade', or 'resize', 'none'
                      enable_keyboard_move: true,
                      cycle: true,
                      callbacks: {
@@ -335,17 +335,18 @@
           if(thumb_count == thumbs_loaded) {
             thumb_wrapper_width -= 100;
             var list = context.nav.find('.ad-thumb-list');
-            list.css('width', thumb_wrapper_width +'px');
-            var i = 1;
-            var last_height = list.height();
-            while(i < 201) {
-              list.css('width', (thumb_wrapper_width + i) +'px');
-              if(last_height != list.height()) {
-                break;
-              }
-              last_height = list.height();
-              i++;
-            }
+//            list.css('width', thumb_wrapper_width +'px');
+            list.css('width', '100%');
+//            var i = 1;
+  //          var last_height = list.height();
+    //        while(i < 201) {
+      //        list.css('width', (thumb_wrapper_width + i) +'px');
+        //      if(last_height != list.height()) {
+          //      break;
+            //  }
+             // last_height = list.height();
+         //     i++;
+           // }
             clearInterval(inter);
           };
         },
@@ -554,8 +555,10 @@
           img_container.append(img);
         }
         this.image_wrapper.prepend(img_container);
-        var size = this._getContainedImageSize(image.size.width, image.size.height);
-        img.attr('width', size.width);
+/////added 15px
+        var size = this._getContainedImageSize(image.size.width+14, image.size.height);
+
+        img.attr('width', size.width)+4;
         img.attr('height', size.height);
         img_container.css({width: size.width +'px', height: size.height +'px'});
         this._centerImage(img_container, size.width, size.height);

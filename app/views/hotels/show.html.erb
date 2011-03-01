@@ -1,4 +1,4 @@
-<% javascript 'jquery.ad-gallery.js','gmap' %>
+<% javascript 'gmap','jquery.ad-gallery.js' %>
 
 
 <script type="text/javascript">
@@ -30,13 +30,13 @@ $(function() {
 			    	<div class="ad-thumbs">
 			      		<ul class="ad-thumb-list">
 			        		<li>
-			          			<a href="media/HomelyHouse/02.jpg">
+			          			<a href="/media/HomelyHouse/02.jpg">
 			            			<img src="/media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
 			          			</a>
 			        		</li>
 			        		<li>
-			          			<a href="/media/HomelyHouse/02.jpg">
-			            			<img src="/media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
+			          			<a href="/media/HomelyHouse/03.jpg">
+			            			<img src="/media/HomelyHouse/thumbs/03.jpg" alt="Homely House" />
 			          			</a>
 			        		</li>
 			        		<li>
@@ -128,21 +128,13 @@ $(function() {
     						<li class="book"><span>Call 0207 999 999 or <a href="book-online" title="Book online">Book online</a></span></li>								
     					</ul>
       			<% end %>
-					<ul class="row">
-						<li class="room-type"><span>Suite</span></li>
-						<li class="avail"><span>available</span></li>
-						<li class="price"><span>&pound;280</span></li>
-						<li class="book"><span>Call 0207 999 999 or <a href="book-online" title="Book online">Book online</a></span></li>														
-					</ul>
-					<ul class="row">
-						<li class="room-type"><span>Superior Double</span></li>
-						<li class="avail"><span>available</span></li>
-						<li class="price"><span>&pound;200</span></li>
-						<li class="book"><span>Call 0207 999 999 or <a href="book-online" title="Book online">Book online</a></span></li>														
-					</ul>											
+      			<ul>
+  					  <li><span><%= link_to "Add Room Types", new_hotel_hotels_roomtype_path(@hotel), :class=>"add-room-type" %></span></li>
+  					</ul>
+  					
 				</div>
 				
-  		    <%= link_to "Add Room Types", new_hotel_hotels_roomtype_path(@hotel) %>
+  		    
 
   		  <% if admin_or_owner?(current_user) %>
   		    <ul class="row">
@@ -160,9 +152,13 @@ $(function() {
 					<p>	Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
 						tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis 
 						nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
-					</p>	
+					</p>
+					<div style="padding-top:12px">	
+						<img src="/images/gmap.jpg" alt="google map" />	
+					</div>	
 <!--
-		-->		    <div id="map_canvas" style="width: 565px; height: 150px"></div>	
+		    <div id="map_canvas" style="width: 565px; height: 150px"></div>	
+		    -->
 					
 			</div>	
 			<div class="terms">
