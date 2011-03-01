@@ -128,21 +128,17 @@ $(function() {
     						<li class="book"><span>Call 0207 999 999 or <a href="book-online" title="Book online">Book online</a></span></li>								
     					</ul>
       			<% end %>
+      			
+      			<% if hotel_owner?(current_user) %>
       			<ul>
-  					  <li><span><%= link_to "Add Room Types", new_hotel_hotels_roomtype_path(@hotel), :class=>"add-room-type" %></span></li>
+
+  					  <li><span><%= link_to "Add Room Types", new_hotel_hotels_roomtype_path(@hotel), :class=>"add-room-type" %> </span></li>
   					</ul>
+  					<% end %>
   					
 				</div>
 				
-  		    
-
-  		  <% if admin_or_owner?(current_user) %>
-  		    <ul class="row">
-	        <%#= hidden_field "property[no_of_bedrooms]", :value => @property.no_of_bedrooms %>
-
-  		    </ul>
-  		  <% end %>
-  										
+  		    										
 			</div>
 			<div class="direction">
 				<div class="heading">						

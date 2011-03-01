@@ -25,6 +25,11 @@ class Hotel < ActiveRecord::Base
     return false if current_user.nil? || current_user.id != @hotel.owner_id
 		true		
   end
+  
+  def hotel_owner?(user)
+    return false if Self.owner_id != user.id
+    return true
+  end
 
   def top_rated
 #    find(:all,)

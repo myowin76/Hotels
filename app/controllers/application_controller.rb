@@ -17,6 +17,11 @@ class ApplicationController < ActionController::Base
 		return false if current_user.nil? || current_user.user_type.name != "Admin"
 		true
 	end
+	
+	def hotel_owner?(user)
+	  return false if current_user.nil? || (@hotel.owner_id != user.id)
+		true
+  end
 
 	def admin_or_owner?(id)
 	  if(admin_user? || owner_user?)

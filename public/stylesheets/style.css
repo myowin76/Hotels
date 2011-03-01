@@ -247,6 +247,7 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
 .details .customer-reviews .by{}
 .details .customer-reviews .all{width:100%;float:left;text-align:right;}
 .details .customer-reviews .all a{text-decoration:underline;}
+
 /* Ad-Gallery */
 .ad-gallery {
   width: 100%;
