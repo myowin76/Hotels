@@ -23,14 +23,14 @@
     				<div class="field">							
               <% if devise_mapping.rememberable? -%>
     						<div class="checkbox">
-                  <%= f.check_box :remember_me %><%= f.label :remember_me, :for => 'remember' %>
+                  <%= f.check_box :remember_me, %><%= f.label :remember_me, :for => 'remember_me' %>
                 </div>
-              <% end -%>				</div>
+              <% end -%>				
+            </div>
     				<div class="buttons">
               <%= f.submit "Sign in" %>						
     				</div>				
     			</div>
-    		</form>
     		<% end %>
     		<div class="links">
     			<%= render :partial => "devise/shared/links" %>
@@ -38,5 +38,5 @@
 
     </div>	  		
 	</div>
-    <div class="lgoin-box-bot"></div>
+  <div class="lgoin-box-bot"></div>
 </div>

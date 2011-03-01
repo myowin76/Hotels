@@ -1,5 +1,4 @@
-
-<%= form_for @hotel, :html => {:multipart => true} do |f| %>
+<% form_for @hotel, :html => {:multipart => true} do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :name %><br />
@@ -53,15 +52,24 @@
   </p>
   <%#= f.label :hotel_photo, "File" %>
   <%#= f.file_field :hotel_photo %>
-  
-  <%= f.fields_for :photos do |p| %>
-	  <p>
-		<%= f.label :hotel_photo, "Photo" %><br />
-		<%= p.file_field :hotel_photo, :index => nil %>
 
-	  </p>
-	<% end %>
-		<%= link_to "Add Photos", '#' %>
+  <%= f.fields_for :photos do |p| %>
+    <p>
+  	<%= p.label :Photo %><br />
+  	<%= p.file_field :hotel_photo, :index => nil %>
+  	<%= link_to_function "delete", "remove_field($(this), ('.photo'))" %>
+    </p>
+    <% end %>
+
+
+
+	
+	<%= link_to_function "Add Photos" do |page|
+		page.insert_html :bottom, :photos, :partial => 'shared/photo_upload', :locals => {:photo => page}, :object => Photo.new
+	end %>
+	
+	
+	
   <h3>Hotels Features and Services</h3>
 	<ul>
 	<% @all_facilities.each do |facility| %>

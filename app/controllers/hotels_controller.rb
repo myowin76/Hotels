@@ -32,16 +32,16 @@ class HotelsController < ApplicationController
   def new
 #    @hotel = Hotel.new
     @hotel = current_user.hotels.new
+    @photos = @hotel.photos.new
     @all_facilities = Facility.all
   end
 
   def create
     #can use? 
     @hotel =current_user.hotels.build(params[:hotel])
-    @photos = @hotel.photos.new(params[:hotel_photo])
-    #@hotel = Hotel.new(params[:hotel])
+    @photos = @hotel.photos.new(params[:hotel])
+
     @all_facilities = Facility.all
-  	#@hotel.owner_id = current_user.id if current_user
   	checked_h_facilities = get_hotel_facilities_from(params[:hotel_facility_list])
   	removed_h_facilities = @all_facilities - checked_h_facilities
   	

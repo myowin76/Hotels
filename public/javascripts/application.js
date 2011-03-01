@@ -9,5 +9,6 @@ $(function(){
 		pauseOnPagerHover: 0
 	});
 	$("#datepicker").datepicker({ buttonImage: '/images/datepicker.gif' });
+	
 
 });
