@@ -8,5 +8,9 @@ class HomeController < ApplicationController
   def browse
     
   end
+  
+  def guides
+    @menu_state_g = "active"
+  end
 
 end

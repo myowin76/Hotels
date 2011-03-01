@@ -57,8 +57,8 @@
     				<div class="main-nav">
     					<ul>
     						<li class=<%=@menu_state%> ><%= link_to_unless_current 'Home', root_url%></li>
-    						<li><a href="#" title="Deals">Deals</a></li>
-    						<li><a href="#" title="Travel Guides">Travel Guides</a></li>
+    						<li class=<%=@menu_state_d%> ><a href="#" title="Deals">Deals</a></li>
+    						<li class=<%=@menu_state_g %> ><%= link_to_unless_current 'Travel Guides', guides_url%></li>
     						<li class=<%=@menu_state_c%>><%= link_to_unless_current 'Contact Us', contact_us_url%></li>																							
     					</ul>
     				</div>
