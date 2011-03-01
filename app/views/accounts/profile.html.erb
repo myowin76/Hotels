@@ -4,10 +4,13 @@
   <div class="heading">
     <h2>User Profile</h2>
   </div>
+  <div class="acc-details">
   Username: <%= @user.username %><br />
   Email: <%= @user.email %></br />
-
-<h2>My Hotels</h2>
+  </div>
+  <div class="heading">
+    <h2>My Hotels</h2>
+  </div>
 <% @hotels.each do |hotel| %>
 
   <div class="list-block">
@@ -26,14 +29,13 @@
   				<p><%= hotel.overview %>
   				It is simply that wehave very high standards. There are fine restaurants with wonderful food and friendly service.  People who work for us genuinely enjoy being there;  everyone strives to make your stay a happy one.</p>
   			</div>
+    		<div class="actions">
+    		<%= link_to "Edit", edit_hotel_path(hotel) %> | <%= link_to "Destroy", hotel, :confirm => 'Are you sure?', :method => :delete %>
+    		</div>
+
   		</div>
   	</div>
   	
-
-      <td><%= link_to "Show", hotel %></td>
-      <td><%= link_to "Edit", edit_hotel_path(hotel) %></td>
-      <td><%= link_to "Destroy", hotel, :confirm => 'Are you sure?', :method => :delete %></td>
-
     <% end %>
     
   </div>

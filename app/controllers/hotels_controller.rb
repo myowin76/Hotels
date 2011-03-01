@@ -36,7 +36,7 @@ class HotelsController < ApplicationController
   def create
     #can use? 
     @hotel =current_user.hotels.build(params[:hotel])
-    photos = @hotel.photos.new(params[:hotel_photo])
+    @photos = @hotel.photos.new(params[:hotel_photo])
     #@hotel = Hotel.new(params[:hotel])
     @all_facilities = Facility.all
   	#@hotel.owner_id = current_user.id if current_user
@@ -57,11 +57,25 @@ class HotelsController < ApplicationController
 
   def edit
     @hotel = Hotel.find(params[:id])
+    @all_facilities = Facility.all
   end
 
   def update
+		params[:photo_ids] ||= []
     @hotel = Hotel.find(params[:id])
+		unless params[:photo_ids].empty?
+			Photo.destroy_pics(params[:id], params[:photo_ids])
+		end
+    
+    @all_facilities = Facility.all
+  	#@hotel.owner_id = current_user.id if current_user
+  	checked_h_facilities = get_hotel_facilities_from(params[:hotel_facility_list])
+  	removed_h_facilities = @all_facilities - checked_h_facilities
+    
     if @hotel.update_attributes(params[:hotel])
+      checked_h_facilities.each {|h_facility|@hotel.facilities<< h_facility if !@hotel.facilities.include?(h_facility)}
+	    removed_h_facilities.each {|h_facility|@hotel.facilities.delete(h_facility) if @hotel.facilities.include?(h_facility)}
+	    
       redirect_to @hotel, :notice  => "Successfully updated hotel."
     else
       render :action => 'edit'
