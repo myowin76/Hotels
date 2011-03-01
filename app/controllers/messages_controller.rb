@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
-    @menu_state_c = "active"
+    @menu_state_c = "class=active"
   end
 
   def create
