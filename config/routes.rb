@@ -9,8 +9,7 @@ Hotels::Application.routes.draw do
   get "account/profile"
 
   resources :hotel_types
-  resources :room_types  
-  resources :photos
+  resources :room_types    
   resources :user_types
   resources :hotels_facilities
   resources :messages
@@ -18,6 +17,7 @@ Hotels::Application.routes.draw do
   resources :hotels do
     resources :reviews
     resources :hotels_roomtypes
+    resources :photos    
   end
 #  resources :room_types
   resources :facilities

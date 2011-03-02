@@ -56,18 +56,10 @@
   <%= f.fields_for :photos do |p| %>
     <p>
   	<%= p.label :Photo %><br />
-  	<%= p.file_field :hotel_photo, :index => nil %>
+  	<%= p.file_field :uploaded_file, :index => nil %>
   	<%= link_to_function "delete", "remove_field($(this), ('.photo'))" %>
     </p>
-    <% end %>
-
-
-
-	
-	<%= link_to_function "Add Photos" do |page|
-		page.insert_html :bottom, :photos, :partial => 'shared/photo_upload', :locals => {:photo => page}, :object => Photo.new
-	end %>
-	
+    <% end %>	
 	
 	
   <h3>Hotels Features and Services</h3>

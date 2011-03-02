@@ -2,6 +2,7 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.xml
   def index
+    @hotel = Hotel.find(params[:hotel_id])
     @photos = Photo.all
 
     respond_to do |format|
@@ -13,6 +14,7 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.xml
   def show
+    @hotel = Hotel.find(params[:hotel_id])    
     @photo = Photo.find(params[:id])
 
     respond_to do |format|
@@ -24,7 +26,8 @@ class PhotosController < ApplicationController
   # GET /photos/new
   # GET /photos/new.xml
   def new
-    @photo = Photo.new
+    @hotel = Hotel.find(params[:hotel_id])    
+    @photo = @hotel.photos.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,17 +37,19 @@ class PhotosController < ApplicationController
 
   # GET /photos/1/edit
   def edit
-    @photo = Photo.find(params[:id])
+    @hotel = Hotel.find(params[:hotel_id])    
+    @photo = @hotel.photos.find(params[:id])
   end
 
   # POST /photos
   # POST /photos.xml
   def create
-    @photo = Photo.new(params[:photo])
+    @hotel = Hotel.find(params[:hotel_id])    
+    @photo = @hotel.photos.new(params[:photo])
 
     respond_to do |format|
       if @photo.save
-        format.html { redirect_to(@photo, :notice => 'Photo was successfully created.') }
+        format.html { redirect_to(hotel_path(@hotel), :notice => 'Photo was successfully created.') }
         format.xml  { render :xml => @photo, :status => :created, :location => @photo }
       else
         format.html { render :action => "new" }

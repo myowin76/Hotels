@@ -1,19 +1,22 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :hotel_id, :hotel_photo
-  
+
+  attr_accessible :hotel_id, :uploaded_file
   belongs_to :hotel
   
-  has_attached_file :hotel_photo,
-        :styles => {	:thumb => "80x80#",
-      					:original => "640x480#"},
-        :path => ":rails_root/public/media/hotels/:id/:basename.:extension"
+  has_attached_file :uploaded_file,
+      :styles => {	:thumb => "80x50#",
+					  :original => "346x260#"},	
+      :url => "hotels/get/:id",
+      :path => ":rails_root/hotels/:id/:basename.:extension"
+      
+      validates_attachment_presence :uploaded_file
+    	validates_attachment_content_type :uploaded_file, 
+    	:content_type => ['image/jpeg', 'image/pjpeg', 
+    								   'image/jpg', 'image/png']
 
-        
-  validates_attachment_size :hotel_photo, :less_than => 10.megabytes  
-  validates_attachment_presence :hotel_photo
-	validates_attachment_content_type :hotel_photo, 
-	:content_type => ['image/jpeg', 'image/pjpeg', 
-								   'image/jpg', 'image/png']
-	
+    	def self.destroy_pics(hotel, photos)
+    		Photo.find(photos, :conditions => {:hotel_id => hotel}).each(&:destroy)
+    	end
+    	
   
 end
