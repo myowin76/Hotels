@@ -29,6 +29,10 @@ $(function() {
 			  	<div class="ad-nav">
 			    	<div class="ad-thumbs">
 			      		<ul class="ad-thumb-list">
+			      		<% @hotel.photos.each do | photo | %>
+			      		  	<li><%= link_to(image_tag(photo.uploaded_file.url(:thumb), :alt => ''), photo.uploaded_file.url(:original), :class => 'image1' ) %></li>
+                  <% end unless @hotel.photos.first.new_record? rescue nil %>
+                
 			        		<li>
 			          			<a href="/media/HomelyHouse/02.jpg">
 			            			<img src="/media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
@@ -57,7 +61,7 @@ $(function() {
 			</div>
 
 		</div>
-<%= link_to "Upload Hotel Photos", new_hotel_photo_path(@hotel) %>
+    <%= link_to "Upload Hotel Photos", new_hotel_photo_path(@hotel) %>
 		<div class="customer-reviews">
 			<div class="heading">
 				<h2>Customer Reviews</h2>
