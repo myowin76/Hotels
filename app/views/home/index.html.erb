@@ -76,7 +76,7 @@
 
 					<ul>
 					  <% @hotel_types.each do |hotel_type|%>  					
-						  <li><%= link_to hotel_type.name , hotel_types_path %></li>
+						  <li id=<%= hotel_type.id %>><%= link_to hotel_type.name , browse_by_path(hotel_type) %></li>
 					  <% end %>
 					</ul>
 
@@ -84,9 +84,9 @@
 			</div>
       
 
-  			<div class="top-rated">
+  			<div class="top-hotels">
   				<div class="heading">			
-  					<h2>Top rated hotels</h2>
+  					<h2>Top Hotels in Town</h2>
   				</div>	
 
         	<div class="list">
@@ -98,7 +98,7 @@
         				<div class="details">
         					<h3><a href="#">Sea View Inn</a></h3>
         					<div class="loc">Henden, Middlesex</div>
-        					<div class="s5"></div><div class="reviews"><a href="#" title="reviews">Reviews</a></div>
+        					<div class="s5"></div><div class="reviews"><a href="#" title="reviews">(19)Reviews</a></div>
         				</div>
         			</div>
         		</div>
@@ -111,7 +111,7 @@
         				<div class="details">
         					<h3><a href="#">Capitol Hotel</a></h3>
         					<div class="loc">Henden, Middlesex</div>
-        					<div class="s4"></div><div class="reviews"><a href="#" title="reviews">Reviews</a></div>        					
+        					<div class="s4"></div><div class="reviews"><a href="#" title="reviews">(8)Reviews</a></div>        					
         				</div>
         			</div>
         		</div>
@@ -124,7 +124,7 @@
         				<div class="details">
         					<h3><a href="#">Premier Nights</a></h3>
         					<div class="loc">Henden, Middlesex</div>
-        					<div class="s3"></div><div class="reviews"><a href="#" title="reviews">Reviews</a></div>        					
+        					<div class="s3"></div><div class="reviews"><a href="#" title="reviews">(2)Reviews</a></div>        					
         				</div>
         			</div>
         		</div>
@@ -137,7 +137,7 @@
         				<div class="details">
         					<h3><a href="#">Majastic Inn</a></h3>
         					<div class="loc">Kingston, Surrey</div>
-        					<div class="s5"></div><div class="reviews"><a href="#" title="reviews">Reviews</a></div>        					
+        					<div class="s5"></div><div class="reviews"><a href="#" title="reviews">(0)Reviews</a></div>        					
         				</div>
         			</div>
         		</div>
@@ -174,7 +174,7 @@
         <div class="one-third last">
           <div class="small-box">
     				<div class="heading">      
-          	  <h2 class="newsletter">Newsletter</h2>
+          	  <h2 class="newsletter">View Hotels on the Map</h2>
           	</div>
           </div>
         </div>

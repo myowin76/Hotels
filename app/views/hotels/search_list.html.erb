@@ -1,59 +1,119 @@
-<div class="left-area">
-<div class="win-box">
-	<div class="filters">
-		<div class="heading">	
-			<h2 class="smart-filters" title="Smart Filters">Smart Filters</h2>
-		</div>			
-	</div>			
-	<div class="info">	
-		<div class="heading">
-			<h2 class="top-location" title="Top Locations">Top Locations</h2>
+<div class="listing">
+  <div class="left-area">
+    <div class="win-box">
+    	<div class="filters">
+    		<div class="heading">	
+    			<h2 class="smart-filters" title="Smart Filters">Smart Filters</h2>
+    		</div>			
+    	</div>			
+    	<div class="info">	
+    		<div class="heading">
+    			<h2 class="top-location" title="Top Locations">Top Locations</h2>
+    		</div>
+    			<ul>
+    				<li><a href="#" title="The City">The City</a></li>
+    				<li><a href="#" title="Greenwich">Greenwich</a></li>
+    				<li><a href="#" title="Wembledon">Wembledon</a></li>
+    				<li><a href="#" title="King Cross">King Cross</a></li>
+    				<li><a href="#" title="Twickenham">Twickenham</a></li>
+    				<li><a href="#" title="Camden">Camden</a></li>
+    			</ul>
+    		</div>
+    	</div>
+
+    <div class="top-rated">
+      <div class="heading">
+        <h2>Top Rated Hotels</h2>
+      </div>
+      <div class="list">
+    		<div class="hotel-box">
+    			<div id="01" class="hotel">
+    				<div class="thumb">
+    					<a href="#" title=""><img src="/media/HomelyHouse/thumbs/02.jpg" title="Title for 1.jpg" /></a>
+    				</div>
+    				<div class="details">
+    					<h3><a href="#">Sea View Inn</a></h3>
+    					<div class="loc">Henden, Middlesex</div>
+    					<div class="s5"></div><div class="reviews"><a href="#" title="reviews">Reviews</a></div>
+    				</div>
+    			</div>
+    		</div>
+    		
+    		<div class="hotel-box">
+    			<div id="01" class="hotel">
+    				<div class="thumb">
+    					<a href="#" title=""><img src="/media/CapitolHotel/thumbs/01.jpg" title="Title for 1.jpg" /></a>
+    				</div>
+    				<div class="details">
+    					<h3><a href="#">Capitol Hotel</a></h3>
+    					<div class="loc">Henden, Middlesex</div>
+    					<div class="s4"></div><div class="reviews"><a href="#" title="reviews">Reviews</a></div>        					
+    				</div>
+    			</div>
+    		</div>
+
+    		<div class="hotel-box">
+    			<div id="01" class="hotel">
+    				<div class="thumb">
+    					<a href="#" title=""><img src="/media/PremierNights/thumbs/01.jpg" title="Title for 1.jpg" /></a>
+    				</div>
+    				<div class="details">
+    					<h3><a href="#">Premier Nights</a></h3>
+    					<div class="loc">Henden, Middlesex</div>
+    					<div class="s3"></div><div class="reviews"><a href="#" title="reviews">Reviews</a></div>        					
+    				</div>
+    			</div>
+    		</div>
+
+    		<div class="hotel-box">
+    			<div id="01" class="hotel">
+    				<div class="thumb">
+    					<a href="#" title=""><img src="/media/MajesticInns/thumbs/01.jpg" title="Title for 1.jpg" /></a>
+    				</div>
+    				<div class="details">
+    					<h3><a href="#">Majastic Inn</a></h3>
+    					<div class="loc">Kingston, Surrey</div>
+    					<div class="s5"></div><div class="reviews"><a href="#" title="reviews">Reviews</a></div>        					
+    				</div>
+    			</div>
+    		</div>
+    		
+    	</div>
 		</div>
-			<ul>
-				<li><a href="#" title="The City">The City</a></li>
-				<li><a href="#" title="Greenwich">Greenwich</a></li>
-				<li><a href="#" title="Wembledon">Wembledon</a></li>
-				<li><a href="#" title="King Cross">King Cross</a></li>
-				<li><a href="#" title="Twickenham">Twickenham</a></li>
-				<li><a href="#" title="Camden">Camden</a></li>
-			</ul>
-		</div>
-	</div>
-</div>
-<div class="list">
-    <div>
-      Hotels List
+  </div>  
+  <div class="list">
+    <div class="heading">
+      <h2>Hotels List</h2>
     </div>
 
     <% @hotels.each do |hotel| %>
         <div class="list-block">
         	<div class="box">
-        		<div id="01" class="hotel">
         			<div class="thumb">
         				<a href="#" title=""><img src="/media/CapitolHotel/thumbs/01.jpg" title="Title for 1.jpg" /></a>
         			</div>
         			<div class="details">
-        				<h3><%= link_to hotel.name, hotel %></h3>
-        				<div class="s<%= hotel.star %>"></div>
-        				<div class="loc"><%= hotel.address %>, <%= hotel.postcode %></div>
+        				<h3 class=s<%= hotel.star%>><%= link_to hotel.name, hotel %></h3>
+        				<div class="loc">Location: <%= hotel.area %></div>
+        				<div class="view"><%= link_to "View Details", hotel %></div>
+
         				<div class="price">From &pound; <span>76</span></div>
         			</div>
         			<div class="desc">
         				<p><%= hotel.overview %>
         				It is simply that wehave very high standards. There are fine restaurants with wonderful food and friendly service.  People who work for us genuinely enjoy being there;  everyone strives to make your stay a happy one.</p>
         			</div>
-        			<% if hotel_owner?(current_user)%>
+        			<% if hotel_owner?(current_user) %>
           		<div class="actions">
           		<%= link_to "Edit", edit_hotel_path(hotel) %> | <%= link_to "Destroy", hotel, :confirm => 'Are you sure?', :method => :delete %>
           		</div>
           		<% end %>
 
         		</div>
-        	</div>
-      </div>  	
+      </div>	
 	  <% end unless @hotels.first.new_record? rescue nil %>
 
-	
-
+	</div>
 	</div>	
+</div>
 </div>

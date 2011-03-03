@@ -50,18 +50,16 @@
     <%= f.label :direction %><br />
     <%= f.text_area :direction, :rows => 10, :cols => 60 %>
   </p>
-  <%#= f.label :hotel_photo, "File" %>
-  <%#= f.file_field :hotel_photo %>
 
-  <%= f.fields_for :photos do |p| %>
-    <p>
-  	<%= p.label :Photo %><br />
-  	<%= p.file_field :uploaded_file, :index => nil %>
-  	<%= link_to_function "delete", "remove_field($(this), ('.photo'))" %>
-    </p>
-    <% end %>	
+  <h3>Uploaded Photos</h3>
+  <% @hotel.photos.each do | photo | %>
+		<div class="hotel_photos">
+			<%= image_tag(photo.uploaded_file.url(:thumb), :alt => '') %>
+			<%= check_box_tag "photo_ids[]", photo.id %>
+		</div>
+	<% end unless @hotel.photos.first.new_record? rescue nil %>
 	
-	
+
   <h3>Hotels Features and Services</h3>
 	<ul>
 	<% @all_facilities.each do |facility| %>

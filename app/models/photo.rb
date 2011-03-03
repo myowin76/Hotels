@@ -16,6 +16,14 @@ class Photo < ActiveRecord::Base
     	:content_type => ['image/jpeg', 'image/pjpeg', 
     								   'image/jpg', 'image/png']
 
+
+
+       #def photo_attributes=(photo_attributes)
+     	 #photo_attributes.each do |attributes|
+       #photos.build(attributes)
+       #end
+       #end  
+
     	def self.destroy_pics(hotel, photos)
     		Photo.find(photos, :conditions => {:hotel_id => hotel}).each(&:destroy)
     	end

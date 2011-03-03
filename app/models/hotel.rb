@@ -21,18 +21,18 @@ class Hotel < ActiveRecord::Base
   
 	validates_presence_of :name, :address, :postcode, :phone, :star, :no_of_rooms
 
-  def self.hotel_owner?
-    return false if current_user.nil? || current_user.id != @hotel.owner_id
-		true		
-  end
+#  def self.hotel_owner?
+#    return false if current_user.nil? || current_user.id != @hotel.owner_id
+#		true		
+#  end
   
-  def hotel_owner?(user)
-    return false if Self.owner_id != user.id
-    return true
-  end
+#  def hotel_owner?(user)
+#    return false if Self.owner_id != user.id
+#    return true
+#  end
 
   def top_rated
-#    find(:all,)
+    
   end
 
 	def self.search(search,page)

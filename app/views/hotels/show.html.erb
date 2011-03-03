@@ -30,29 +30,23 @@ $(function() {
 			    	<div class="ad-thumbs">
 			      		<ul class="ad-thumb-list">
 			      		<% @hotel.photos.each do | photo | %>
+			      		  <% if @hotel.photos.blank? %>
+			      		    <li>
+  			          			<a href="/images/no-photo.jpg">
+  			            			<img src="/images/no-photo-thumb.jpg" alt="" />
+  			          			</a>
+  			        		</li>
+			      		  <% else %>  
 			      		  	<li><%= link_to(image_tag(photo.uploaded_file.url(:thumb), :alt => ''), photo.uploaded_file.url(:original), :class => 'image1' ) %></li>
+			      		  <% end %>	
                   <% end unless @hotel.photos.first.new_record? rescue nil %>
                 
 			        		<li>
 			          			<a href="/media/HomelyHouse/02.jpg">
-			            			<img src="/media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
+			            			<img src="/media/HomelyHouse/thumbs/02.jpg" alt="" />
 			          			</a>
 			        		</li>
-			        		<li>
-			          			<a href="/media/HomelyHouse/03.jpg">
-			            			<img src="/media/HomelyHouse/thumbs/03.jpg" alt="Homely House" />
-			          			</a>
-			        		</li>
-			        		<li>
-			          			<a href="/media/HomelyHouse/02.jpg">
-			            			<img src="/media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
-			          			</a>
-			        		</li>
-			        		<li>
-			          			<a href="/media/HomelyHouse/02.jpg">
-			            			<img src="/media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
-			          			</a>
-			        		</li>
+			        		
 		
 			      		</ul>
 			    	</div>
@@ -61,7 +55,10 @@ $(function() {
 			</div>
 
 		</div>
-    <%= link_to "Upload Hotel Photos", new_hotel_photo_path(@hotel) %>
+		
+		<% if hotel_owner?(current_user) %>
+      <%= link_to "Upload Hotel Photos", new_hotel_photo_path(@hotel) %>
+    <% end %>  
 		<div class="customer-reviews">
 			<div class="heading">
 				<h2>Customer Reviews</h2>
@@ -76,7 +73,6 @@ $(function() {
       </div>
       <% end %>
       <div class="all">
-        <a href="#"></a> 
         <%= link_to  'Read All Reviews', hotel_reviews_path(@hotel) %>
         | 
         <%= link_to  'Write a Review', new_hotel_review_path(@hotel)%>

@@ -58,11 +58,12 @@ class HotelsController < ApplicationController
   end
 
   def edit
-    @hotel = Hotel.find(params[:id])
+    @hotel = current_user.hotels.find(params[:id])
     @all_facilities = Facility.all
   end
 
   def update
+
 		params[:photo_ids] ||= []
     @hotel = Hotel.find(params[:id])
 		unless params[:photo_ids].empty?
@@ -85,7 +86,7 @@ class HotelsController < ApplicationController
   end
 
   def destroy
-    @hotel = Hotel.find(params[:id])
+    @hotel = current_user.hotels.find(params[:id])
     @hotel.destroy
     redirect_to hotels_url, :notice => "Successfully destroyed hotel."
   end
@@ -98,6 +99,10 @@ class HotelsController < ApplicationController
       render "search_list"
 
   	end
+  end
+  
+  def browse_by
+
   end
 
   private
