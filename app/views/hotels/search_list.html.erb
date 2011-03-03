@@ -90,7 +90,11 @@
         <div class="list-block">
         	<div class="box">
         			<div class="thumb">
-        				<a href="#" title=""><img src="/media/CapitolHotel/thumbs/01.jpg" title="Title for 1.jpg" /></a>
+        			
+        			<% unless hotel.photos.first.nil? %>
+        				<%= image_tag hotel.photos.first.uploaded_file.url(:thumb), :alt => "" %>
+        			<% end %>
+
         			</div>
         			<div class="details">
         				<h3 class=s<%= hotel.star%>><%= link_to hotel.name, hotel %></h3>
@@ -103,17 +107,17 @@
         				<p><%= hotel.overview %>
         				It is simply that wehave very high standards. There are fine restaurants with wonderful food and friendly service.  People who work for us genuinely enjoy being there;  everyone strives to make your stay a happy one.</p>
         			</div>
-        			<% if hotel_owner?(current_user) %>
+        			<% #if hotel_owner?(current_user) %>
           		<div class="actions">
           		<%= link_to "Edit", edit_hotel_path(hotel) %> | <%= link_to "Destroy", hotel, :confirm => 'Are you sure?', :method => :delete %>
           		</div>
-          		<% end %>
+          		<%# end %>
 
         		</div>
       </div>	
-	  <% end unless @hotels.first.new_record? rescue nil %>
+	  <% end  %>
 
-	</div>
+
 	</div>	
 </div>
 </div>

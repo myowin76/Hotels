@@ -40,13 +40,7 @@ $(function() {
 			      		  	<li><%= link_to(image_tag(photo.uploaded_file.url(:thumb), :alt => ''), photo.uploaded_file.url(:original), :class => 'image1' ) %></li>
 			      		  <% end %>	
                   <% end unless @hotel.photos.first.new_record? rescue nil %>
-                
-			        		<li>
-			          			<a href="/media/HomelyHouse/02.jpg">
-			            			<img src="/media/HomelyHouse/thumbs/02.jpg" alt="" />
-			          			</a>
-			        		</li>
-			        		
+              			        		
 		
 			      		</ul>
 			    	</div>
@@ -117,7 +111,7 @@ $(function() {
 				<div class="table">
 					<ul class="header">
 						<li class="room-type"><span>Room Types</span></li>
-						<li class="avail"><span>Avail?</span></li>
+						<li class="avail"><span>Availablity</span></li>
 						<li class="price"><span>Price</span></li>
 					</ul>
 					<% @hotel_roomtypes.each do |room_type|%>				    

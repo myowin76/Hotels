@@ -18,7 +18,9 @@
   	<div class="box">
   		<div id="01" class="hotel">
   			<div class="thumb">
-  				<a href="#" title=""><img src="/media/CapitolHotel/thumbs/01.jpg" title="Title for 1.jpg" /></a>
+    			<% unless hotel.photos.first.nil? %>
+    				<%= image_tag hotel.photos.first.uploaded_file.url(:thumb), :alt => "" %>
+    			<% end %>
   			</div>
   			<div class="details">
   				<h3><%= link_to hotel.name, hotel %></h3>
