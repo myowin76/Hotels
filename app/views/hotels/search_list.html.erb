@@ -25,65 +25,30 @@
       <div class="heading">
         <h2>Top Rated Hotels</h2>
       </div>
-      <div class="list">
-    		<div class="hotel-box">
-    			<div id="01" class="hotel">
-    				<div class="thumb">
-    					<a href="#" title=""><img src="/media/HomelyHouse/thumbs/02.jpg" title="Title for 1.jpg" /></a>
-    				</div>
-    				<div class="details">
-    					<h3><a href="#">Sea View Inn</a></h3>
-    					<div class="loc">Henden, Middlesex</div>
-    					<div class="s5"></div><div class="reviews"><a href="#" title="reviews">Reviews</a></div>
-    				</div>
-    			</div>
-    		</div>
-    		
-    		<div class="hotel-box">
-    			<div id="01" class="hotel">
-    				<div class="thumb">
-    					<a href="#" title=""><img src="/media/CapitolHotel/thumbs/01.jpg" title="Title for 1.jpg" /></a>
-    				</div>
-    				<div class="details">
-    					<h3><a href="#">Capitol Hotel</a></h3>
-    					<div class="loc">Henden, Middlesex</div>
-    					<div class="s4"></div><div class="reviews"><a href="#" title="reviews">Reviews</a></div>        					
-    				</div>
-    			</div>
-    		</div>
-
-    		<div class="hotel-box">
-    			<div id="01" class="hotel">
-    				<div class="thumb">
-    					<a href="#" title=""><img src="/media/PremierNights/thumbs/01.jpg" title="Title for 1.jpg" /></a>
-    				</div>
-    				<div class="details">
-    					<h3><a href="#">Premier Nights</a></h3>
-    					<div class="loc">Henden, Middlesex</div>
-    					<div class="s3"></div><div class="reviews"><a href="#" title="reviews">Reviews</a></div>        					
-    				</div>
-    			</div>
-    		</div>
-
-    		<div class="hotel-box">
-    			<div id="01" class="hotel">
-    				<div class="thumb">
-    					<a href="#" title=""><img src="/media/MajesticInns/thumbs/01.jpg" title="Title for 1.jpg" /></a>
-    				</div>
-    				<div class="details">
-    					<h3><a href="#">Majastic Inn</a></h3>
-    					<div class="loc">Kingston, Surrey</div>
-    					<div class="s5"></div><div class="reviews"><a href="#" title="reviews">Reviews</a></div>        					
-    				</div>
-    			</div>
-    		</div>
-    		
-    	</div>
+      <% @top_hotels.each do |hotel| %>
+        <div class="list">
+      		<div class="hotel-box">
+      			<div id="01" class="hotel">
+        				<div class="thumb">
+            			<% unless hotel.photos.first.nil? %>
+            				<%= image_tag hotel.photos.first.uploaded_file.url(:thumb), :alt => "" %>
+            			<% end %>
+        				</div>
+      				  <div class="details">
+      					  <h3><%= link_to hotel.name, hotel %></h3>
+        					<div class="loc"><%= hotel.area %></div>
+        					<div class="s<%= hotel.star %>"></div>
+        					<div class="reviews"><a href="#" title="reviews">Reviews</a></div>
+      					</div>
+      				</div>
+      			</div>
+      		</div>
+      <% end %>
 		</div>
   </div>  
   <div class="list">
     <div class="heading">
-      <h2>Hotels List</h2>
+      <h2><% unless params[:search].blank? %>Hotels  in <%= params[:search]%><% else %> All Hotels <% end %></h2>
     </div>
 
     <% @hotels.each do |hotel| %>

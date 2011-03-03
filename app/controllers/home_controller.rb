@@ -3,6 +3,8 @@ class HomeController < ApplicationController
   def index
     @menu_state = "class=active"
     @hotel_types = HotelType.all
+    @top_hotels = Hotel.top_hotels
+
   end
   
 

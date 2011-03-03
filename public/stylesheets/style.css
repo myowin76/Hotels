@@ -26,6 +26,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .content {background:url(../images/backgrounds/down-shadow2.jpg) repeat-x center top;float:left;min-height:400px; padding-top:15px;color:#282828;width:100%;}
 .content a:hover{text-decoration:underline;}
 .login-box h2, .search-box h2, .small-box h2, .info h2, .win-box h2, .main-content h2{height:30px;padding-bottom:8px; background:url(../images/backgrounds/down-shadow.jpg) repeat-x center bottom;}
+.my-hotels h2{background:none;}
 .center{width:412px;margin:0 auto;}
 #flash_alert{color:#d64646;}
 .full-width{width:100%;float:left;}
@@ -188,6 +189,7 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
 /* listing page*/
 .list{float:left;padding-left:12px;width:568px;}
 .list-block{float:left;width:100%;margin-bottom:12px;}
+.my-hotels .list-block{background:url(../images/backgrounds/down-shadow.jpg) repeat-x top; padding:12px 0;}
 .list-block .feature{background-color:#fffff0;border:1px solid #cdcdcd; -webkit-border-radius:10px;border-radius:10px;-moz-border-radius:10px; display:block;padding:15px;float:left;width:630px; }
 
 .listing .list-block .box{padding:15px;float:left;width:538px; }

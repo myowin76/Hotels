@@ -31,7 +31,8 @@ class Hotel < ActiveRecord::Base
 #    return true
 #  end
 
-  def top_rated
+  def self.top_hotels
+    find(:all, :order => "star desc", :limit => 6)
     
   end
 

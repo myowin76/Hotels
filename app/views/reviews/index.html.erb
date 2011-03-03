@@ -4,13 +4,14 @@
         <h2>Admin</h2>
           <ul>
     				<li><%= link_to "Write a Review", new_hotel_review_path(@hotel) %></li>
+    				<li><%= link_to "Back", new_hotel_review_path(@hotel) %></li>    				
     			</ul>  			
       </div>			
 		</div>
   <%= render :partial => 'shared/admin_menu' %>      
 </div>
 <div class="main-content">
-<h2>Reviews</h2>
+<h2>Customer Reviews for <%= @hotel.name %></h2>
 
 <table>
   <tr>

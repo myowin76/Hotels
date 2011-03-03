@@ -1,9 +1,0 @@
-<div class="photo">
-<% fields_for "hotel[photo_attributes][]", photo do |p| %>
-  <p>
-	<%= p.label :Photo %><br />
-	<%= p.file_field :hotel_photo, :index => nil %>
-	<%= link_to_function "delete", "remove_field($(this), ('.photo'))" %>
-  </p>
-<% end %>
-</div>
