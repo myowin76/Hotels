@@ -13,3 +13,6 @@
 .listing .win-box-top{background:url(../images/ie/win-box-top.jpg) no-repeat;width:368px;height:12px;float:left;}
 .listing .win-box{background:url(../images/ie/win-box-mid.jpg) repeat-y;width:324px;height:auto;float:left;border:none;padding-bottom:0;margin-bottom:0;}
 .listing .win-box-bottom{background:url(../images/ie/win-box-bottom.jpg) no-repeat;width:368px;height:12px;float:left;}
+
+
+.listing .list-block .box{background:url(../images/backgrounds/listing-box.jpg) no-repeat;with:570px; border:none;}
