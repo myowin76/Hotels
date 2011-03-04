@@ -145,14 +145,14 @@ background:none;border:1px solid #cdcdcd;height:auto;padding:18px;height:160px;}
 .login-box form .fields .checkbox{margin-left:172px;background-color:none;}
 .login-box form .fields .checkbox input{width:16px;height:16px;margin:2px;}
 .login-box form .fields .input input{width:180px;padding:5px 5px 4px;}
-.login-box form .fields .buttons{clear:both;padding:0px 0;text-align:right;height:26px;}
-.login-box form .fields .buttons input{cursor:pointer;width:103px;height:0;background:url(../images/buttons/login.jpg) no-repeat;float:right;padding-top:28px;overflow:hidden;border:none;}
-.login-box form .fields .buttons input.register{cursor:pointer;width:114px;height:0; background:url(../images/buttons/register.jpg) no-repeat;float:right;padding-top:28px;overflow:hidden;border:none;}
+.login-box form .fields .buttons{clear:both;padding:0px 0;text-align:right;height:28px;}
+.login-box form .fields .buttons input{cursor:pointer;width:103px;height:0;background:url(../images/buttons/login.jpg) no-repeat;float:right;padding:31px 0 0 0;overflow:hidden;border:none;;}
+.login-box form .fields .buttons input.register{cursor:pointer;width:114px;height:0; background:url(../images/buttons/register.jpg) no-repeat;float:right;padding-top:31px;overflow:hidden;border:none;}
 
 .login-box .links{float:left;width:100%;height:24px;line-height:24px;}
 .login-box a:hover{text-decoration:underline;border:none;}
 .login-box .flash_alert{}
-.login-box form .fields .buttons input.reset-password{cursor:pointer;width:103px;height:0; background:url(../images/buttons/reset-pwd.jpg) no-repeat;float:right;padding-top:28px;overflow:hidden;border:none;}
+.login-box form .fields .buttons input.reset-password{cursor:pointer;width:103px;height:0; background:url(../images/buttons/reset-pwd.jpg) no-repeat;float:right;padding-top:31px;overflow:hidden;border:none;}
 .login-box form .fields .buttons input:hover{background-position:0 -33px;}
 /* Footer */
 #footer{float:left;padding-top:40px;width:948px;}
