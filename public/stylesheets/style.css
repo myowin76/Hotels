@@ -28,11 +28,14 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .login-box h2, .search-box h2, .small-box h2, .info h2, .win-box h2, .message h2, .main-content h2, .information h2,.contact-addr h2 {height:30px;padding-bottom:8px; background:url(../images/backgrounds/down-shadow.jpg) repeat-x center bottom;}
 .my-hotels h2{background:none;}
 .center{width:412px;margin:0 auto;}
+.breadcrumb{height:30px;float:left;width:100%;}
+.breadcrumb .back{float:right;padding-right:8px;}
 #flash_alert{color:#d64646;}
 .full-width{width:100%;float:left;}
 .one-half{width:50%;float:left;}
 #error_explanation h2{display:none;}
 #error_explanation ul li{color:#d64646;}
+
 /* Navigations */
 .top-nav{height:27px;float:left;width:100%;background:url(../images/backgrounds/top-nav-bg.jpg) repeat-x;}
 .top-nav .left{float:left;width:230px;position:relative;z-index:5;}
@@ -174,7 +177,7 @@ background:url(../images/backgrounds/down-shadow.jpg) repeat-x;line-height:30px;
  .guides .left-area .info{padding:15px;}
 input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; background-color: #F2F2F2; border-style: solid;border-width: 1px;padding: 4px 0;}
 #hotel_facility_list_{background-color:none;}
-.contact-form{float:right;width:525px;padding:25px;-moz-border-radius:10px;border:2px solid #3DB2CC;}
+.contact-form{float:right;width:525px;padding:50px 25px 25px; -moz-border-radius:10px;-webkit-border-radius:10px;border-radius:10px;border:2px solid #3DB2CC;}
 .contact-form  form input, .contact-form form textarea {width:380px;}
 .contact-form form{width:525px;float:left;}
 .contact-form ul{float:left;padding-bottom:18px;}
