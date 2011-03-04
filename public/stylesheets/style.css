@@ -203,10 +203,9 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
 .my-hotels .list-block{background:url(../images/backgrounds/down-shadow.jpg) repeat-x top; padding:12px 0;margin-bottom:0;}
 .list-block .feature{background-color:#fffff0;border:1px solid #cdcdcd; -webkit-border-radius:10px;border-radius:10px;-moz-border-radius:10px; display:block;padding:15px;float:left;width:630px; }
 .listing .list .heading h2{padding-left:15px;}
-.listing .list-block .box{padding:15px;float:left;width:538px; }
 
 .list-block .box{float:left;width:632px;}
-.listing .list-block .box{width:536px;background-color:#fffff0;border:1px solid #cdcdcd;-webkit-border-radius:10px;border-radius:10px;-moz-border-radius:10px; }
+.listing .list-block .box{width:536px;background-color:#fffff0;border:1px solid #cdcdcd;-webkit-border-radius:10px;border-radius:10px;-moz-border-radius:10px; padding:15px;float:left;}
 
 .list-block .box .actions{float:left;width:632px;padding-top:10px;}
 .list-block .box .actions a{background-color:#D64646;color:#ffffff;padding:3px 12px;margin-right:5px;}
