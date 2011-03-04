@@ -25,7 +25,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .content .heading{float:left;width:100%;height:16px;height:30px;}
 .content {background:url(../images/backgrounds/down-shadow2.jpg) repeat-x center top;float:left;min-height:400px; padding-top:15px;color:#282828;width:100%;}
 .content a:hover{text-decoration:underline;}
-.login-box h2, .search-box h2, .small-box h2, .info h2, .win-box h2, .message h2, .main-content h2, .contact-addr h2 {height:30px;padding-bottom:8px; background:url(../images/backgrounds/down-shadow.jpg) repeat-x center bottom;}
+.login-box h2, .search-box h2, .small-box h2, .info h2, .win-box h2, .message h2, .main-content h2, .information h2,.contact-addr h2 {height:30px;padding-bottom:8px; background:url(../images/backgrounds/down-shadow.jpg) repeat-x center bottom;}
 .my-hotels h2{background:none;}
 .center{width:412px;margin:0 auto;}
 #flash_alert{color:#d64646;}
@@ -52,11 +52,11 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 
 .language-links,.account-links{float:right;}
 .account-links li{float:left;height:25px;line-height:25px;padding:0 6px;color:#ffffff;}
-.advert{height:52px;float:left;width:100%;}
+.advert{height:55px;float:left;width:100%;}
 .nav-wrap{float:left;width:100%;height:31px;}
 .main-nav{float:left;width:480px;height:31px;}
 .main-nav ul{float:left;padding-left:35px;height:31px;text-transform:uppercase;color:#454545;font-family:"Rockwell", Arial;font-size:13px;}
-.main-nav li{float:left;line-height:24px;padding:4px 10px;margin-right:18px;height:22px;}
+.main-nav li{float:left;line-height:24px;padding:2px 12px;margin-right:18px;height:22px;}
 .main-nav li a{margin-bottom:4px;}
 .main-nav li.active{;background-color:#D64646;}
 .main-nav li.active{color:#ffffff}
@@ -110,10 +110,11 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .search-box form .submit-button:hover{background-position:0 -33px;}
 
 .win-box{float:left;width:222px;padding:22px;border:2px solid #3DB2CC;display:block;-moz-border-radius:10px; -webkit-border-radius:10px;border-radius:10px;margin-bottom:12px;}
-.listing .win-box{float:left;width:320px;padding:22px;border:2px solid #3DB2CC;display:block;-moz-border-radius:10px; -webkit-border-radius:10px;border-radius:10px;margin-bottom:12px;}
+.listing .win-box, .guides .win-box{float:left;width:320px;padding:22px;border:2px solid #3DB2CC;display:block;-moz-border-radius:10px; -webkit-border-radius:10px;border-radius:10px;margin-bottom:12px;}
 
 .contact-addr{line-height:18px;padding-top:15px;width:338px;float:left;}
-
+.contact-addr a{text-decoration:underline;}
+.contact-addr .map-link{background-color:#D64646;padding:2px 10px;color:#ffffff;}
 .info-box{width:100%;margin:12px 0;float:left;background: none repeat #DBF6BE;border:1px solid #FDD845;border-color:#9BBF65;color:#3C4E27;}
 .info-box .cont{border-top: 1px solid #FFFFFF;font-weight: bold; padding: 10px;text-align: center;}
 .small-box ul, .info ul, .admin ul{float:left;}
@@ -126,7 +127,12 @@ background:none;border:1px solid #cdcdcd;height:auto;padding:18px;height:160px;}
 .small-box ul li a:hover, .info ul li a:hover, .admin ul li a:hover{text-decoration:underline;}
 .one-third{float:left;width:310px;margin-right:9px;}
 .last{margin:0;}
-
+/* Guides */
+.guides .summary{float:right;}
+.guides p{padding-bottom:12px;}
+.guides .left-area{width:580px;float:right;}
+.guides .left-area .information{padding:24px 18px 0;}
+.guides .left-area .information a{text-decoration:underline;}
 /* login page */
 .login-box{width:368px;margin:50px auto;padding:22px 22px 12px;float:left;}
 .login-box form{float:left;width:100%;}
@@ -164,7 +170,8 @@ background:url(../images/backgrounds/down-shadow.jpg) repeat-x;line-height:30px;
 
 /* Contact Page, Contact Form */
 .left-area{float:left;width:270px;}
-.listing .left-area{float:left;width:368px;}
+.listing .left-area {float:left;width:368px;}
+ .guides .left-area .info{padding:15px;}
 input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; background-color: #F2F2F2; border-style: solid;border-width: 1px;padding: 4px 0;}
 #hotel_facility_list_{background-color:none;}
 .contact-form{float:right;width:525px;padding:25px;-moz-border-radius:10px;border:2px solid #3DB2CC;}
