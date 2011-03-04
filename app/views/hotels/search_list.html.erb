@@ -22,37 +22,24 @@
       <div class="heading">
         <h2>Top Rated Hotels</h2>
       </div>
-      <div class="list">
-    		<div class="hotel-box">
-      				<div class="thumb">
-          			<img src="media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
-          		</div>
-    				  <div class="details">
-    					  <h3><a href="#" >Sea View Inn</a></h3>
-      					<div class="loc">Location: Ealing</div>
-      					<div class="s4"</div>
-      					<div class="reviews"><a href="#" title="reviews">Reviews</a></div>
-    					</div>
-    				</div>
-    		</div>
-    		<div class="list">
-      			<div id="02" class="hotel">
-        				<div class="thumb">
-            			<img src="media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
-            		</div>
-      				  <div class="details">
-      					  <h3><a href="#" >Mejastic Inn</a></h3>
-        					<div class="loc">Location: Wembley</div>
-        					<div class="s5"</div>
-        					<div class="reviews"><a href="#" title="reviews">Reviews</a></div>
-      					</div>
-      				</div>
-      		</div>
-        
+			<div class="list">
+				<div class="hotel-box">
+					<div class="thumb">
+						<img src="media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
+					</div>
+					<div class="details">
+						<h3><a href="#" >Sea View Inn</a></h3>
+						<div class="loc">Location: Ealing</div>
+						<div class="s4"></div>
+						<div class="reviews"><a href="#" title="reviews">Reviews</a></div>
+					</div>
+				</div>
+	    	</div>        
 
       <% @top_hotels.each do |hotel| %>
         <div class="list">
       		<div class="hotel-box">
+      			<div id="01" class="hotel">
         				<div class="thumb">
             			<% unless hotel.photos.first.nil? %>
             				<%= image_tag hotel.photos.first.uploaded_file.url(:thumb), :alt => "" %>
@@ -65,6 +52,7 @@
         					<div class="reviews"><%= link_to "Reviews (#{hotel.reviews.count})", hotel_reviews_path(hotel) %></div>
       					</div>
       				</div>
+      			</div>
       		</div>
       <% end %>
 		</div>
