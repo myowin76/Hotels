@@ -15,4 +15,5 @@
 .listing .win-box-bottom{background:url(../images/ie/win-box-bottom.jpg) no-repeat;width:368px;height:12px;float:left;}
 
 
-.listing .list-block .box{background:url(../images/backgrounds/listing-box.jpg) no-repeat;with:570px; border:none;}
+.listing .list-block .box{background:url(../images/backgrounds/listing-box.jpg) no-repeat;with:570px;height:175px;padding-bottom:0; border:none;}
+
