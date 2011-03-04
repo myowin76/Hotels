@@ -1,4 +1,11 @@
 
 .win-box .filters, .win-box .info{float:left;width:100%;}
-.search-box{float:right;background:url(../images/backgrounds/search-box.jpg) no-repeat;width:278px;height:327px;display:block;border:none;}
-.login-box{background:url(../images/backgrounds/login-box-bg.jpg) no-repeat;width:372px;margin:50px auto;padding:22px 22px 12px;float:left;border:none;min-height:231px;}
+.search-box{float:right;background:url(../images/ie/search-box.jpg) no-repeat;width:278px;height:327px;display:block;border:none;}
+/*.login-box{background:url(../images/backgrounds/login-box-bg.jpg) no-repeat;width:372px;margin:50px auto;padding:22px 22px 12px;float:left;border:none;min-height:231px;}*/
+.login-box-top{background:url(../images/ie/login-box-top.jpg) no-repeat;width:416px;height:10px;float:left;}
+.login-box-top{background:url(../images/ie/login-box-mid.jpg) repeat-y;width:416px;height:auto;float:left;}
+.login-box-bottom{background:url(../images/ie/login-box-bottom.jpg) no-repeat;width:416px;height:10px;float:left;}
+
+.win-box-top{background:url(../images/ie/win-box-top.jpg) no-repeat;width:368px;height:12px;float:left;}
+.win-box-top{background:url(../images/ie/win-box-mid.jpg) repeat-y;width:368px;height:auto;float:left;}
+.win-box-bottom{background:url(../images/ie/win-box-bottom.jpg) no-repeat;width:368px;height:12px;float:left;}

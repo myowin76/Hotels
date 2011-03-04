@@ -24,7 +24,6 @@
       </div>
       <div class="list">
     		<div class="hotel-box">
-    			<div id="01" class="hotel">
       				<div class="thumb">
           			<img src="media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
           		</div>
@@ -35,11 +34,9 @@
       					<div class="reviews"><a href="#" title="reviews">Reviews</a></div>
     					</div>
     				</div>
-    			</div>
     		</div>
     		<div class="list">
-      		<div class="hotel-box">
-      			<div id="01" class="hotel">
+      			<div id="02" class="hotel">
         				<div class="thumb">
             			<img src="media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
             		</div>
@@ -50,14 +47,12 @@
         					<div class="reviews"><a href="#" title="reviews">Reviews</a></div>
       					</div>
       				</div>
-      			</div>
       		</div>
         
 
       <% @top_hotels.each do |hotel| %>
         <div class="list">
       		<div class="hotel-box">
-      			<div id="01" class="hotel">
         				<div class="thumb">
             			<% unless hotel.photos.first.nil? %>
             				<%= image_tag hotel.photos.first.uploaded_file.url(:thumb), :alt => "" %>
@@ -67,10 +62,9 @@
       					  <h3><%= link_to hotel.name, hotel %></h3>
         					<div class="loc"><%= hotel.area %></div>
         					<div class="s<%= hotel.star %>"></div>
-        					<div class="reviews"><a href="#" title="reviews">Reviews</a></div>
+        					<div class="reviews"><%= link_to "Reviews (#{hotel.reviews.count})", hotel_reviews_path(hotel) %></div>
       					</div>
       				</div>
-      			</div>
       		</div>
       <% end %>
 		</div>
@@ -109,7 +103,7 @@
 
         			</div>
         			<div class="details">
-        				<h3 class=s<%= hotel.star%>><%= link_to hotel.name, hotel %></h3>
+        				<h3 class="s<%= hotel.star%>"><%= link_to hotel.name, hotel %></h3>
         				<div class="loc">Location: <%= hotel.area %></div>
         				<div class="view"><%= link_to "View Details", hotel %></div>
 
