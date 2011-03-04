@@ -1,7 +1,6 @@
 <%= javascript 'jquery.validationEngine_w' %>
 <%= render :partial => 'left_side' %>
-<div class="main-content">
-	<h2>Contact Us</h2>
+
 	<div class="contact-form">
 		<%= form_for @message do |f| %>
       <%= f.error_messages %>
@@ -24,4 +23,3 @@
 			</ul>
     <% end %>
 	</div>
-</div>

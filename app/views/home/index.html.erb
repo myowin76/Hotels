@@ -94,7 +94,7 @@
         		<div class="hotel-box">
         				<div class="thumb">
             			<% unless hotel.photos.first.nil? %>
-            				<%= image_tag hotel.photos.first.uploaded_file.url(:thumb), :alt => "" %>
+            				<%= link_to image_tag(hotel.photos.first.uploaded_file.url(:thumb), :alt => ""), hotel %>
             			<% end %>
         				</div>
         				<div class="details">

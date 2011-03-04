@@ -2,9 +2,6 @@
   <div class="left-area">
     <div class="win-box">
     	<div class="filters">
-    		<div class="heading">	
-    			<h2 class="smart-filters" title="Smart Filters">Smart Filters</h2>
-    		</div>			
     	</div>			
     	<div class="info">	
     		<div class="heading">
@@ -25,6 +22,38 @@
       <div class="heading">
         <h2>Top Rated Hotels</h2>
       </div>
+      <div class="list">
+    		<div class="hotel-box">
+    			<div id="01" class="hotel">
+      				<div class="thumb">
+          			<img src="media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
+          		</div>
+    				  <div class="details">
+    					  <h3><a href="#" >Sea View Inn</a></h3>
+      					<div class="loc">Location: Ealing</div>
+      					<div class="s4"</div>
+      					<div class="reviews"><a href="#" title="reviews">Reviews</a></div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="list">
+      		<div class="hotel-box">
+      			<div id="01" class="hotel">
+        				<div class="thumb">
+            			<img src="media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
+            		</div>
+      				  <div class="details">
+      					  <h3><a href="#" >Mejastic Inn</a></h3>
+        					<div class="loc">Location: Wembley</div>
+        					<div class="s5"</div>
+        					<div class="reviews"><a href="#" title="reviews">Reviews</a></div>
+      					</div>
+      				</div>
+      			</div>
+      		</div>
+        
+
       <% @top_hotels.each do |hotel| %>
         <div class="list">
       		<div class="hotel-box">
@@ -50,7 +79,25 @@
     <div class="heading">
       <h2><% unless params[:search].blank? %>Hotels  in <%= params[:search]%><% else %> All Hotels <% end %></h2>
     </div>
-
+    <div class="list-block">
+			<div class="box">
+				<div id="01" class="hotel">
+					<div class="thumb">
+						<a href="#" title=""><img src="media/HomelyHouse/thumbs/02.jpg" title="Title for 1.jpg" /></a>
+					</div>
+					<div class="details">
+            <h3 class="s4"><a href="#">Sea View Inn</a></h3>					
+						<div class="loc">Henden, Middlesex</div>
+    				<div class="view"><a href="#">View Details</a></div>						
+						<div class="price">From &pound; <span>76</span></div>
+					</div>
+					<div class="desc">
+						<p>Espacio Torrijos is situated on Hermosilla Street next to General Díaz Porlier, in the quarter of Salamanca in the heart of Madrid. The seven storey building provides a range of one, two and three bedroom apartments and spacious penthouses.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
     <% @hotels.each do |hotel| %>
         <div class="list-block">
         	<div class="box">

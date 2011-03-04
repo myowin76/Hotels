@@ -25,7 +25,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .content .heading{float:left;width:100%;height:16px;height:30px;}
 .content {background:url(../images/backgrounds/down-shadow2.jpg) repeat-x center top;float:left;min-height:400px; padding-top:15px;color:#282828;width:100%;}
 .content a:hover{text-decoration:underline;}
-.login-box h2, .search-box h2, .small-box h2, .info h2, .win-box h2, .main-content h2{height:30px;padding-bottom:8px; background:url(../images/backgrounds/down-shadow.jpg) repeat-x center bottom;}
+.login-box h2, .search-box h2, .small-box h2, .info h2, .win-box h2, .message h2, .main-content h2, .contact-addr h2 {height:30px;padding-bottom:8px; background:url(../images/backgrounds/down-shadow.jpg) repeat-x center bottom;}
 .my-hotels h2{background:none;}
 .center{width:412px;margin:0 auto;}
 #flash_alert{color:#d64646;}
@@ -63,22 +63,22 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .main-nav li a:hover{text-decoration:underline;}
 
 /* Home page */
-.top-hotels{float:right;padding:14px 0;width:318px;}
+.top-hotels{float:right;padding:14px 0;width:318px;background:url(../images/backgrounds/down-shadow.jpg) repeat-x bottom;}
 .top-hotels .list{width:100%;padding-left:0;}
-.top-hotels .hotel-box{padding:15px 0;float:left;background:url(../images/backgrounds/down-shadow.jpg) repeat-x center top; width:100%;}
+.top-hotels .hotel-box{padding:15px 0 5px;float:left;background:url(../images/backgrounds/down-shadow.jpg) repeat-x center top; width:100%;}
 .top-hotels .hotel-box .thumb{float:left;width:80px;height:50px;border:1px solid #cdcdcd;padding:2px;}
 .top-hotels .hotel-box .details{font-size:12px;float:left;margin-left:10px;width:222px;min-height:50px;}
 .top-hotels .s1, .top-rated .s2,.top-rated .s3, .top-rated .s4,.top-rated .s5{margin-top:3px;float:left;width:96px; height:18px;}
-.top-hotels .hotel-box .details .reviews{float:right;padding:2px 10px;background-color:#D64646;}
+.top-hotels .hotel-box .details .reviews{float:right;padding:3px 12px;background-color:#D64646;}
 .top-hotels .hotel-box .details .reviews a{color:#ffffff;}
 .top-hotels .hotel-box  h3{width:100%;padding-bottom:4px;}
-.top-hotels .hotel-box .details h3 a{color:#F07A07;}
+.top-hotels .hotel-box .details h3 a{color:#F07A07;font-family:"Rockwell Std", Rockwell, Arial;font-size:14px;}
 .browse-by{width:615px;float:left;padding:14px 0;}
 .browse-by .hotel-types ul{float:left;background:url(../images/backgrounds/down-shadow.jpg) repeat-x center top;); padding-top:18px;}
 .browse-by .hotel-types ul li{padding-left:16px;float:left;background:url(../images/square-green.jpg) no-repeat 0 3px;height:28px;width:188px;} 
 
 /*listing */
-.top-rated{float:left;padding:15px;width:338px;}
+.top-rated{float:left;padding:15px;width:338px;background:url(../images/backgrounds/down-shadow.jpg) repeat-x bottom;}
 .top-rated .list{width:100%;padding-left:0;}
 .top-rated .hotel-box{padding:15px 0;float:left;background:url(../images/backgrounds/down-shadow.jpg) repeat-x center top; width:100%;}
 .top-rated .hotel-box .thumb{float:left;width:80px;height:50px;border:1px solid #cdcdcd;padding:2px;}
@@ -112,7 +112,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .win-box{float:left;width:222px;padding:22px;border:2px solid #3DB2CC;display:block;-moz-border-radius:10px; -webkit-border-radius:10px;border-radius:10px;margin-bottom:12px;}
 .listing .win-box{float:left;width:320px;padding:22px;border:2px solid #3DB2CC;display:block;-moz-border-radius:10px; -webkit-border-radius:10px;border-radius:10px;margin-bottom:12px;}
 
-.win-box .contact-addr{line-height:1.5;}
+.contact-addr{line-height:18px;padding-top:15px;width:338px;float:left;}
 
 .info-box{width:100%;margin:12px 0;float:left;background: none repeat #DBF6BE;border:1px solid #FDD845;border-color:#9BBF65;color:#3C4E27;}
 .info-box .cont{border-top: 1px solid #FFFFFF;font-weight: bold; padding: 10px;text-align: center;}
@@ -167,38 +167,39 @@ background:url(../images/backgrounds/down-shadow.jpg) repeat-x;line-height:30px;
 .listing .left-area{float:left;width:368px;}
 input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; background-color: #F2F2F2; border-style: solid;border-width: 1px;padding: 4px 0;}
 #hotel_facility_list_{background-color:none;}
-.contact-form{float:left;width:600px;padding-top:40px;}
+.contact-form{float:right;width:525px;padding:25px;-moz-border-radius:10px;border:2px solid #3DB2CC;}
 .contact-form  form input, .contact-form form textarea {width:380px;}
-.contact-form form{width:545px;float:left;}
+.contact-form form{width:525px;float:left;}
 .contact-form ul{float:left;padding-bottom:18px;}
 .contact-form ul li{padding-bottom: 3px;float:left;}
 .contact-form ul.left li, .contact-form ul.right li {width:222px;float:left;}
 .contact-form ul li label{width: 220px; float:left;}
 
 .contact-form li input {float:left;width:220px;}
-.contact-form ul li span{color:#F07A07;}
+.contact-form ul li span{color:#D64646;}
 .contact-form ul.left{width:222px;float:left;}
 .contact-form ul.right{width:222px;float:right;}
-.contact-form  li textarea {float:left;height:150px;width:545px;overflow:auto;}
-.contact-form li.send-enquiry {float:left;width:550px;text-align:right;padding-top:22px;}
+.contact-form  li textarea {float:left;height:150px;width:525px;overflow:auto;}
+.contact-form li.send-enquiry {float:left;width:525px;text-align:right;padding-top:22px;}
 .contact-form li.send-enquiry p{font-size:11px;}
 .contact-form input.submit-button {background:url(../images/buttons/send-the-enquiry.jpg) no-repeat; border:medium none;cursor:pointer;height:31px;width:151px;float:right;}
 .contact-form input.submit-button:hover{background-position: 0 -33px;}
 
 
 /* listing page*/
+
 .list{float:left;padding-left:12px;width:568px;}
 .list-block{float:left;width:100%;margin-bottom:12px;}
-.my-hotels .list-block{background:url(../images/backgrounds/down-shadow.jpg) repeat-x top; padding:12px 0;}
+.my-hotels .list-block{background:url(../images/backgrounds/down-shadow.jpg) repeat-x top; padding:12px 0;margin-bottom:0;}
 .list-block .feature{background-color:#fffff0;border:1px solid #cdcdcd; -webkit-border-radius:10px;border-radius:10px;-moz-border-radius:10px; display:block;padding:15px;float:left;width:630px; }
-
+.listing .list .heading h2{padding-left:15px;}
 .listing .list-block .box{padding:15px;float:left;width:538px; }
 
 .list-block .box{float:left;width:632px;}
 .listing .list-block .box{width:536px;background-color:#fffff0;border:1px solid #cdcdcd;-webkit-border-radius:10px;border-radius:10px;-moz-border-radius:10px; }
 
-.list-block .box .actions{float:left;width:632px;}
-.list-block .box .actions a{color:#D64646;}
+.list-block .box .actions{float:left;width:632px;padding-top:10px;}
+.list-block .box .actions a{background-color:#D64646;color:#ffffff;padding:3px 12px;margin-right:5px;}
 .list-block .feature{background-color:#fffff0;}
 .list-block .box .thumb{float:left;width:80px;height:50px;border:1px solid #cdcdcd;padding:2px;}
 .list-block .box .thumb a{-moz-box-shadow:0 1px 3px #777777;display:inline-block;}
@@ -207,7 +208,7 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
 .list-block .box .details{float:left;margin-left:10px;width:511px;min-height:50px;}
 .listing .list-block .box .details{float:left;margin-left:10px;width:440px;min-height:50px;}
 .list-block .box .details h3{display:inline;font-size:18px;overflow:hidden;padding-right:110px;font-family: "Rockwell Std", Rockwell, Arial;}
-.list-block .box .details h3 a{color:#F07A07;}
+.list-block .box .details h3 a{color:#F07A07;font-size:16px;}
 .list-block .loc{float:left;width:100%;padding-bottom:5px;}
 .listing .list-block .view{float:left;width:100px;}
 .list-block .price{float:right;font-weight:bold;}
@@ -240,7 +241,7 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
 .details .hotel-details .fb-like{float:left;background:url(../images/backgrounds/down-shadow.jpg) repeat-x center top;width:100%;padding:10px 0;height:22px;}
 
 .details .add-room-type{text-decoration:underline;}
-.details .overview, .details .hotel-facilities, .details .room-types, .details .direction, .details .terms {float:left;padding-top:18px;width:100%;}
+.details .overview, .details .hotel-facilities, .details .room-types, .details .direction, .details .terms {float:left;padding-top:18px;width:100%;line-height:16px;}
 
 .details .hotel-facilities ul li{float:left;padding-left:18px;background:url(../images/square-blue.jpg) no-repeat 0 4px;width:262px;padding-bottom:8px;}
 
