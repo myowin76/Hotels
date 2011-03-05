@@ -1,5 +1,7 @@
 Hotels::Application.routes.draw do
 
+  resources :locations
+
   resources :hotels_roomtypes
 
   get "accounts/profile"

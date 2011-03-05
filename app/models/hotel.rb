@@ -1,3 +1,5 @@
+include Geokit::Geocoders
+
 class Hotel < ActiveRecord::Base
   attr_accessible :name, :address, :postcode, :phone, :fax, :area ,:star, :no_of_rooms, :overview, :terms, :direction,  :hotel_type_id, :photo_ids, :photo_attributes
   has_many :photos
@@ -20,6 +22,40 @@ class Hotel < ActiveRecord::Base
   has_many :facilities, :through => :hotels_facilities
   
 	validates_presence_of :name, :address, :postcode, :phone, :star, :no_of_rooms
+
+  # Google Map
+  acts_as_mappable   :default_units => :miles, 
+                     :default_formula => :sphere, 
+                     :distance_field_name => :distance,
+                     :lat_column_name => :latitude,
+                     :lng_column_name => :longitude,
+                     :auto_geocode=>{:field=>:postcode, :error_message=>'Could not geocode address'}
+  
+    before_save :generate_longitude_latitude
+
+	  #Get longitude and latitude from a PostCode
+	  def generate_longitude_latitude
+	    #Geocode the postcode
+	    geocode = MultiGeocoder.geocode(self.postcode)
+	    self.latitude = geocode.ll.split(",")[0]
+	    self.longitude = geocode.ll.split(",")[1]
+	  end
+
+   #Get full address from longitude and latitude
+   def area_address
+     address=GoogleGeocoder.reverse_geocode([self.latitude,self.longitude])
+     address.full_address
+   end
+
+   def self.search_with_location(google_loc, distance)
+
+      #just set a default for distance now. might not need this once we sort the view.
+      distance ||= 15 
+      # ****** Removing the radius limit of the search ********
+      sites = Property.find(:all, :origin => google_loc, :order => 'distance asc', :limit => 20 )
+      #sites = Site.find(:all, :origin => google_loc, :within => distance, :order => 'distance asc', :limit => SITE_SEARCH_LIMIT, :include => :accessibilities, :conditions => ["accessibilities.code = ?", "PP"])
+      #sites.delete_if {|s| !s.is_public?} #not great because it will delete sites and not give us back the right limit
+   end
 
 #  def self.hotel_owner?
 #    return false if current_user.nil? || current_user.id != @hotel.owner_id

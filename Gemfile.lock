@@ -36,6 +36,10 @@ GEM
       warden (~> 1.0.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    geokit (1.5.0)
+    geokit-rails3 (0.1.2)
+      geokit (~> 1.5.0)
+      rails (~> 3.0.0)
     i18n (0.5.0)
     mail (2.2.15)
       activesupport (>= 2.3.6)
@@ -85,6 +89,7 @@ PLATFORMS
 
 DEPENDENCIES
   devise (= 1.1.4)
+  geokit-rails3
   mocha
   nifty-generators
   paperclip (~> 2.3)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110302103958) do
+ActiveRecord::Schema.define(:version => 20110305030358) do
 
   create_table "facilities", :force => true do |t|
     t.string   "name"
@@ -58,11 +58,20 @@ ActiveRecord::Schema.define(:version => 20110302103958) do
     t.integer  "hotel_type_id"
     t.integer  "owner_id"
     t.string   "prices_from"
+    t.decimal  "latitude",      :precision => 15, :scale => 10
+    t.decimal  "longitude",     :precision => 15, :scale => 10
   end
 
   create_table "hotels_facilities", :force => true do |t|
     t.integer  "hotel_id"
     t.integer  "facility_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", :force => true do |t|
+    t.integer  "name"
+    t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -27,6 +27,8 @@ class HotelsController < ApplicationController
     @hotel_reviews = @hotel.reviews
     @hotel_roomtypes = @hotel.hotels_roomtypes
     @room_type_name= @hotel_roomtypes.find_by_id(@all_room_types)
+    
+  	
   end
 
   def new

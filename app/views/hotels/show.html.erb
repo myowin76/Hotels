@@ -1,6 +1,9 @@
 <% javascript 'gmap','jquery.ad-gallery.js' %>
-
-
+<% content_for :head do %>
+  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAuAl7RTzygYWmNT9BW_FiFxShtUTnv0leG1BmiJF7gj1WoesWNxRXaRTbVHiPgGyuvUL67cxC5BfOQA&sensor=true_or_false"
+          type="text/javascript"></script>
+  
+<% end %>
 <script type="text/javascript">
 $(function() {
 
@@ -19,6 +22,7 @@ $(function() {
   );
 });
 </script>
+
 
 <div class="breadcrumb">
     <div class="back"><%= link_to "Back", :back %></div>
@@ -120,8 +124,7 @@ $(function() {
 			  </ul>
 		  <% end %>
 			</div>
-			
-			
+
 			<div class="room-types">
 				<div class="heading">
 					<h2 title="Room Types">Room Types</h2>
@@ -160,13 +163,19 @@ $(function() {
 						tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis 
 						nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
 					</p>
-					<div style="padding-top:12px">	
-						<img src="/images/gmap.jpg" alt="google map" />	
-					</div>	
-<!--
+          <script type="text/javascript">
+          $(function(){
+            if (GBrowserIsCompatible()) {
+                  var map = new GMap2(document.getElementById("map_canvas"));
+                  map.setCenter(new GLatLng(<%=@hotel.latitude %>, <%= @hotel.longitude %>), 15);
+                  point =new GLatLng(<%=@hotel.latitude %>, <%= @hotel.longitude %>);
+                  map.addOverlay(new GMarker(point));                  
+                  map.setUIToDefault();
+                }
+          });
+          </script>
 		    <div id="map_canvas" style="width: 565px; height: 150px"></div>	
-		    -->
-					
+
 			</div>	
 			<div class="terms">
 				<div class="heading">
