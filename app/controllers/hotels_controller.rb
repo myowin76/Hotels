@@ -7,7 +7,7 @@ class HotelsController < ApplicationController
         @hotels = Hotel.all
         render "search_list"
   	else
-  		@hotels = Hotel.search(params[:search],params[:page])
+  		@hotels = Hotel.search(params[:search].downcase,params[:page])
       render "search_list"
 
   	end

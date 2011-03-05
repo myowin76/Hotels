@@ -52,7 +52,7 @@ class Hotel < ActiveRecord::Base
       #just set a default for distance now. might not need this once we sort the view.
       distance ||= 15 
       # ****** Removing the radius limit of the search ********
-      sites = Property.find(:all, :origin => google_loc, :order => 'distance asc', :limit => 20 )
+      sites = Hotel.find(:all, :origin => google_loc, :order => 'distance asc', :limit => 20 )
       #sites = Site.find(:all, :origin => google_loc, :within => distance, :order => 'distance asc', :limit => SITE_SEARCH_LIMIT, :include => :accessibilities, :conditions => ["accessibilities.code = ?", "PP"])
       #sites.delete_if {|s| !s.is_public?} #not great because it will delete sites and not give us back the right limit
    end
@@ -86,5 +86,15 @@ class Hotel < ActiveRecord::Base
 			photos.build(attributes)
 		end
 	end
+	
+	##########
+  #creates the info for google popup thing
+  ##########
+  def map_info_window
+    return "<div style=\"font-size: 14px;color:#000000;width:200px; \" ><div class='gmap_info_header'><a href='/rooms/#{self.id}'>#{self.name}</a></div></div>
+  <div style=\"font-size: 10px;color:#000000;width:200px;\"><div class='gmap_info_address'><strong>Location:</strong> #{self.area}</div>
+  <div class='gmap_info_address'><strong>Star:</strong>#{self.star}</div></div>"
+  end
+  
 
 end

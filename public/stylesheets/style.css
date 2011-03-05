@@ -205,8 +205,11 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
 .list-block{float:left;width:100%;margin-bottom:12px;}
 .my-hotels .list-block{background:url(../images/backgrounds/down-shadow.jpg) repeat-x top; padding:12px 0;margin-bottom:0;}
 .list-block .feature{background-color:#fffff0;border:1px solid #cdcdcd; -webkit-border-radius:10px;border-radius:10px;-moz-border-radius:10px; display:block;padding:15px;float:left;width:630px; }
-.listing .list .heading h2{padding-left:15px;}
-
+.listing .list .heading{padding-bottom:15px;}
+.listing .list .heading h2{padding-left:15px;float:left;height:31px;line-height:35px;}
+.listing .list .heading .on-the-map{float:right;height:31px;width:114px;}
+.listing .list .heading .on-the-map a{float:right;height:0;padding-top:31px;overflow:hidden; background:url(../images/buttons/on-the-map.jpg) no-repeat;width:114px;}
+.listing .list .heading .on-the-map a:hover{background-position:0 -33px;}
 .list-block .box{float:left;width:632px;}
 .listing .list-block .box{width:536px;background-color:#fffff0;border:1px solid #cdcdcd;-webkit-border-radius:10px;border-radius:10px;-moz-border-radius:10px; padding:15px;float:left;}
 

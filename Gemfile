@@ -12,7 +12,7 @@ gem "nifty-generators", :group => :development
 #for uploading files
 gem "paperclip", "~> 2.3"
 gem 'geokit-rails3'
-
+gem "aws-s3"
 
 gem "mocha", :group => :test
 # Bundle edge Rails instead:

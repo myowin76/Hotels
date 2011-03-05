@@ -1,3 +1,12 @@
+<% content_for :head do %>
+  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAM41OPHNEzeRe7qzntS2dZxRhUbQCvgHcewKkuhV-KkriOp2HwhReuvtd5emO1MhE-giChvNKkDVHIA&sensor=false" type="text/javascript">
+<% javascript "markerGroup"%>
+  </script>
+
+	
+  
+<% end %>
+
 <div class="listing">
   <div class="left-area">
 		<div class="win-box-top"></div>
@@ -82,7 +91,9 @@
   <div class="list">
     <div class="heading">
       <h2><% unless params[:search].blank? %>Hotels  in <%= params[:search]%><% else %> All Hotels <% end %></h2>
+      <div class="on-the-map"><a href="#">on the map</a></div>
     </div>
+
     <div class="list-block">
 			<div class="box">
 				<div id="01" class="hotel">
@@ -167,7 +178,14 @@
 
         		</div>
       </div>	
+
 	  <% end  %>
+
+    <div class="map-view" style="display:block;float:left;">
+      <div id="map_canvas" style="width: 720px; height: 450px"></div>	
+    
+    </div>
+    
 
 
 	</div>	
