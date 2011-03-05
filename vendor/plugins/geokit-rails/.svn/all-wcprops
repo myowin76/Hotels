@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/homeshare/!svn/ver/10/trunk/vendor/plugins/geokit-rails
+END
+Rakefile
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/homeshare/!svn/ver/10/trunk/vendor/plugins/geokit-rails/Rakefile
+END
+VERSION_HISTORY.txt
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/homeshare/!svn/ver/10/trunk/vendor/plugins/geokit-rails/VERSION_HISTORY.txt
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/homeshare/!svn/ver/10/trunk/vendor/plugins/geokit-rails/.gitignore
+END
+init.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/homeshare/!svn/ver/10/trunk/vendor/plugins/geokit-rails/init.rb
+END
+install.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/homeshare/!svn/ver/10/trunk/vendor/plugins/geokit-rails/install.rb
+END
+MIT-LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/homeshare/!svn/ver/10/trunk/vendor/plugins/geokit-rails/MIT-LICENSE
+END
+about.yml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/homeshare/!svn/ver/10/trunk/vendor/plugins/geokit-rails/about.yml
+END
+README.markdown
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/homeshare/!svn/ver/10/trunk/vendor/plugins/geokit-rails/README.markdown
+END

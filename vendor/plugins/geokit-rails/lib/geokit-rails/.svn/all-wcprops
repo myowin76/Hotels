@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/homeshare/!svn/ver/10/trunk/vendor/plugins/geokit-rails/lib/geokit-rails
+END
+acts_as_mappable.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/homeshare/!svn/ver/10/trunk/vendor/plugins/geokit-rails/lib/geokit-rails/acts_as_mappable.rb
+END
+ip_geocode_lookup.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/homeshare/!svn/ver/10/trunk/vendor/plugins/geokit-rails/lib/geokit-rails/ip_geocode_lookup.rb
+END
+defaults.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/homeshare/!svn/ver/10/trunk/vendor/plugins/geokit-rails/lib/geokit-rails/defaults.rb
+END

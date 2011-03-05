@@ -23,14 +23,12 @@
 							<img src="media/MajesticInns/01.jpg" alt="MajesticInns" />
 						</a>
 					</div>
-				</div>
-      
+				</div>      
       <div class="search-box">
         <div class="heading">
       	  <h2 class="search-for-hotels" title="Search for Hotels">Search for Hotels</h2>
       	</div>
-          <% form_tag hotels_path, :method => 'get' do %>
-    			
+          <% form_tag hotels_path, :method => 'get' do %>    			
       		<ul>
       			<li>
       				<label>Location</label>
@@ -65,25 +63,19 @@
       		</ul>
     		<% end %>			
       </div>
-
       </div>
-
 			<div class="browse-by">
 				<div class="hotel-types">
 					<div class="heading">
 						<h2 title="Browse by Hotel Types">Browse by Hotel Types</h2>
 					</div>
-
 					<ul>
 					  <% @hotel_types.each do |hotel_type|%>  					
 						  <li id=<%= hotel_type.id %>><%= link_to hotel_type.name , browse_by_path(hotel_type) %></li>
 					  <% end %>
 					</ul>
-
 				</div>
 			</div>
-      
-
   			<div class="top-hotels">
   				<div class="heading">			
   					<h2>Top Hotels in Town</h2>
@@ -105,12 +97,8 @@
         				</div>
         		</div>
         		<% end %>
-        		
         	</div>
-
-          
   			</div>
-
   		<div class="full-width">
         <div class="one-third">
           <div class="small-box">

@@ -35,11 +35,6 @@ $(function() {
 			  	<div class="ad-nav">
 			    	<div class="ad-thumbs">
 			      		<ul class="ad-thumb-list">
-                <li>
-		          			<a href="/media/HomelyHouse/02.jpg">
-		            			<img src="/media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
-		          			</a>
-		        		</li>
 			      		<% @hotel.photos.each do | photo | %>
 			      		  <% if @hotel.photos.blank? %>
 			      		    <li>
@@ -48,30 +43,14 @@ $(function() {
   			          			</a>
   			        		</li>
 			      		  <% else %>  
-			      		  	<li><%= link_to(image_tag(photo.uploaded_file.url(:thumb), :alt => ''), photo.uploaded_file.url(:original), :class => 'image1' ) %></li>
-
-				        		
+			      		  	<li><%= link_to(image_tag(photo.uploaded_file.url(:thumb), :alt => ''), photo.uploaded_file.url(:original), :class => 'image1' ) %></li>				        		
 			      		  <% end %>	
                   <% end unless @hotel.photos.first.new_record? rescue nil %>
-              		<li>
-			          			<a href="/media/HomelyHouse/02.jpg">
-			            			<img src="/media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
-			          			</a>
-			        		</li>
-			        		<li>
-			          			<a href="/media/HomelyHouse/02.jpg">
-			            			<img src="/media/HomelyHouse/thumbs/02.jpg" alt="Homely House" />
-			          			</a>
-			        		</li>	        		
-		
 			      		</ul>
 			    	</div>
-			  </div>
-		
+			  </div>		
 			</div>
-
-		</div>
-		
+		</div>		
 		<% if hotel_owner?(current_user) %>
       <%= link_to "Upload Hotel Photos", new_hotel_photo_path(@hotel) %>
     <% end %>  
@@ -124,7 +103,6 @@ $(function() {
 			  </ul>
 		  <% end %>
 			</div>
-
 			<div class="room-types">
 				<div class="heading">
 					<h2 title="Room Types">Room Types</h2>
@@ -148,11 +126,8 @@ $(function() {
       			<ul>
   					  <li><span><%= link_to "Add Room Types", new_hotel_hotels_roomtype_path(@hotel.id), :class=>"add-room-type" %> </span></li>
   					</ul>
-  					<% end %>
-  					
-				</div>
-				
-  		    										
+  					<% end %>  					
+				</div>					
 			</div>
 			<div class="direction">
 				<div class="heading">						
