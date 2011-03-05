@@ -36,16 +36,8 @@ $(function() {
 			    	<div class="ad-thumbs">
 			      		<ul class="ad-thumb-list">
 			      		<% @hotel.photos.each do | photo | %>
-			      		  <% if @hotel.photos.blank? %>
-			      		    <li>
-  			          			<a href="/images/no-photo.jpg">
-  			            			<img src="/images/no-photo-thumb.jpg" alt="" />
-  			          			</a>
-  			        		</li>
-			      		  <% else %>  
 			      		  	<li><%= link_to(image_tag(photo.uploaded_file.url(:thumb), :alt => ''), photo.uploaded_file.url(:original), :class => 'image1' ) %></li>				        		
-			      		  <% end %>	
-                  <% end unless @hotel.photos.first.new_record? rescue nil %>
+                <% end unless @hotel.photos.first.new_record? rescue nil %>
 			      		</ul>
 			    	</div>
 			  </div>		
