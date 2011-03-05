@@ -134,7 +134,7 @@ background:none;border:1px solid #cdcdcd;height:auto;padding:18px;height:160px;}
 .one-third{float:left;width:310px;margin-right:9px;}
 .last{margin:0;}
 /* Guides */
-.guides .summary{float:right;}
+.guides .summary{float:right;width:368px;}
 .guides p{padding-bottom:12px;}
 .guides .left-area{width:580px;float:right;}
 .guides .left-area .information{padding:24px 18px 0;}
