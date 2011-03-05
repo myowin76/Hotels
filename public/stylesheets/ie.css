@@ -7,7 +7,7 @@
 .login-box-bottom{background:url(../images/ie/login-box-bottom.jpg) no-repeat;width:416px;height:10px;float:left;}
 
 .win-box-top{background:url(../images/ie/win-box-top.jpg) no-repeat;width:368px;height:12px;float:left;}
-.win-box-top{background:url(../images/ie/win-box-mid.jpg) repeat-y;width:368px;height:auto;float:left;}
+.win-box{background:url(../images/ie/win-box-mid.jpg) repeat-y;width:368px;height:auto;float:left;}
 .win-box-bottom{background:url(../images/ie/win-box-bottom.jpg) no-repeat;width:368px;height:12px;float:left;}
 
 .listing .win-box-top{background:url(../images/ie/win-box-top.jpg) no-repeat;width:368px;height:12px;float:left;}
