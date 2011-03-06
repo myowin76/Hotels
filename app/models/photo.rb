@@ -6,7 +6,7 @@ class Photo < ActiveRecord::Base
   has_attached_file :uploaded_file,
       :styles => {	:thumb => "80x50#",
 					  :original => "346x260#"},	
-#      :url  => "/images/hotels/:id/:style/:basename.:extension",
+            #:url  => "/images/hotels/:id/:style/:basename.:extension",
   		:path => ":rails_root/public/images/hotels/:id/:styles/:basename.:extension",
       :storage => :s3,
       :s3_credentials => "#{RAILS_ROOT}/config/amazon_s3.yml",
