@@ -74,7 +74,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .top-hotels .hotel-box{padding:15px 0 5px;float:left;background:url(../images/backgrounds/down-shadow.jpg) repeat-x center top; width:100%;}
 .top-hotels .hotel-box .thumb{float:left;width:80px;height:50px;border:1px solid #cdcdcd;padding:2px;}
 .top-hotels .hotel-box .details{font-size:12px;float:left;margin-left:10px;width:222px;min-height:50px;}
-.top-hotels .s1, .top-rated .s2,.top-rated .s3, .top-rated .s4,.top-rated .s5{margin-top:3px;float:left;width:96px; height:18px;}
+.top-hotels .s1, .top-rated .s1, .top-hotels .s2, .top-rated .s2,.top-hotels .s3, .top-rated .s3, .top-hotels .s4,.top-rated .s4, .top-hotels .s5, .top-rated .s5{margin-top:3px;float:left;width:96px; height:18px;}
 .top-hotels .hotel-box .details .reviews{float:right;padding:3px 12px;background-color:#D64646;}
 .top-hotels .hotel-box .details .reviews a{color:#ffffff;}
 .top-hotels .hotel-box  h3{width:100%;padding-bottom:4px;}
@@ -201,7 +201,7 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
 
 /* listing page*/
 
-.list{float:left;padding-left:12px;width:568px;}
+.list{float:left;padding-left:20px;width:560px;}
 .list-block{float:left;width:100%;margin-bottom:12px;}
 .my-hotels .list-block{background:url(../images/backgrounds/down-shadow.jpg) repeat-x top; padding:12px 0;margin-bottom:0;}
 .list-block .feature{background-color:#fffff0;border:1px solid #cdcdcd; -webkit-border-radius:10px;border-radius:10px;-moz-border-radius:10px; display:block;padding:15px;float:left;width:630px; }
@@ -222,7 +222,7 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
 .list-block .desc{width:100%;float:left;padding-top:8px;line-height:16px;height:65px;overflow:hidden;}
 .list-block .box .details{float:left;margin-left:10px;width:511px;min-height:50px;}
 .listing .list-block .box .details{float:left;margin-left:10px;width:440px;min-height:50px;}
-.list-block .box .details h3{display:inline;font-size:18px;overflow:hidden;padding-right:110px;font-family: "Rockwell Std", Rockwell, Arial;}
+.list-block .box .details h3{display:inline;font-size:18px;overflow:hidden;padding-right:110px;}
 .list-block .box .details h3 a{color:#F07A07;font-size:16px;}
 .list-block .loc{float:left;width:100%;padding-bottom:5px;}
 .listing .list-block .view{float:left;width:100px;}

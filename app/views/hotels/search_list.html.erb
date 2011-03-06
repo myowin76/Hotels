@@ -52,8 +52,12 @@
   <div class="list">
     <div class="heading">
       <h2><% unless params[:search].blank? %>Hotels  in <%= params[:search]%><% else %> All Hotels <% end %></h2>
+        <% unless @hotels.blank? %>
       <div class="on-the-map"><a href="#">on the map</a></div>
+      <% end %>
     </div>
+
+<% unless @hotels.blank? %>
 
     <% @hotels.each do |hotel| %>
         <div class="list-block">
@@ -76,16 +80,19 @@
         				<p><%= hotel.overview %>
         				It is simply that wehave very high standards. There are fine restaurants with wonderful food and friendly service.  People who work for us genuinely enjoy being there;  everyone strives to make your stay a happy one.</p>
         			</div>
-        			<% #if hotel_owner?(current_user) %>
+		          <% if hotel_owner?(current_user, hotel) %>
           		<div class="actions">
-          		<%= link_to "Edit", edit_hotel_path(hotel) %><%= link_to "Destroy", hotel, :confirm => 'Are you sure?', :method => :delete %>
-          		</div>
-          		<%# end %>
+          		  <%= link_to "Edit", edit_hotel_path(hotel) %><%= link_to "Destroy", hotel, :confirm => 'Are you sure?', :method => :delete %>
+            		</div>
+          		<% end %>
 
         		</div>
       </div>	
 
 	  <% end  %>
+<% else %>	  	  
+  <p><strong>There are currently no <%= params[:type_name]%> in the list.</strong></p>
+<% end %>	  
 <!--
     <div class="map-view" style="display:block;float:left;">
       <div id="map_canvas" style="width: 720px; height: 450px"></div>	

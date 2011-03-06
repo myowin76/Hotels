@@ -70,8 +70,8 @@
 						<h2 title="Browse by Hotel Types">Browse by Hotel Types</h2>
 					</div>
 					<ul>
-					  <% @hotel_types.each do |hotel_type|%>  					
-						  <li id=<%= hotel_type.id %>><%= link_to hotel_type.name , browse_by_path(hotel_type) %></li>
+					  <% @hotel_types.each do |hotel_type|%>  				
+						  <li id=type_<%= hotel_type.id %>><%= link_to hotel_type.name , browse_by_path(hotel_type.name) %></li>
 					  <% end %>
 					</ul>
 				</div>

@@ -31,7 +31,7 @@ Hotels::Application.routes.draw do
   match "/travel-guides" => "home#guides", :as=> "guides"
   match "/thankyou" => "messages#thankyou"
   match "/admin" =>"sessions#new"
-  match "hotels/browse" => "hotels#browse_by", :as => "browse_by"
+  match "browse/:type_name" => "hotels#browse", :as => "browse_by"
   match "user-profile" => "accounts#profile", :as => :user_profile
   root :to => "home#index"
   

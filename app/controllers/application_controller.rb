@@ -18,8 +18,8 @@ class ApplicationController < ActionController::Base
 		true
 	end
 	
-	def hotel_owner?(user)
-	  return false if current_user.nil? || (@hotel.owner_id != user.id)
+	def hotel_owner?(user,hotel)
+	  return false if current_user.nil? || (hotel.owner_id != user.id)
 		true
   end
 
