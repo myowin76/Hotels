@@ -21,12 +21,16 @@ class HotelsController < ApplicationController
   end
 
   def show
-    @hotel = Hotel.find_by_name(params[:hotel_name])
-    @all_room_types= RoomType.all
+    if params[:hotel_name].nil?
+      @hotel = Hotel.find_by_name(params[:hotel_name])
+    end
+    if params[:id]
+      @hotel = Hotel.find(params[:id])
+    end
     @hotel_facilities = @hotel.facilities
     @hotel_reviews = @hotel.reviews
     @hotel_roomtypes = @hotel.hotels_roomtypes
-    @room_type_name= @hotel_roomtypes.find_by_id(@all_room_types)
+    @room_type_name= @hotel.room_types.name
     
   	
   end
