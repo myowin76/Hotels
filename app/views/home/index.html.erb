@@ -86,11 +86,11 @@
         		<div class="hotel-box">
         				<div class="thumb">
             			<% unless hotel.photos.first.nil? %>
-            				<%= link_to image_tag(hotel.photos.first.uploaded_file.url(:thumb), :alt => ""), hotel %>
+            				<%= link_to image_tag(hotel.photos.first.uploaded_file.url(:thumb), :alt => ""), details_path(hotel.name) %>
             			<% end %>
         				</div>
         				<div class="details">
-        					<h3><%= link_to hotel.name, hotel %></h3>
+        					<h3><%= link_to hotel.name , details_path(hotel.name) %></h3>
         					<div class="loc"><%= hotel.area %></div>
         					<div class="s<%= hotel.star %>"></div>
         					<div class="reviews"><%= link_to "Reviews (#{hotel.reviews.count})", hotel_reviews_path(hotel) %></div>
