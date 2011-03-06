@@ -21,7 +21,7 @@ class HotelsController < ApplicationController
   end
 
   def show
-    if params[:hotel_name].nil?
+    unless params[:hotel_name].nil?
       @hotel = Hotel.find_by_name(params[:hotel_name])
     end
     if params[:id]
