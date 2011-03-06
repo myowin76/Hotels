@@ -44,14 +44,14 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .top-nav .left{float:left;width:230px;position:relative;z-index:5;}
 .header-right .language{padding:5px 12px 5px 35px;}
 .header-right .language a{float:left;height:28px;width:150px;color:#ffffff;}
-.header-right .language-links{float:right;width:90px;height:31px;}
-.header-right .language-list{float:left;width:90px;padding-top:6px;height:25px;}
+.header-right .language-links{float:right;width:68px;height:31px;}
+.header-right .language-list{float:left;width:68px;padding-top:6px;height:25px;}
 
-.header-right .language-list li{cursor:pointer;display:block;height:15px;width:24px;float:left;padding-right:4px;}
-.header-right .language-list li a{float:left;height:0;padding-top:15px;overflow:hidden;width:24px;}
-.header-right .language-list li.english a{background:url(../images/english.gif) no-repeat;}
-.header-right .language-list li.france a{background:url(../images/france.png) no-repeat;}
-.header-right .language-list li.spanish a{background:url(../images/spanish.gif) no-repeat;}
+.header-right .language-list li{cursor:pointer;display:block;height:15px;width:16px;float:left;padding-right:4px;}
+.header-right .language-list li a{float:left;height:0;padding-top:15px;overflow:hidden;width:16px;background: url(../images/languages.jpg) no-repeat;}
+.header-right .language-list li.english a{background-position:-42px 0;}
+.header-right .language-list li.france a{background-position:-21px 0;}
+.header-right .language-list li.spanish a{background-position:0 0;}
 
 .top-nav .right{float:right;width:445px;}
 .top-nav .right li a{color:#FFFFFF;}
