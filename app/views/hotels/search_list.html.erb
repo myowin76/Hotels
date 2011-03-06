@@ -39,7 +39,7 @@
             			<% end %>
         				</div>
       				  <div class="details">
-      					  <h3><%= link_to hotel.name, hotel %></h3>
+      					  <h3><%= link_to hotel.name , details_path(hotel.name) %></h3>
         					<div class="loc"><%= hotel.area %></div>
         					<div class="s<%= hotel.star %>"></div>
         					<div class="reviews"><%= link_to "Reviews (#{hotel.reviews.count})", hotel_reviews_path(hotel) %></div>
@@ -70,7 +70,7 @@
 
         			</div>
         			<div class="details">
-        				<h3 class="s<%= hotel.star%>"><%= link_to hotel.name, hotel %></h3>
+        				<h3 class="s<%= hotel.star%>"><%= link_to hotel.name , details_path(hotel.name) %></h3>
         				<div class="loc">Location: <%= hotel.area %></div>
         				<div class="view"><%= link_to "View Details", hotel %></div>
 

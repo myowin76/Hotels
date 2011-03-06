@@ -16,14 +16,14 @@
 
   <div class="list-block">
   	<div class="box">
-  		<div id="01" class="hotel">
+  		<div id="hotel_<%= hotel.id %>" class="hotel">
   			<div class="thumb">
     			<% unless hotel.photos.first.nil? %>
-    				<%= link_to image_tag(hotel.photos.first.uploaded_file.url(:thumb), :alt => ""), hotel %>
+    				<%= link_to image_tag(hotel.photos.first.uploaded_file.url(:thumb), :alt => ""), details_path  %>
     			<% end %>
   			</div>
   			<div class="details">
-  				<h3><%= link_to hotel.name, hotel %></h3>
+  				<h3><%= link_to hotel.name , details_path(hotel.name) %></h3>
   				<div class="s<%= hotel.star %>"></div>
   				<div class="loc"><%= hotel.address %>, <%= hotel.postcode %></div>
   				<div class="price">From &pound; <span>76</span></div>

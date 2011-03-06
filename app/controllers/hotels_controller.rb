@@ -21,7 +21,7 @@ class HotelsController < ApplicationController
   end
 
   def show
-    @hotel = Hotel.find(params[:id])
+    @hotel = Hotel.find_by_name(params[:hotel_name])
     @all_room_types= RoomType.all
     @hotel_facilities = @hotel.facilities
     @hotel_reviews = @hotel.reviews
@@ -94,10 +94,13 @@ class HotelsController < ApplicationController
   end
   
   def search
-  	if params[:search].blank?
-        redirect_to root_url
+    @top_hotels=Hotel.find(:all, :order => 'star desc', :limit => 5)
+    if params[:search].blank?        
+        #redirect_to root_url
+        @hotels = Hotel.all
+        render "search_list"
   	else
-  		@hotels = Hotel.search(params[:search])
+  		@hotels = Hotel.search(params[:search].downcase,params[:page])
       render "search_list"
 
   	end
