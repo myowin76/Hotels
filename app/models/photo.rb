@@ -7,10 +7,11 @@ class Photo < ActiveRecord::Base
       :styles => {	:thumb => "80x50#",
 					  :original => "346x260#"},	
 #      :url  => "/images/hotels/:id/:style/:basename.:extension",
-  		:path => ":rails_root/public/images/hotels/:id/:style/:basename.:extension",
+ # 		:path => ":rails_root/public/images/hotels/:id/:style/:basename.:extension",
+      :path => "/hotels/:id/:style/:filename"
       :storage => :s3,
-      :s3_credentials => "#{RAILS_ROOT}/config/amazon_s3.yml",
-      :bucket => "worldskillsukhotels"
+      :s3_credentials => "#{RAILS_ROOT}/config/amazon_s3.yml"
+
   		
       
       

@@ -1,12 +1,15 @@
 development:
+  bucket: "worldskillsukhotels"
   access_key_id: AKIAI4KBPOW2QXCXLMTQ
   secret_access_key: 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
 
 staging:
+  bucket: "worldskillsukhotels"    
   access_key_id: AKIAI4KBPOW2QXCXLMTQ
   secret_access_key: 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
 
 production:
+  bucket: "worldskillsukhotels"    
   access_key_id: AKIAI4KBPOW2QXCXLMTQ
   secret_access_key: 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
 
