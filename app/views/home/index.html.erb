@@ -71,7 +71,7 @@
 					</div>
 					<ul>
 					  <% @hotel_types.each do |hotel_type|%>  				
-						  <li id=type_<%= hotel_type.id %>><%= link_to hotel_type.name , browse_by_path(hotel_type.name) %></li>
+						  <li><%= link_to hotel_type.name , browse_by_path(hotel_type.name) %></li>
 					  <% end %>
 					</ul>
 				</div>

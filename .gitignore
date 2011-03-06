@@ -7,6 +7,3 @@ doc/
 *.swp
 *~
 .DS_Store
-config/amazon_s3.yml
-config/database.yml
-config/gmaps_api_key.yml
