@@ -211,7 +211,7 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
 .listing .list .heading .on-the-map a{float:right;height:0;padding-top:31px;overflow:hidden; background:url(../images/buttons/on-the-map.jpg) no-repeat;width:114px;}
 .listing .list .heading .on-the-map a:hover{background-position:0 -33px;}
 .list-block .box{float:left;width:632px;}
-.listing .list-block .box{width:536px;background-color:#fffff0;border:1px solid #cdcdcd;-webkit-border-radius:10px;border-radius:10px;-moz-border-radius:10px; padding:15px;float:left;}
+.listing .list-block .box{width:528px;background-color:#fffff0;border:1px solid #cdcdcd;-webkit-border-radius:10px;border-radius:10px;-moz-border-radius:10px; padding:15px;float:left;}
 
 .list-block .box .actions{float:left;width:632px;padding-top:10px;}
 .list-block .box .actions a{background-color:#D64646;color:#ffffff;padding:3px 12px;margin-right:5px;}
@@ -221,7 +221,7 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
 .list-block .box .thumb img{border:1px solid #7C7C7C;}
 .list-block .desc{width:100%;float:left;padding-top:8px;line-height:16px;height:65px;overflow:hidden;}
 .list-block .box .details{float:left;margin-left:10px;width:511px;min-height:50px;}
-.listing .list-block .box .details{float:left;margin-left:10px;width:440px;min-height:50px;}
+.listing .list-block .box .details{float:left;margin-left:10px;width:432px;min-height:50px;}
 .list-block .box .details h3{display:inline;font-size:18px;overflow:hidden;padding-right:110px;}
 .list-block .box .details h3 a{color:#F07A07;font-size:16px;}
 .list-block .loc{float:left;width:100%;padding-bottom:5px;}
