@@ -61,7 +61,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .advert{height:55px;float:left;width:100%;}
 .nav-wrap{float:left;width:100%;height:31px;}
 .main-nav{float:left;width:480px;height:31px;}
-.main-nav ul{float:left;padding-left:35px;height:31px;text-transform:uppercase;color:#454545;font-family:"Rockwell", Arial;font-size:13px;}
+.main-nav ul{float:left;padding-left:35px;height:31px;text-transform:uppercase;color:#454545;font-family:"Rockwell", Arial;font-size:13px;width:100%;}
 .main-nav li{float:left;line-height:24px;padding:2px 12px;margin-right:18px;height:22px;}
 .main-nav li a{margin-bottom:4px;}
 .main-nav li.active{;background-color:#D64646;}
@@ -118,7 +118,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .win-box{float:left;width:222px;padding:22px;border:2px solid #3DB2CC;display:block;-moz-border-radius:10px; -webkit-border-radius:10px;border-radius:10px;margin-bottom:12px;}
 .listing .win-box, .guides .win-box{float:left;width:320px;padding:22px;border:2px solid #3DB2CC;display:block;-moz-border-radius:10px; -webkit-border-radius:10px;border-radius:10px;margin-bottom:12px;}
 
-.contact-addr{line-height:18px;padding-top:15px;width:338px;float:left;}
+.contact-addr{line-height:18px;padding:15px;width:308px;float:left;}
 .contact-addr a{text-decoration:underline;}
 .contact-addr .map-link{background-color:#D64646;padding:2px 10px;color:#ffffff;}
 .info-box{width:100%;margin:12px 0;float:left;background: none repeat #DBF6BE;border:1px solid #FDD845;border-color:#9BBF65;color:#3C4E27;}
@@ -213,7 +213,7 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
 .list-block .box{float:left;width:632px;}
 .listing .list-block .box{width:528px;background-color:#fffff0;border:1px solid #cdcdcd;-webkit-border-radius:10px;border-radius:10px;-moz-border-radius:10px; padding:15px;float:left;}
 
-.list-block .box .actions{float:left;width:632px;padding-top:10px;}
+.list-block .box .actions{float:left;width:100%;padding-top:10px;}
 .list-block .box .actions a{background-color:#D64646;color:#ffffff;padding:3px 12px;margin-right:5px;}
 .list-block .feature{background-color:#fffff0;}
 .list-block .box .thumb{float:left;width:80px;height:50px;border:1px solid #cdcdcd;padding:2px;}

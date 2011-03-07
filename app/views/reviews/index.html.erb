@@ -3,8 +3,7 @@
       <div class="admin">
         <h2>Menu</h2>
           <ul>
-    				<li><%= link_to "Write a Review", new_hotel_review_path(@hotel) %></li>
-    				<li><%= link_to "Back", :back %></li>    				
+    				<li><%= link_to "Write a Review", new_hotel_review_path(@hotel) %></li>	
     			</ul>  			
       </div>			
 		</div>
@@ -13,12 +12,14 @@
 <div class="main-content">
 <h2>Customer Reviews for <%= @hotel.name %></h2>
 
+
+
 <table>
-  <tr>
-    <th>Comment</th>
-    <th>Rating</th>
-    <th>Recommand</th>
-  </tr>
+  <% if @reviews.blank? %>  
+    <tr>
+      <td>There are currently no reviews and rating for <%=@hotel.name %></td>
+    </tr>
+  <% else %>      
   <% for review in @reviews %>
     <tr>
       <td><%= review.comment %></td>
@@ -29,6 +30,8 @@
       <td><%#= link_to "Destroy", review, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
+<% end %>
 </table>
+
 </div>
 

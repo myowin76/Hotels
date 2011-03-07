@@ -1,5 +1,5 @@
 class HotelsController < ApplicationController
-#  before_filter :authenticate_user!, :except => [:search]
+  before_filter :authenticate_user!, :except => [:search, :browse, :show]
   def index
     @top_hotels=Hotel.find(:all, :order => 'star desc', :limit => 5)
     if params[:search].blank?        
@@ -9,15 +9,7 @@ class HotelsController < ApplicationController
   	else
   		@hotels = Hotel.search(params[:search].downcase,params[:page])
       render "search_list"
-
   	end
-    
-    if user_signed_in?
-      #@hotels = current_user.hotels.all
-      #redirect_to user_profile_path
-    else
-      #redirect_to new_session_path  
-	  end
   end
 
   def show
@@ -31,14 +23,13 @@ class HotelsController < ApplicationController
     @hotel_reviews = @hotel.reviews
     @hotel_roomtypes = @hotel.hotels_roomtypes
     @room_type_name= @hotel.room_types.name
-    
-  	
+     	
   end
 
   def new
 #    @hotel = Hotel.new
     @hotel = current_user.hotels.new
-    @photos = @hotel.photos.new
+#    @photos = @hotel.photos.new
     @all_facilities = Facility.all
   end
 
