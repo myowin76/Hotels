@@ -12,9 +12,6 @@ class Photo < ActiveRecord::Base
       :s3_credentials => "#{RAILS_ROOT}/config/amazon_s3.yml",
       :bucket => "worldskillsukhotels"
   		
-      
-      
-      
       validates_attachment_presence :uploaded_file
     	validates_attachment_content_type :uploaded_file, 
     	:content_type => ['image/jpeg', 'image/pjpeg', 

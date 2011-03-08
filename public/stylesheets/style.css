@@ -80,7 +80,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .top-hotels .hotel-box  h3{width:100%;padding-bottom:4px;}
 .top-hotels .hotel-box .details h3 a{color:#F07A07;font-family:"Rockwell Std", Rockwell, Arial;font-size:14px;}
 .browse-by{width:615px;float:left;padding:14px 0;}
-.browse-by .hotel-types ul{float:left;background:url(../images/backgrounds/down-shadow.jpg) repeat-x center top;); padding-top:18px;}
+.browse-by .hotel-types ul{float:left;background:url(../images/backgrounds/down-shadow.jpg) repeat-x top; padding-top:18px;}
 .browse-by .hotel-types ul li{padding-left:16px;float:left;background:url(../images/square-green.jpg) no-repeat 0 3px;height:28px;width:188px;} 
 
 /*listing */
@@ -454,3 +454,12 @@ input, textarea {border:1px solid #CFCFCF;border-top:#919191;color:#404040; back
   left: -9000px;
   top: -9000px;
 }
+
+/* admin */
+.add-hotel{width:100%;}
+.add-hotel h2{width:100%;}
+.btn-add-hotel{background:url(../images/buttons/add-hotel.jpg) no-repeat;height:0;padding-top:26px;overflow:hidden; float:right;width:115px;border:none;cursor:pointer;}
+
+.btn-add-hotel:hover{background-position:0 -33px;}
+.add-hotel{padding-bottom:16px;float:left;}
+.add-hotel ul li{width:320px;float:left;height:25px;}

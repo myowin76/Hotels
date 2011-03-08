@@ -1,24 +1,24 @@
-
-<div class="left-area">
-  	<div class="win-box-top"></div>
-	<div class="win-box">
-      <div class="admin">
-
-        <h2>Manage</h2>
-          <% if admin_or_owner?(current_user.id) %>
-          <ul>
-    				<li><%= link_to "Hotels", hotels_path %></li>		
-    				<li><%= link_to "Room Types", facilities_path %></li>
-    			</ul> 
-    			<% end %>
-	        <% if customer_user? %> 			
-	          <ul>
-      				<li><%= link_to "Add Hotels", new_hotel_path %></li>		
-<%#= link_to "Bookmarks", hotels_path %>
-<%#= link_to "Reviews", facilities_path %>
-      			</ul>
-	        <% end %>  
-      </div>			
+		<div class="left-area">
+			<div class="win-box-top"></div>
+			<div class="win-box">
+				<div class="admin">
+					<h2>
+						Manage
+					</h2><% if admin_or_owner?(current_user.id) %>
+					<ul>
+						<li>
+							<%= link_to "Hotels", hotels_path %>
+						</li>
+						<li>
+							<%= link_to "Room Types", facilities_path %>
+						</li>
+					</ul><% end %><% if customer_user? %>
+					<ul>
+						<li>
+							<%= link_to "Add Hotels", new_hotel_path %>
+						</li><%#= link_to "Bookmarks", hotels_path %><%#= link_to "Reviews", facilities_path %>
+					</ul><% end %>
+				</div>
+			</div>
+			<div class="win-box-bottom"></div>
 		</div>
-  	<div class="win-box-bottom"></div>
-</div>

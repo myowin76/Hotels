@@ -14,24 +14,24 @@
 
 
 
-<table>
+
   <% if @reviews.blank? %>  
-    <tr>
-      <td>There are currently no reviews and rating for <%=@hotel.name %></td>
-    </tr>
+
+      <p>There are currently no reviews and rating for <%=@hotel.name %></p>
   <% else %>      
   <% for review in @reviews %>
-    <tr>
-      <td><%= review.comment %></td>
-      <td><%= review.rating %></td>
-      <td><%= review.recommand %></td>
-      <td><%#= link_to "Show", review %></td>
-      <td><%#= link_to "Edit", edit_review_path(review) %></td>
-      <td><%#= link_to "Destroy", review, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
+
+      <strong>Comment</strong>:<%= review.comment %><br />
+      <strong>Customer Rating:</strong><%= review.rating %> out of 10<br />
+      By Lovely User
+      <%= review.recommand %><br />
+      <%#= link_to "Show", review %>
+      <%#= link_to "Edit", edit_review_path(review) %>
+      <%#= link_to "Destroy", review, :confirm => 'Are you sure?', :method => :delete %>
+
   <% end %>
 <% end %>
-</table>
+
 
 </div>
 
