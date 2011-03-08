@@ -55,7 +55,12 @@ class HotelsController < ApplicationController
   end
 
   def edit
-    @hotel = current_user.hotels.find(params[:id])
+    unless params[:hotel_name].nil?
+      @hotel = Hotel.find_by_name(params[:hotel_name])
+    end    
+    if params[:id]
+      @hotel = current_user.hotels.find(params[:id])
+    end
     @all_facilities = Facility.all
   end
 

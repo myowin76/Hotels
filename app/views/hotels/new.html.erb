@@ -1,28 +1,26 @@
-<div class="left-area">
-	<div class="win-box">
-      <div class="admin">
-      <% if admin_user? %>
-        <h2>Admin</h2>
-          <ul>
-    				<li><%= link_to "Back to List", hotels_path %></li>
-    			</ul> 
-    	<% else %>
-        <h2>Menu</h2>
-        <ul>
-  				<li><%= link_to "Back to Profile", user_profile_path %></li>
-  			</ul> 
-    	
-    	<% end %>		 			
-      </div>
+		<div class="left-area">
+			<div class="win-box">
+				<div class="admin">
+					<% if admin_user? %>
+					<h2>
+						Admin
+					</h2>
+					<ul>
+						<li>
+							<%= link_to "Back to List", hotels_path %>
+						</li>
+					</ul><% else %>
+					<h2>
+						Menu
+					</h2>
+					<ul>
+						<li>
+							<%= link_to "Back to Profile", user_profile_path %>
+						</li>
+					</ul><% end %>
+				</div>
+			</div><%= render :partial => 'shared/admin_menu' %>
 		</div>
-
-    <%= render :partial => 'shared/admin_menu' %>      
-
-    
-</div>
-
-<div class="main-content">
-  <%= render 'form' %>
-</div>
-
-
+		<div class="main-content">
+			<%= render 'form' %>
+		</div>
