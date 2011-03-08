@@ -57,18 +57,12 @@
 				<%= f.text_area :direction, :rows => 10, :cols => 60 %>
 			</p>
 		</div>
+		<% @hotel.photos.each do | photo | %>
+			<div class="hotel_photos">
+				<%= image_tag(photo.uploaded_file.url(:thumb), :alt => '') %><%= check_box_tag "photo_ids[]", photo.id %>
+			</div>
+		<% end unless @hotel.photos.first.new_record? rescue nil %>
 
-		<div class="add-hotel">
-			<h2>
-				Hotels Features and Services
-			</h2>
-			<ul class="feature-list">
-				<% @all_facilities.each do |facility| %>
-				<li>
-					<%= check_box_tag "hotel_facility_list[]", facility.id, @hotel.facilities.map{|f| f.id}.include?(facility.id) %><%= facility.name %>
-				</li><% end %>
-			</ul>
-		</div>
 		<p>
 			<%= f.submit  %>
 		</p>
