@@ -57,11 +57,7 @@
 				<%= f.text_area :direction, :rows => 10, :cols => 60 %>
 			</p>
 		</div>
-		<% @hotel.photos.each do | photo | %>
-			<div class="hotel_photos">
-				<%= image_tag(photo.uploaded_file.url(:thumb), :alt => '') %><%= check_box_tag "photo_ids[]", photo.id %>
-			</div>
-		<% end unless @hotel.photos.first.new_record? rescue nil %>
+
 		<div class="add-hotel">
 			<h2>
 				Hotels Features and Services
