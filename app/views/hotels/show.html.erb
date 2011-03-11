@@ -111,6 +111,15 @@ $(function() {
     						<li class="avail"><span>available</span></li>
     						<li class="price"><span>&pound;<%= room_type.price %></span></li>
     						<li class="book"><span>Call 0207 999 999 or <a href="book-online" title="Book online">Book online</a></span></li>								
+      						<% if hotel_owner?(current_user, @hotel) %>
+								<li class="action">
+									<span><%=link_to "Edit", edit_hotel_hotels_roomtype_path(@hotel.id, room_type) %></span>
+									
+									<%#= link_to 'Destroy', hotel_hotels_roomtype_path(@hotel.id), :confirm => 'Are you sure?', :method => :delete %>									
+								
+								</li>
+
+							<% end %>
     					</ul>
       			<% end %>
       			

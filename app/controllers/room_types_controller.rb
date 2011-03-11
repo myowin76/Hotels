@@ -21,6 +21,7 @@ class RoomTypesController < ApplicationController
   end
 
   def edit
+
     @room_type = RoomType.find(params[:id])
   end
 

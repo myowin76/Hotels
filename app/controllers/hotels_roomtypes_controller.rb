@@ -24,6 +24,7 @@ class HotelsRoomtypesController < ApplicationController
   # GET /hotels_roomtypes/new
   # GET /hotels_roomtypes/new.xml
   def new
+    @box_header = "Add Hotel Room Type"
     @all_room_types = RoomType.all
     @hotel= Hotel.find(params[:hotel_id])
     @hotels_roomtype = @hotel.hotels_roomtypes.build
@@ -36,7 +37,9 @@ class HotelsRoomtypesController < ApplicationController
 
   # GET /hotels_roomtypes/1/edit
   def edit
-    @hotels_roomtype = HotelsRoomtype.find(params[:id])
+    @box_header = "Edit Hotel Room Type"
+    @hotel= Hotel.find(params[:hotel_id])
+    @hotels_roomtype = @hotel.hotels_roomtypes.find(params[:id])
   end
 
   # POST /hotels_roomtypes
@@ -62,7 +65,7 @@ class HotelsRoomtypesController < ApplicationController
 
     respond_to do |format|
       if @hotels_roomtype.update_attributes(params[:hotels_roomtype])
-        format.html { redirect_to(@hotels_roomtype, :notice => 'Hotels roomtype was successfully updated.') }
+        format.html { redirect_to(hotel_path(@hotels_roomtype.hotel), :notice => 'Hotels roomtype was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

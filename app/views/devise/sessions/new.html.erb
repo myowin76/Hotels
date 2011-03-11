@@ -1,42 +1,39 @@
 
-<div class="center">
-  <div class="login-box-top"></div>
-	<div class="login-box">
-
-	    <div class="mid">
-    		<h2 title="sign-in">Sign In</h2>
-        <% flash.each do |name, msg| %>
-          <%= content_tag :div, msg, :id => "flash_#{name}" %>
-        <% end %>
-        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-          <%= devise_error_messages! %>
-
-    			<div class="fields">
-    				<div class="field">
-    					<div class="label"><%= f.label :username %></div>
-    					<div class="input"><%= f.text_field :username %></div>
-    				</div>
-    				<div class="field">							
-    					<div class="label"><%= f.label :password %></div>
-    					<div class="input">  <%= f.password_field :password %></div>							
-    				</div>
-    				<div class="field">							
-              <% if devise_mapping.rememberable? -%>
-    						<div class="checkbox">
-                  <%= f.check_box :remember_me, :class => "chkbox" %> <%= f.label :remember_me %>
-                </div>
-              <% end -%>				
-            </div>
-    				<div class="buttons">
-              <%= f.submit "Sign in" %>						
-    				</div>				
-    			</div>
-    		<% end %>
-    		<div class="links">
-    			<%= render :partial => "devise/shared/links" %>
-    		</div>
-
-    </div>	  		
-	</div>
-  <div class="login-box-bottom"></div>
-</div>
+		<div class="center">
+			<div class="login-box-top"></div>
+			<div class="login-box">
+				<div class="mid">
+					<h2 title="sign-in">
+						Sign In
+					</h2>
+					<% flash.each do |name, msg| %>
+						<%= content_tag :div, msg, :id => "flash_#{name}" %>
+					<% end %>
+					<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %><%= devise_error_messages! %>
+						<div class="fields">
+							<div class="field">
+								<%= f.label :username %>
+								<%= f.text_field :username %>
+							</div>
+							<div class="field">
+								<%= f.label :password %>
+								<%= f.password_field :password %>
+							</div>
+							<div class="field">
+								<% if devise_mapping.rememberable? -%>
+								<div class="checkbox">
+									<%= f.check_box :remember_me, :class => "chkbox" %><%= f.label :remember_me %>
+								</div><% end -%>
+							</div>
+							<div class="buttons">
+								<%= f.submit "Sign in" %>
+							</div>
+						</div>
+					<% end %>
+					<div class="links">
+						<%= render :partial => "devise/shared/links" %>
+					</div>
+				</div>
+			</div>
+			<div class="login-box-bottom"></div>
+		</div>
