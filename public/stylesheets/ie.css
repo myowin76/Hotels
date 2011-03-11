@@ -23,3 +23,4 @@
 .login-box-bottom{background:url(../images/ie/login-box-bottom.jpg) no-repeat;width:416px;height:12px;float:left;}
 
 .contact-form{background:url(../images/ie/contact-form-bg.jpg) no-repeat;border:none;width:529px;}
+.list-block .desc{max-height:50px;}

@@ -1,37 +1,34 @@
-<div class="left-area">
-	<div class="win-box">
-      <div class="admin">
-        <h2>Menu</h2>
-          <ul>
-    				<li><%= link_to "Write a Review", new_hotel_review_path(@hotel) %></li>	
-    			</ul>  			
-      </div>			
+
+		<div class="left-area">
+			<div class="win-box">
+				<div class="admin">
+					<h2>
+						Menu
+					</h2>
+					<ul>
+						<li>
+							<%= link_to "Write a Review", new_hotel_review_path(@hotel) %>
+						</li>
+						<li>
+							<%= link_to "back", @hotel %>
+						</li>
+					</ul>
+				</div>
+			</div><%= render :partial => 'shared/admin_menu' %>
 		</div>
-  <%= render :partial => 'shared/admin_menu' %>      
-</div>
-<div class="main-content">
-<h2>Customer Reviews for <%= @hotel.name %></h2>
-
-
-
-
-  <% if @reviews.blank? %>  
-
-      <p>There are currently no reviews and rating for <%=@hotel.name %></p>
-  <% else %>      
-  <% for review in @reviews %>
-
-      <strong>Comment</strong>:<%= review.comment %><br />
-      <strong>Customer Rating:</strong><%= review.rating %> out of 10<br />
-      By Lovely User
-      <%= review.recommand %><br />
-      <%#= link_to "Show", review %>
-      <%#= link_to "Edit", edit_review_path(review) %>
-      <%#= link_to "Destroy", review, :confirm => 'Are you sure?', :method => :delete %>
-
-  <% end %>
-<% end %>
-
-
-</div>
-
+		<div class="main-content">
+			<h2>
+				Customer Reviews for <%= @hotel.name %>
+			</h2>
+			<% if @reviews.blank? %>
+				<p>
+					There are currently no reviews and rating for <%=@hotel.name %>
+				</p>
+			<% else %>
+				<% for review in @reviews %><strong>Comment</strong>:<%= review.comment %><br>
+				<strong>Customer Rating:</strong><%= review.rating %> out of 10<br>
+				By Lovely User <%= review.recommand %><br>
+				<%#= link_to "Show", review %> <%#= link_to "Edit", edit_review_path(review) %> <%#= link_to "Destroy", review, :confirm => 'Are you sure?', :method => :delete %> 
+				<% end %> 
+			<% end %>
+		</div>

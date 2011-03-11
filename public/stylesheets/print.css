@@ -1,1 +1,8 @@
-
+li{list-style-type:none;}
+.body{font-family:'verdana';}
+.content{width:100%;color:#000;margin:0;float:none;}
+.main-nav,.language-links, .breadcrumb .back, .fb-like, .customer-reviews .all{display:none;}
+#footer .left, #footer .right, .details .room-types .header, .ad-image .ad-image-description{display:none;}
+.hotel-facilities ul li{list-style-type:square;}
+.details .left-gallary {width:100%;float:left;}
+.ad-gallery .ad-thumbs li{float:left;}

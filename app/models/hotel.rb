@@ -21,7 +21,7 @@ class Hotel < ActiveRecord::Base
   has_many :hotels_facilities, :dependent => :destroy
   has_many :facilities, :through => :hotels_facilities
   
-	validates_presence_of :name, :address, :postcode, :phone, :star, :no_of_rooms
+	validates_presence_of :name, :address, :postcode, :area, :phone, :star, :no_of_rooms, :overview
 
   # Google Map
   acts_as_mappable   :default_units => :miles, 

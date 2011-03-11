@@ -6,10 +6,6 @@ Hotels::Application.routes.draw do
 
   get "accounts/profile"
 
-  get "destroy/account"
-
-  get "account/profile"
-
   resources :hotel_types
   resources :room_types    
   resources :user_types
@@ -25,7 +21,7 @@ Hotels::Application.routes.draw do
   resources :facilities
   devise_for :users, :path_names => {:sign_up => "register"}
   
-  
+  get "hotels/search"
 
   get "home/index"
   match "hotels/search" => "hotels#search", :as =>  "search_by"

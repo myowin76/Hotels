@@ -4,23 +4,23 @@
 				Name and Address
 			</h2>
 			<p>
-				<%= f.label :name %><br>
+				<%= f.label :name %><span>*</span><br>
 				<%= f.text_field :name %>
 			</p>
 			<p>
-				<%= f.label :address %><br>
+				<%= f.label :address %><span>*</span><br>
 				<%= f.text_field :address %>
 			</p>
 			<p>
-				<%= f.label :area %><br>
+				<%= f.label :area %><span>*</span><br>
 				<%= f.text_field :area %>
 			</p>
 			<p>
-				<%= f.label :postcode %><br>
+				<%= f.label :postcode %><span>*</span><br>
 				<%= f.text_field :postcode %>
 			</p>
 			<p>
-				<%= f.label :phone %><br>
+				<%= f.label :phone %><span>*</span><br>
 				<%= f.text_field :phone %>
 			</p>
 			<p>
@@ -41,11 +41,11 @@
 				<%= f.select :star, star_list %>
 			</p>
 			<p>
-				<%= f.label :no_of_rooms %><br>
+				<%= f.label :no_of_rooms %><span>*</span><br>
 				<%= f.text_field :no_of_rooms %>
 			</p>
 			<p>
-				<%= f.label :overview %><br>
+				<%= f.label :overview %><span>*</span><br>
 				<%= f.text_area :overview, :rows => 10, :cols => 60 %>
 			</p>
 			<p>
@@ -62,7 +62,19 @@
 				<%= image_tag(photo.uploaded_file.url(:thumb), :alt => '') %><%= check_box_tag "photo_ids[]", photo.id %>
 			</div>
 		<% end unless @hotel.photos.first.new_record? rescue nil %>
-
+		<div class="add-hotel">
+			<h2>
+				Hotels Features and Services
+			</h2>
+			<ul class="feature-list">
+				<% @all_facilities.each do |facility| %>
+				<li>
+					<%= check_box_tag "hotel_facility_list[]", facility.id, @hotel.facilities.map{|f| f.id}.include?(facility.id) %>
+					<%= facility.name %>
+				</li>
+				<% end %>
+			</ul>
+		</div>
 		<p>
 			<%= f.submit  %>
 		</p>

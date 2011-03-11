@@ -2,7 +2,8 @@
 <html>
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Cyper Hotels" %></title>
-    <%= stylesheet_link_tag 'style','print','validationEngine.jquery','blitzer/jquery-ui-1.8.9.custom' %>
+    <%= stylesheet_link_tag 'style','validationEngine.jquery','blitzer/jquery-ui-1.8.9.custom' %>
+    <%= stylesheet_link_tag 'print', :media => 'print' %>
     <%= javascript_include_tag 'jquery-1.4.4.min'%>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>  	
@@ -82,9 +83,6 @@
     		<div class="left">
     			<div class="footer-nav">
     				<ul>
-  				  	<% if user_signed_in? %>
-    					<li><%= link_to 'Add Hotels', new_hotel_path %></li>
-              <% end %>
     					<li><a href="login.html" title="Agents">Agents</a></li>						
     					<li><a href="/privacy" title="Privacy">Privacy</a></li>
     					<li><a href="/terms" title="Terms">Terms</a></li>

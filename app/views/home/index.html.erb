@@ -32,12 +32,12 @@
       		<ul>
       			<li>
       				<label>Location</label>
-		    			<%= text_field_tag :search, params[:search], :id=> 'search-field', :class=>'txtfield' %>
+		    			<%= text_field_tag :search, params[:search], :id=> 'search-field', :class=>'txtfield', :placeholder => 'Search Location' %>
 
       			</li>
       			<li>
       				<label>Arrival Date</label>
-      				<input id="datepicker" name="arrival-date" type="text" class="arrival-date" />
+      				<input id="datepicker" name="arrival-date" type="text" class="arrival-date txtfield" />
       			</li>
       			<li>
       				<label>How many person?</label>

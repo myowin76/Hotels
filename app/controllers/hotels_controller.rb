@@ -17,7 +17,7 @@ class HotelsController < ApplicationController
       @hotel = Hotel.find_by_name(params[:hotel_name])
     end
     if params[:id]
-      @hotel = Hotel.find(params[:id])
+      @hotel = Hotel.find(params[:id])  
     end
     @hotel_facilities = @hotel.facilities
     @hotel_reviews = @hotel.reviews
@@ -90,7 +90,7 @@ class HotelsController < ApplicationController
   def destroy
     @hotel = current_user.hotels.find(params[:id])
     @hotel.destroy
-    redirect_to hotels_url, :notice => "Successfully destroyed hotel."
+    redirect_to user_profile_path, :notice => "Successfully destroyed hotel."
   end
   
   def search
@@ -119,5 +119,6 @@ class HotelsController < ApplicationController
 		facility_list = [] if facility_list.blank?
 		return facility_list.collect{|fid| Facility.find_by_id(fid.to_i)}.compact
 	end
- 
+  
+  
 end
