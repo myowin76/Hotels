@@ -3,9 +3,9 @@
 			<div class="login-box-top"></div>
 			<div class="login-box">
 				<div class="mid">
-					<h2 title="sign-in">
-						Sign In
-					</h2>
+					<div class="heading">
+						<h2 title="sign-in">Sign In</h2>
+					</div>
 					<% flash.each do |name, msg| %>
 						<%= content_tag :div, msg, :id => "flash_#{name}" %>
 					<% end %>

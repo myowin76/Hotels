@@ -1,8 +1,8 @@
 <% form_for @hotel do |f| %><%= f.error_messages %>
 		<div class="add-hotel">
-			<h2>
-				Name and Address
-			</h2>
+			<div class="heading">
+				<h2>Name and Address</h2>
+			</div>
 			<p>
 				<%= f.label :name %><span>*</span><br>
 				<%= f.text_field :name %>
@@ -29,9 +29,9 @@
 			</p>
 		</div>
 		<div class="add-hotel">
-			<h2>
-				Hotel Details
-			</h2>
+			<div class="heading">			
+				<h2>Hotel Details</h2>
+			</div>
 			<p>
 				<%= f.label :hotel_type_id %><br>
 				<%= select(:hotel, :hotel_type_id, HotelType.all.collect { |t| [t.name, t.id]}) %>
@@ -63,9 +63,9 @@
 			</div>
 		<% end unless @hotel.photos.first.new_record? rescue nil %>
 		<div class="add-hotel">
-			<h2>
-				Hotels Features and Services
-			</h2>
+			<div class="heading">			
+			<h2>Hotels Features and Services</h2>
+			</div>
 			<ul class="feature-list">
 				<% @all_facilities.each do |facility| %>
 				<li>

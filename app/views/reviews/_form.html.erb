@@ -1,16 +1,42 @@
-<%= form_for [@hotel,@review] do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :comment %><br />
-    <%= f.text_area :comment %>
-  </p>
-  <p>
-    <%= f.label :rating %><br />
-    <%= f.text_field :rating %>
-  </p>
-  <p>
-    <%= f.label :recommand %><br />
-    <%= f.check_box :recommand %>
-  </p>
-  <p><%= f.submit %></p>
-<% end %>
+
+
+<div class="center">
+  <div class="login-box-top"></div>
+	<div class="login-box">
+
+	    <div class="mid">
+    		<h2 title="">New review for <%= @hotel.name %></h2>
+        <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <% end %>
+		<%= form_for [@hotel,@review] do |f| %>
+
+		<div class="fields">
+		  <div class="field">
+		    <%= f.label :comment %>
+		    <%= f.text_area :comment %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :rating %>
+		    <%= f.text_field :rating %>
+		  </div>
+
+		  <div class="field">
+		    <%= f.label :recommand %>
+		    <%= f.check_box :recommand %>
+		  </div>
+			<div class="buttons">
+		    <%= f.submit 'Add Photo' %>
+		  </div>
+		</div>
+		<% end %>
+		<div class="links">
+			<%=link_to "Cancel", @hotel %>
+		</div>
+		
+
+
+    </div>	  		
+	</div>
+  <div class="login-box-bottom"></div>
+</div>

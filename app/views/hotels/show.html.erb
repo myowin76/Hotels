@@ -59,7 +59,7 @@ $(function() {
         <div class="by">Reviewed by Richard,  Nov 2010</div>
       </div>
       <% end %>
-      <div class="all">
+      <div class="action">
         <%= link_to  'Read All Reviews', hotel_reviews_path(@hotel) %>
         | 
         <%= link_to  'Write a Review', new_hotel_review_path(@hotel)%>
@@ -96,9 +96,7 @@ $(function() {
 		  <% end %>
 			</div>
 			<div class="room-types">
-				<div class="heading">
 					<h2 title="Room Types">Room Types</h2>
-				</div>
 				<div class="table">
 					<ul class="header">
 						<li class="room-type"><span>Room Types</span></li>
