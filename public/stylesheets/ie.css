@@ -18,9 +18,15 @@
 
 
 .listing .list-block .box{background:url(../images/ie/listing-box.jpg) no-repeat;width:538px;height:175px;padding-bottom:0; border:none;}
-.login-box-top{background:url(../images/ie/login-box-top.jpg) no-repeat;width:416px;height:10px;float:left;}
+.login-box-top{background:url(../images/ie/login-box-top.jpg) no-repeat;width:416px;height:12px;float:left;overflow:hidden;}
 .login-box{background:url(../images/ie/login-box-mid.jpg) repeat-y;width:372px;height:auto;float:left;border:none;margin:0;}
 .login-box-bottom{background:url(../images/ie/login-box-bottom.jpg) no-repeat;width:416px;height:12px;float:left;}
 
 .contact-form{background:url(../images/ie/contact-form-bg.jpg) no-repeat;border:none;width:529px;}
 .list-block .desc{max-height:50px;}
+
+
+.login-box form .fields .buttons input{width:114px;height:31px;padding-top:0;}
+.login-box form .fields .buttons input.add-photo{width:114px;height:31px;padding-top:0;}
+.login-box form .fields .buttons input.register{width:114px;height:31px;padding-top:0;}
+

@@ -12,11 +12,7 @@ class HomeController < ApplicationController
     @menu_state_g = "class=active"
   end
 
-  def privacy
-    @menu_state_p = "class=active"
-  end
-  
-  def about
-    @menu_state_a = "class=active"
+  def under_construction
+    
   end
 end
