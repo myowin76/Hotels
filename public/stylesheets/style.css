@@ -103,7 +103,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 /* Content*/
 
 .main-content h1{font-size:20px;}
-.main-content, .banner .images{width:615px;float:left;}
+.main-content, .banner .images{width:615px;float:left;overflow:hidden;}
 .main-content{padding-left:35px;padding-top:24px;width:641px;min-height:400px;}
 .banner{height:374px;float:left;width:100%;}
 .images{height:369px;;margin-top:1px;}
