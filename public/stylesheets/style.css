@@ -18,8 +18,6 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .content .heading{float:left;width:100%;height:16px;height:31px;padding-bottom: 8px; background:url(../images/backgrounds/down-shadow.jpg) repeat-x center bottom;}
 .center{width:412px;margin:0 auto;}
 
-
-
 .breadcrumb{height:30px;float:left;width:100%;}
 .breadcrumb .back{float:right;height:31px;width:103px;}
 .breadcrumb .back a{background:url(../images/buttons/back.jpg) no-repeat;height:0;width:103px;padding-top:31px;float:left; overflow:hidden;}
@@ -40,7 +38,6 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .logo a{background:url(../images/logo.jpg) no-repeat;float:left;height:0;overflow:hidden;padding-top:110px; width:270px;}
 .header-right{float:left;width:675px;}
 .main-content .acc-details{float:left;padding-bottom:18px;width:100%;}
-
 
 /* Navigations */
 .top-nav{height:27px;float:left;width:100%;background:url(../images/backgrounds/top-nav-bg.jpg) repeat-x;}
@@ -89,7 +86,6 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .browse-by .hotel-types ul{float:left;padding-top:12px;}
 .browse-by .hotel-types ul li{padding-left:16px;float:left;background:url(../images/square-green.jpg) no-repeat 0 3px;height:28px;width:188px;} 
 
-
 /*listing */
 .top-rated{float:left;padding:15px;width:338px;}
 .top-rated .hotel-box .thumb{float:left;width:80px;height:50px;border:1px solid #cdcdcd;padding:2px;}
@@ -99,9 +95,41 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .top-rated .hotel-box .details .reviews a{color:#ffffff;}
 .top-rated .hotel-box  h3{width:100%;}
 
+.list{float:left;padding-left:20px;width:560px;}
+.list-block{float:left;width:100%;margin-bottom:12px;}
+.my-hotels .list-block{background:url(../images/backgrounds/up-shadow.jpg) repeat-x bottom; padding-bottom:12px; margin-bottom:12px;}
+.list-block .feature{background-color:#fffff0;border:1px solid #cdcdcd; -webkit-border-radius:10px;border-radius:10px;-moz-border-radius:10px; display:block;padding:15px;float:left;width:630px; }
+.listing .list .heading{padding-bottom:15px;}
+.listing .list .heading h2{padding-left:15px;float:left;height:31px;line-height:35px;}
+.listing .list .heading .on-the-map{float:right;height:31px;width:114px;}
+.listing .list .heading .on-the-map a{float:right;height:0;padding-top:31px;overflow:hidden; background:url(../images/buttons/on-the-map.jpg) no-repeat;width:114px;}
+.listing .list .heading .on-the-map a:hover{background-position:0 -33px;}
+.list-block .box{float:left;width:632px;}
+.listing .list-block .box{width:528px;background-color:#fffff0;border:1px solid #cdcdcd;-webkit-border-radius:10px;border-radius:10px;-moz-border-radius:10px; padding:15px;float:left;}
+
+.list-block .box .actions{float:left;width:100%;padding-top:10px;}
+.list-block .box .actions a{color:#ffffff;padding:3px 12px;margin-right:5px;}
+.list-block .feature{background-color:#fffff0;}
+.list-block .box .thumb{float:left;width:80px;height:50px;border:1px solid #cdcdcd;padding:2px;}
+.list-block .box .thumb a{-moz-box-shadow:0 1px 3px #777777;display:inline-block;}
+.list-block .box .thumb img{border:1px solid #7C7C7C;}
+.list-block .desc{width:100%;float:left;padding-top:8px;line-height:16px;height:65px;overflow:hidden;}
+.list-block .box .details{float:left;margin-left:10px;width:511px;min-height:50px;}
+.listing .list-block .box .details{float:left;margin-left:10px;width:432px;min-height:50px;}
+.list-block .box .details h3{display:inline;font-size:18px;overflow:hidden;padding-right:110px;}
+.list-block .box .details h3 a{color:#F07A07;font-size:16px;}
+.list-block .loc{float:left;width:100%;padding-bottom:5px;}
+.listing .list-block .view{float:left;width:100px;}
+.list-block .price{float:right;font-weight:bold;}
+.list-block .right{float:right;width:200px;}
+
+.pagination{float:left;}
+.pagination li{float:left;margin-right:10px;}
+.pagination li a{border:1px solid #CDCDCD;display:block;padding:5px 10px;text-align:center;text-decoration:none;
+-moz-border-radius:3px 3px 3px 3px;}
+.pagination li.selected a{background:none #CDCDCD;border-color:#CDCDCD;color:#FFFFFF;}
 
 /* Content*/
-
 .main-content h1{font-size:20px;}
 .main-content, .banner .images{width:615px;float:left;overflow:hidden;}
 .main-content{padding-left:35px;padding-top:24px;width:641px;min-height:400px;}
@@ -160,6 +188,9 @@ background:none;border:1px solid #cdcdcd;height:auto;padding:18px;height:168px;f
 .login-box a:hover{text-decoration:underline;border:none;}
 .login-box .flash_alert{}
 .login-box form .fields .buttons input.reset-password{cursor:pointer;width:103px;height:0; background:url(../images/buttons/reset-pwd.jpg) no-repeat;float:right;padding-top:31px;overflow:hidden;border:none;}
+.login-box form .fields .buttons input.change-pwd{
+cursor:pointer;width:171px;height:0; background:url(../images/buttons/change-pwd.jpg) no-repeat;float:right;padding-top:31px;overflow:hidden;border:none;}
+
 .login-box form .fields .buttons input:hover{background-position:0 -33px;}
 .login-box form .fields .buttons input.update-btn{background:url(../images/buttons/update.jpg) no-repeat;width:114px; margin-right:11px;}
 
@@ -204,44 +235,9 @@ background:url(../images/backgrounds/down-shadow.jpg) repeat-x;line-height:30px;
 .contact-form input.submit-button {background:url(../images/buttons/send-the-enquiry.jpg) no-repeat; border:medium none;cursor:pointer;height:31px;width:151px;float:right;}
 .contact-form input.submit-button:hover{background-position: 0 -33px;}
 /* user profile */
-.my-hotels h2{background:none;}
 
-/* listing page*/
-
-.list{float:left;padding-left:20px;width:560px;}
-.list-block{float:left;width:100%;margin-bottom:12px;}
-.my-hotels .list-block{background:url(../images/backgrounds/up-shadow.jpg) repeat-x bottom; padding-bottom:12px; margin-bottom:12px;}
-.list-block .feature{background-color:#fffff0;border:1px solid #cdcdcd; -webkit-border-radius:10px;border-radius:10px;-moz-border-radius:10px; display:block;padding:15px;float:left;width:630px; }
-.listing .list .heading{padding-bottom:15px;}
-.listing .list .heading h2{padding-left:15px;float:left;height:31px;line-height:35px;}
-.listing .list .heading .on-the-map{float:right;height:31px;width:114px;}
-.listing .list .heading .on-the-map a{float:right;height:0;padding-top:31px;overflow:hidden; background:url(../images/buttons/on-the-map.jpg) no-repeat;width:114px;}
-.listing .list .heading .on-the-map a:hover{background-position:0 -33px;}
-.list-block .box{float:left;width:632px;}
-.listing .list-block .box{width:528px;background-color:#fffff0;border:1px solid #cdcdcd;-webkit-border-radius:10px;border-radius:10px;-moz-border-radius:10px; padding:15px;float:left;}
-
-.list-block .box .actions{float:left;width:100%;padding-top:10px;}
-.list-block .box .actions a{color:#ffffff;padding:3px 12px;margin-right:5px;}
-.list-block .feature{background-color:#fffff0;}
-.list-block .box .thumb{float:left;width:80px;height:50px;border:1px solid #cdcdcd;padding:2px;}
-.list-block .box .thumb a{-moz-box-shadow:0 1px 3px #777777;display:inline-block;}
-.list-block .box .thumb img{border:1px solid #7C7C7C;}
-.list-block .desc{width:100%;float:left;padding-top:8px;line-height:16px;height:65px;overflow:hidden;}
-.list-block .box .details{float:left;margin-left:10px;width:511px;min-height:50px;}
-.listing .list-block .box .details{float:left;margin-left:10px;width:432px;min-height:50px;}
-.list-block .box .details h3{display:inline;font-size:18px;overflow:hidden;padding-right:110px;}
-.list-block .box .details h3 a{color:#F07A07;font-size:16px;}
-.list-block .loc{float:left;width:100%;padding-bottom:5px;}
-.listing .list-block .view{float:left;width:100px;}
-.list-block .price{float:right;font-weight:bold;}
-.list-block .right{float:right;width:200px;}
-
-.pagination{float:left;}
-.pagination li{float:left;margin-right:10px;}
-.pagination li a{border:1px solid #CDCDCD;display:block;padding:5px 10px;text-align:center;text-decoration:none;
--moz-border-radius:3px 3px 3px 3px;}
-.pagination li.selected a{background:none #CDCDCD;border-color:#CDCDCD;color:#FFFFFF;}
 .my-hotels{float:left;width:100%;padding-bottom:18px;}
+.my-hotels h2{background:none;}
 .my-hotels .list-block .box{width:606px;}
 .my-hotels .list-block .box .details{width:501px;}
 

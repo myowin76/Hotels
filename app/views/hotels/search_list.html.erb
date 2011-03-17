@@ -91,16 +91,40 @@
         		</div>
       </div>	
 
+
 	  <% end  %>
 <% else %>	  	  
   <p><strong>There are currently no <%= params[:type_name]%> in the list.</strong></p>
 <% end %>	  
-<!--
+    
+	<script type="text/javascript">
+	$(function(){
+	  if (GBrowserIsCompatible()) {
+	        var map = new GMap2(document.getElementById("map_canvas"));
+			var points =[
+			<% @hotels.each do |hotel| %>
+				{latitude: <%=hotel.latitude%>,
+				longitude: <%=hotel.longitude%>},
+			<% end %>		
+			];
+	
+	        for (var i=0; i< points.length; i++) {
+			       
+				map.setCenter(new GLatLng(points[i].latitude,points[i].longitude), 11);
+                point =new GLatLng(points[i].latitude,points[i].longitude);
+                map.addOverlay(new GMarker(point));                  
+                map.setUIToDefault();
+	      
+			}
+		}
+	});
+	</script>
+
     <div class="map-view" style="display:block;float:left;">
-      <div id="map_canvas" style="width: 720px; height: 450px"></div>	
+      <div id="map_canvas" style="width: 560px; height: 450px"></div>	
     
     </div>
-    -->
+
 
 
 	</div>	
