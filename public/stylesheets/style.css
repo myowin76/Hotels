@@ -59,6 +59,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .language-links,.account-links{float:right;}
 .account-links li{float:left;height:25px;line-height:25px;padding:0 6px;color:#ffffff;}
 .advert{height:55px;float:left;width:100%;}
+.advert img{float:right;padding-top:10px;padding-right:5px;}
 .nav-wrap{float:left;width:100%;height:31px;}
 
 .main-nav{float:left;width:480px;height:31px;}
@@ -82,8 +83,8 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .top-hotels .hotel-box  h3{width:100%;padding-bottom:4px;}
 .top-rated .hotel-box .details h3 a, .top-hotels .hotel-box .details h3 a{color:#F07A07;font-family:"Rockwell Std", Rockwell, Arial;font-size:14px;}
 
-.browse-by{width:615px;float:left;padding-top:14px;background:url(../images/backgrounds/up-shadow.jpg) repeat-x bottom;}
-.browse-by .hotel-types ul{float:left;padding-bottom:12px ;}
+.browse-by{width:615px;float:left;padding-top:14px;}
+.browse-by .hotel-types ul{float:left;padding:12px 0 ;}
 .browse-by .hotel-types ul li{padding-left:16px;float:left;background:url(../images/square-green.jpg) no-repeat 0 3px;height:28px;width:188px;} 
 
 .service-bar{float:left;width:100%;padding:12px 0;}
@@ -161,13 +162,16 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .contact-addr .map-link{padding:2px 10px;color:#ffffff;}
 .small-box ul, .info ul, .admin ul{float:left;}
 .small-box{-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;
-background:none;border:1px solid #cdcdcd;height:auto;padding:18px;height:168px;float:left;width:272px;}
+background:none;border:1px solid #cdcdcd;height:auto;padding:18px;height:168px;float:left;width:262px;}
 
 .small-box ul li, .info ul li, .admin ul li{background:url(../images/square-green.jpg) no-repeat 0 6px; padding-left:18px;height:22px;}
 .small-box ul li a, .info ul li a, .admin ul li a{color:#333333;line-height:1.5em;}
 .small-box ul li a:hover, .info ul li a:hover, .admin ul li a:hover{text-decoration:underline;}
-.one-third{float:left;width:310px;margin-right:9px;}
-.last{margin:0;}
+.one-third{float:left;width:300px}
+.full-width{float:left;padding-top:30px;width:100%;}
+.full-width .last{float:right;}
+
+
 
 /* Guides */
 .guides .summary{float:right;width:368px;}
