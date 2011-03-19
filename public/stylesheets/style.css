@@ -82,9 +82,14 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .top-hotels .hotel-box  h3{width:100%;padding-bottom:4px;}
 .top-rated .hotel-box .details h3 a, .top-hotels .hotel-box .details h3 a{color:#F07A07;font-family:"Rockwell Std", Rockwell, Arial;font-size:14px;}
 
-.browse-by{width:615px;float:left;padding:14px 0;}
-.browse-by .hotel-types ul{float:left;padding-top:12px;}
+.browse-by{width:615px;float:left;padding-top:14px;background:url(../images/backgrounds/up-shadow.jpg) repeat-x bottom;}
+.browse-by .hotel-types ul{float:left;padding-bottom:12px ;}
 .browse-by .hotel-types ul li{padding-left:16px;float:left;background:url(../images/square-green.jpg) no-repeat 0 3px;height:28px;width:188px;} 
+
+.service-bar{float:left;width:100%;padding:12px 0;}
+.service-bar .block{width:28%;float:left;padding:12px;border:2px solid #3DB2CC;margin-left:7px;-moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px;text-align:center;background-color:#fffff0;}
+.service-bar .block span{font-size:16px;}
+.service-bar .first{margin-left:0px;}
 
 /*listing */
 .top-rated{float:left;padding:15px;width:338px;}
@@ -175,7 +180,7 @@ background:none;border:1px solid #cdcdcd;height:auto;padding:18px;height:168px;f
 .login-box{width:368px;margin:50px auto;padding:22px 22px 12px;float:left;}
 .login-box form{float:left;width:100%;}
 .login-box form .fields .field{float:left;width:100%;padding-bottom:10px;}
-.login-box form .fields .field label{line-height:24px;width:164px;padding: 0 10px 0 0;float:left;text-align:right;}
+.login-box form .fields .field label{line-height:24px;width:174px;padding: 0 10px 0 0;float:left;text-align:right;}
 .login-box form .fields .checkbox label{width:95px;padding:0;}
 .login-box form .fields input{width:180px;padding:5px 5px 4px;}
 .login-box form .fields .checkbox{margin-left:172px;background-color:none;}
@@ -193,6 +198,7 @@ cursor:pointer;width:171px;height:0; background:url(../images/buttons/change-pwd
 
 .login-box form .fields .buttons input:hover{background-position:0 -33px;}
 .login-box form .fields .buttons input.update-btn{background:url(../images/buttons/update.jpg) no-repeat;width:114px; margin-right:11px;}
+.login-box form .fields .chkbox{width:20px;margin-top:4px;}
 
 /* Footer */
 #footer{float:left;padding-top:40px;width:948px;}
@@ -465,7 +471,9 @@ background:url(../images/backgrounds/down-shadow.jpg) repeat-x;line-height:30px;
 .add-hotel{width:100%;}
 .add-hotel h2{width:100%;}
 .btn-add-hotel{background:url(../images/buttons/add-hotel.jpg) no-repeat;height:0;padding-top:26px;overflow:hidden; float:right;width:115px;border:none;cursor:pointer;}
-.login-box form .fields .buttons .add-btn{background:url(../images/buttons/add.jpg) no-repeat;width:95;height:0;overflow:hidden;padding-top:31px; float:right;}
+.login-box form .fields .buttons .submit{background:url(../images/buttons/submit.jpg) no-repeat;height:0;padding-top:31px;overflow:hidden; float:right;width:94px;border:none;cursor:pointer;}
+.login-box form .fields textarea{width:366px;background-color:#F2F2F2;border-color:#919191 #CFCFCF #CFCFCF;border-width:1px; border-right:1px solid #CFCFCF;padding:4px 0;border-style:solid;}
+.login-box form .fields .buttons .add-btn{background:url(../images/buttons/add.jpg) no-repeat;width:95px;height:0;overflow:hidden;padding-top:31px; float:right;}
 .btn-add-hotel:hover{background-position:0 -33px;}
 .add-hotel{padding-bottom:16px;float:left;}
 .add-hotel ul li{width:320px;float:left;height:25px;}
@@ -474,8 +482,6 @@ background:url(../images/backgrounds/down-shadow.jpg) repeat-x;line-height:30px;
 .add-hotel .field_with_errors{width:auto;display:block;color:#D64646;}
 .error_messages{color:#D64646;}
 .error_messages ul{padding-bottom:12px;}
-
-.browse-by{width:615px;float:left;padding:14px 0;background:url(../images/backgrounds/up-shadow.jpg) repeat-x bottom;}
 
 .home-deals{float:left;width:100%;padding-bottom:20px;}
 .home-deals ul{float:left;border:1px solid #CDCDCD;padding:12px;width:591px;}
@@ -486,3 +492,4 @@ background:url(../images/backgrounds/down-shadow.jpg) repeat-x;line-height:30px;
 .home-deals h3 a{color:#F07A07;}
 .home-deals img{float:left;}
 .all-deals a{float:right;padding:2px 12px;}
+

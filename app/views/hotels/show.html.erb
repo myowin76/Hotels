@@ -1,6 +1,6 @@
 <% javascript 'gmap','jquery.ad-gallery.js' %>
 <% content_for :head do %>
-  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAM41OPHNEzeRe7qzntS2dZxRhUbQCvgHcewKkuhV-KkriOp2HwhReuvtd5emO1MhE-giChvNKkDVHIA&sensor=false"
+  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAM41OPHNEzeRe7qzntS2dZxRhUbQCvgHcewKkuhV-KkriOp2HwhReuvtd5emO1MhE-giChvNKkDVHIA&sensor=true"
           type="text/javascript"></script>
   
 <% end %>
@@ -140,8 +140,8 @@ $(function() {
           <script type="text/javascript">
           $(function(){
             if (GBrowserIsCompatible()) {
-                  var map = new GMap2(document.getElementById("map_canvas"));
-                  map.setCenter(new GLatLng(<%=@hotel.latitude %>, <%= @hotel.longitude %>), 15);
+                  var map = new google.maps.Map(document.getElementById("map_canvas"));
+                  map.setCenter(new google.maps.LatLng(<%=@hotel.latitude %>, <%= @hotel.longitude %>), 15);
                   point =new GLatLng(<%=@hotel.latitude %>, <%= @hotel.longitude %>);
                   map.addOverlay(new GMarker(point));                  
                   map.setUIToDefault();

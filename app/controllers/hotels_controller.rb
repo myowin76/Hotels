@@ -1,7 +1,7 @@
 class HotelsController < ApplicationController
   before_filter :authenticate_user!, :except => [:search, :browse, :show]
   def index
-    @top_hotels=Hotel.find(:all, :order => 'star desc', :limit => 5)
+    @top_hotels=Hotel.find(:all, :limit => 4, :order => 'star desc' )
     if params[:search].blank?        
         #redirect_to root_url
         @hotels = Hotel.all

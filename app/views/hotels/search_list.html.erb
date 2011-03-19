@@ -103,8 +103,11 @@
 	        var map = new GMap2(document.getElementById("map_canvas"));
 			var points =[
 			<% @hotels.each do |hotel| %>
-				{latitude: <%=hotel.latitude%>,
-				longitude: <%=hotel.longitude%>},
+				{
+					latitude: <%=hotel.latitude%>,
+					longitude: <%=hotel.longitude%>
+				},
+				
 			<% end %>		
 			];
 	
