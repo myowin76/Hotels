@@ -108,8 +108,9 @@
 							<%= link_to "Edit", edit_hotel_path(hotel) %><%= link_to "Destroy", hotel, :confirm => 'Are you sure?', :method => :delete %>
 						</div><% end %>
 					</div>
-				</div><% end  %><script type="text/javascript">
-$(function(){
+				</div><% end  %>
+				<script type="text/javascript">
+				$(function(){
 				if (GBrowserIsCompatible()) {
 				var map = new GMap2(document.getElementById("map_canvas"));
 				var points =[
