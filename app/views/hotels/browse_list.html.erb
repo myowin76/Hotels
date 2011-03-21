@@ -1,0 +1,143 @@
+		<% content_for :head do %>
+				<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAM41OPHNEzeRe7qzntS2dZxRhUbQCvgHcewKkuhV-KkriOp2HwhReuvtd5emO1MhE-giChvNKkDVHIA&amp;sensor=false" type="text/javascript"></script>
+		<% end %>
+
+		<div class="listing">
+			<div class="left-area">
+				<% if params[:location_name]%>
+					<% if params[:type_name]%>
+
+					<% else%>
+					<div class="win-box-top"></div>
+					<div class="win-box">
+						<div class="info">
+							<div class="heading">
+								<h2 class="top-location" title="Filter by Hotel Types">
+									Filter by Hotel Types
+								</h2>
+							</div>
+							<ul>
+								<% @hotel_types.each do |hotel_type|%>
+									<li>
+										<%= link_to hotel_type.name , find_by_hotel_type_in_location_path(params[:location_name],hotel_type.name) %>
+									</li>
+								<% end %>
+							</ul>
+						</div>
+					</div>
+					<div class="win-box-bottom"></div>
+					<% end %>
+				<% else %>
+					<div class="win-box-top"></div>
+					<div class="win-box">
+						<div class="info">
+							<div class="heading">
+								<h2 class="top-location" title="Top Locations">
+									Filter by Locations
+								</h2>
+							</div>
+							<ul>
+								<% @hotels.each do |h| %>
+								<li>
+									<%=link_to h.location.name, find_by_location_of_hotel_type_path(params[:type_name],h.location.name) %>
+								</li><% end %>
+							</ul>
+						</div>
+					</div>
+				<% end %>
+				<div class="top-rated">
+					<div class="heading">
+						<h2>
+							Top Rated Hotels
+						</h2>
+					</div>
+					<div class="list">
+						<% @top_hotels.each do |hotel| %>
+						<div class="hotel-box">
+							<div class="thumb">
+								<% unless hotel.photos.first.nil? %><%= image_tag hotel.photos.first.uploaded_file.url(:thumb), :alt => "" %><% end %>
+							</div>
+							<div class="details">
+								<h3>
+									<%= link_to hotel.name , details_path(hotel.name) %>
+								</h3>
+								<div class="loc">
+									<%= hotel.location.name %>
+								</div>
+								<div class="s&lt;%= hotel.star %&gt;"></div>
+								<div class="reviews">
+									<%= link_to "Reviews (#{hotel.reviews.count})", hotel_reviews_path(hotel) %>
+								</div>
+							</div>
+						</div><% end %>
+					</div>
+				</div>
+			</div>
+			<div class="list">
+				<div class="heading">
+					<h2>
+						<% unless params[:search].blank? %>Hotels in <%= params[:search]%><% else %> All Hotels <% end %>
+					</h2><% unless @hotels.blank? %><!--      <div class="on-the-map"><a href="#">on the map</a></div> -->
+					<% end %>
+				</div><% unless @hotels.blank? %><% @hotels.each do |hotel| %>
+				<div class="list-block">
+					<div class="box">
+						<div class="thumb">
+							<% unless hotel.photos.first.nil? %><%= image_tag hotel.photos.first.uploaded_file.url(:thumb), :alt => "" %><% end %>
+						</div>
+						<div class="details">
+							<h3 class="s&lt;%= hotel.star%&gt;">
+								<%= link_to hotel.name , details_path(hotel.name) %>
+							</h3>
+							<div class="loc">
+								Location: <%= hotel.location.name %>
+							</div>
+							<div class="view">
+								<%= link_to "View Details", hotel %>
+							</div>
+							<div class="price">
+								From £ <span>76</span>
+							</div>
+						</div>
+						<div class="desc">
+							<p>
+								<%= hotel.overview %> It is simply that wehave very high standards. There are fine restaurants with wonderful food and friendly service. People who work for us genuinely enjoy being there; everyone strives to make your stay a happy one.
+							</p>
+						</div><% if hotel_owner?(current_user, hotel) %>
+						<div class="actions">
+							<%= link_to "Edit", edit_hotel_path(hotel) %><%= link_to "Destroy", hotel, :confirm => 'Are you sure?', :method => :delete %>
+						</div><% end %>
+					</div>
+				</div><% end  %><script type="text/javascript">
+$(function(){
+				if (GBrowserIsCompatible()) {
+				var map = new GMap2(document.getElementById("map_canvas"));
+				var points =[
+				<% @hotels.each do |hotel| %>
+				{
+					latitude: <%=hotel.latitude%>,
+					longitude: <%=hotel.longitude%>
+				},
+
+				<% end %>      
+				];
+
+				for (var i=0; i< points.length; i++) {
+
+				map.setCenter(new GLatLng(points[i].latitude,points[i].longitude), 11);
+				point =new GLatLng(points[i].latitude,points[i].longitude);
+				map.addOverlay(new GMarker(point));                  
+				map.setUIToDefault();
+
+				}
+				}
+				});
+				</script>
+				<div class="map-view" style="display:block;float:left;">
+					<div id="map_canvas" style="width: 560px; height: 450px"></div>
+				</div><% else %>
+				<p style="color:red;">
+					<strong>There are currently no hotels in the list.</strong>
+				</p><% end %>
+			</div>
+		</div>

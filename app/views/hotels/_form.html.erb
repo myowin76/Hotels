@@ -13,7 +13,7 @@
 			</p>
 			<p>
 				<%= f.label :area %><span>*</span><br>
-				<%= f.text_field :area %>
+				<%= select(:hotel, :location_id, Location.all.collect { |l| [l.name, l.id]}) %>
 			</p>
 			<p>
 				<%= f.label :postcode %><span>*</span><br>

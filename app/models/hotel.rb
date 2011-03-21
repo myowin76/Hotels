@@ -1,7 +1,7 @@
 include Geokit::Geocoders
 
 class Hotel < ActiveRecord::Base
-  attr_accessible :name, :address, :postcode, :phone, :fax, :area ,:star, :no_of_rooms, :overview, :terms, :direction,  :hotel_type_id, :photo_ids, :photo_attributes
+  attr_accessible :name, :address, :postcode, :phone, :fax, :location_id ,:star, :no_of_rooms, :overview, :terms, :direction,  :hotel_type_id, :photo_ids, :photo_attributes
   has_many :photos
   
   # Room Types (many-to-many)
@@ -10,6 +10,7 @@ class Hotel < ActiveRecord::Base
   
   #Hotel Type
   belongs_to :hotel_type
+  belongs_to :location
   
   # Reviews
   has_many :reviews
@@ -21,7 +22,7 @@ class Hotel < ActiveRecord::Base
   has_many :hotels_facilities, :dependent => :destroy
   has_many :facilities, :through => :hotels_facilities
   
-	validates_presence_of :name, :address, :postcode, :area, :phone, :star, :no_of_rooms, :overview
+	validates_presence_of :name, :address, :postcode, :phone, :star, :no_of_rooms, :overview
 
   # Google Map
   acts_as_mappable   :default_units => :miles, 
@@ -73,9 +74,12 @@ class Hotel < ActiveRecord::Base
   end
 
 	def self.search(search,page)
+	  loc = Location.find_by_name(search)
+	  unless loc.nil?
 		paginate :per_page =>5, :page => page,
-								:conditions => ['address like ? OR area LIKE ?',"%#{search}%","%#{search}%"],
+								:conditions => ['address like ? OR location_id LIKE ?',"%#{search}%","%#{loc.id}%"],
 								:order => 'created_at DESC'
+		end						
 #	search_condition = "%" + search + "%"
  #   find(:all, :conditions => ['address LIKE ? OR area LIKE ?', search_condition, search_condition])
   

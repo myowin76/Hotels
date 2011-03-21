@@ -1,15 +1,32 @@
 class HotelsController < ApplicationController
   before_filter :authenticate_user!, :except => [:search, :browse, :show]
   def index
+    @menu_state_d = "class='active'"
     @top_hotels=Hotel.find(:all, :limit => 4, :order => 'star desc' )
-    if params[:search].blank?        
-        #redirect_to root_url
-        @hotels = Hotel.all
+    @hotels = Hotel.all
+    @hotel_types = HotelType.all
+
+    if params[:search].blank?
         render "search_list"
   	else
   		@hotels = Hotel.search(params[:search].downcase,params[:page])
       render "search_list"
   	end
+  end
+  
+  def deals
+    
+    @menu_state_d = "class='active'"
+    @top_hotels=Hotel.find(:all, :limit => 4, :order => 'star desc' )
+    @hotels = Hotel.all
+    @hotel_types = HotelType.all
+    
+    if params[:type_name]
+      
+      render "browse_list_deals"
+    else
+      render "browse_list_deals"
+    end
   end
 
   def show
@@ -94,13 +111,19 @@ class HotelsController < ApplicationController
   end
   
   def search
+
     @top_hotels=Hotel.find(:all, :order => 'star desc', :limit => 5)
     if params[:search].blank?        
         #redirect_to root_url
         @hotels = Hotel.all
+        @hotels.each do |h|
+          @location = h.location
+        end
+  	    @hotel_types = HotelType.all
         render "search_list"
   	else
-  		@hotels = Hotel.search(params[:search].downcase,params[:page])
+  		  @hotels = Hotel.search(params[:search].downcase,params[:page])
+  	    @hotel_types = HotelType.all
       render "search_list"
 
   	end
@@ -108,12 +131,46 @@ class HotelsController < ApplicationController
   
   def browse
     @top_hotels=Hotel.find(:all, :order => 'star desc', :limit => 5)
-    hotel_type = HotelType.find_by_name(params[:type_name])
+  	hotel_type = HotelType.find_by_name(params[:type_name])
 
     @hotels = Hotel.find_all_by_hotel_type_id(hotel_type.id)
-    render "search_list"
+    render "browse_list"
   end
 
+  def find_by_location
+  	    @hotel_types = HotelType.all  		
+        @top_hotels=Hotel.find(:all, :order => 'star desc', :limit => 5)
+        location = Location.find_by_name(params[:location_name])
+      @hotels = Hotel.find_all_by_location_id(location)
+
+      render "browse_list_deals"      
+  end
+
+  def browse_by_location
+  	    @hotel_types = HotelType.all  		
+        @top_hotels=Hotel.find(:all, :order => 'star desc', :limit => 5)
+        location = Location.find_by_name(params[:location_name])
+      @hotels = Hotel.find_all_by_location_id(location)
+
+      render "browse_list"      
+  end
+
+  def find_by_hotel_type_in_location
+      @top_hotels=Hotel.find(:all, :order => 'star desc', :limit => 5)    
+      location = Location.find_by_name(params[:location_name])
+    	hotel_type = HotelType.find_by_name(params[:type_name])
+    	@hotels = Hotel.find(:all, :conditions => ['location_id LIKE ? OR hotel_type_id LIKE ?', location.id, hotel_type.id])
+    	render "browse_list_deals"
+  end
+
+  def find_by_location_of_hotel_type
+    @top_hotels=Hotel.find(:all, :order => 'star desc', :limit => 5)    
+    location = Location.find_by_name(params[:location_name])
+  	hotel_type = HotelType.find_by_name(params[:type_name])
+  	@hotels = Hotel.find(:all, :conditions => ['location_id LIKE ? OR hotel_type_id LIKE ?', location.id, hotel_type.id])
+  	render "browse_list"
+    
+  end
   private
 	def get_hotel_facilities_from(facility_list)
 		facility_list = [] if facility_list.blank?

@@ -2,30 +2,59 @@
   <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAM41OPHNEzeRe7qzntS2dZxRhUbQCvgHcewKkuhV-KkriOp2HwhReuvtd5emO1MhE-giChvNKkDVHIA&sensor=false" type="text/javascript">
 <% javascript "markerGroup"%>
   </script>
-
-	
-  
 <% end %>
 
 <div class="listing">
   <div class="left-area">
-		<div class="win-box-top"></div>
-    <div class="win-box">
-    	<div class="info">	
-    		<div class="heading">
-    			<h2 class="top-location" title="Top Locations">Top Locations</h2>
-    		</div>
-    			<ul>
-    				<li><a href="#" title="The City">The City</a></li>
-    				<li><a href="#" title="Greenwich">Greenwich</a></li>
-    				<li><a href="#" title="Wembledon">Wembledon</a></li>
-    				<li><a href="#" title="King Cross">King Cross</a></li>
-    				<li><a href="#" title="Twickenham">Twickenham</a></li>
-    				<li><a href="#" title="Camden">Camden</a></li>
-    			</ul>
-    		</div>
-    	</div>
+			<% if params[:search] %>
+			<div class="win-box-top"></div>
+		    <div class="win-box">
+		    	<div class="info">			
+					<div class="heading">
+		    			<h2 class="top-location" title="Filter by Hotel Types">Filter by Hotel Types</h2>
+		    		</div>
+					<ul>
+					  <% @hotel_types.each do |hotel_type|%>  				
+						  <li><%= link_to hotel_type.name , browse_by_path(hotel_type.name) %></li>
+					  <% end %>
+					</ul>
+				</div>
+		    </div>
 			<div class="win-box-bottom"></div>  
+		    	
+			<% else %>
+				<% if params[:location_name]%>
+				<div class="win-box-top"></div>
+			    <div class="win-box">
+			    	<div class="info">			
+						<div class="heading">
+			    			<h2 class="top-location" title="Filter by Hotel Types">Filter by Hotel Types</h2>
+			    		</div>
+						<ul>
+						  <% @hotel_types.each do |hotel_type|%>  				
+							  <li><%= link_to hotel_type.name , browse_by_path(hotel_type.name) %></li>
+						  <% end %>
+						</ul>
+					</div>
+			    </div>
+				<div class="win-box-bottom"></div>  
+				
+				<% else %>
+				<div class="win-box-top"></div>
+			    <div class="win-box">
+			    	<div class="info">	
+		    		<div class="heading">
+		    			<h2 class="top-location" title="Top Locations">Filter by Locations</h2>
+		    		</div>
+					<ul>
+					<% @hotels.each do |h| %>
+						<li><%=link_to h.location.name, find_by_location_path(h.location.name) %></li>
+					<% end %>
+					</ul>
+					</div>
+			    </div>					
+				<% end %>
+			<% end %>
     <div class="top-rated">
       <div class="heading">
         <h2>Top Rated Hotels</h2>
@@ -41,7 +70,7 @@
         				</div>
       				  <div class="details">
       					  <h3><%= link_to hotel.name , details_path(hotel.name) %></h3>
-        					<div class="loc"><%= hotel.area %></div>
+        					<div class="loc"><%= hotel.location.name %></div>
         					<div class="s<%= hotel.star %>"></div>
         					<div class="reviews"><%= link_to "Reviews (#{hotel.reviews.count})", hotel_reviews_path(hotel) %></div>
       					</div>
@@ -55,7 +84,7 @@
     <div class="heading">
       <h2><% unless params[:search].blank? %>Hotels  in <%= params[:search]%><% else %> All Hotels <% end %></h2>
         <% unless @hotels.blank? %>
-      <div class="on-the-map"><a href="#">on the map</a></div>
+<!--      <div class="on-the-map"><a href="#">on the map</a></div> -->
       <% end %>
     </div>
 
@@ -73,7 +102,7 @@
         			</div>
         			<div class="details">
         				<h3 class="s<%= hotel.star%>"><%= link_to hotel.name , details_path(hotel.name) %></h3>
-        				<div class="loc">Location: <%= hotel.area %></div>
+        				<div class="loc">Location: <%= hotel.location.name %></div>
         				<div class="view"><%= link_to "View Details", hotel %></div>
 
         				<div class="price">From &pound; <span>76</span></div>
@@ -93,10 +122,6 @@
 
 
 	  <% end  %>
-<% else %>	  	  
-  <p><strong>There are currently no <%= params[:type_name]%> in the list.</strong></p>
-<% end %>	  
-    
 	<script type="text/javascript">
 	$(function(){
 	  if (GBrowserIsCompatible()) {
@@ -107,17 +132,17 @@
 					latitude: <%=hotel.latitude%>,
 					longitude: <%=hotel.longitude%>
 				},
-				
+
 			<% end %>		
 			];
-	
+
 	        for (var i=0; i< points.length; i++) {
-			       
+
 				map.setCenter(new GLatLng(points[i].latitude,points[i].longitude), 11);
                 point =new GLatLng(points[i].latitude,points[i].longitude);
                 map.addOverlay(new GMarker(point));                  
                 map.setUIToDefault();
-	      
+
 			}
 		}
 	});
@@ -125,8 +150,13 @@
 
     <div class="map-view" style="display:block;float:left;">
       <div id="map_canvas" style="width: 560px; height: 450px"></div>	
-    
+
     </div>
+<% else %>	  	  
+  <p style="color:red;"><strong>There are currently no hotels in the list.</strong></p>
+<% end %>	  
+    
+
 
 
 

@@ -28,7 +28,7 @@
         <div class="heading">
       	  <h2 class="search-for-hotels" title="Search for Hotels">Search for Hotels</h2>
       	</div>
-          <% form_tag search_by_path do %>    			
+          <% form_tag search_by_path(params[:search]) do %>    			
       		<ul>
       			<li>
       				<label>Location</label>
@@ -82,31 +82,31 @@
 					</div>
 					<ul>
 						<li>
-							<a href="#" title="West End">West End Hotels</a>
+							<%= link_to "West End", browse_by_location_path("west end")%>							
 						</li>
 						<li>
-							<a href="#" title="">Docklands Hoels</a>
+							<%= link_to "Ealing", browse_by_location_path("Ealing")%>
 						</li>
 						<li>
-							<a href="#" title="">Soho Hotels</a>
+							<%= link_to "Kilburn", browse_by_location_path("Kilburn")%>
 						</li>
 						<li>
-							<a href="#" title="">Bayswater Hotels</a>
+							<%= link_to "Greenford", browse_by_location_path("greenford")%>
 						</li>
 						<li>
-							<a href="#" title="">Kensington Hotels</a>
+							<%= link_to "Covent Garden", browse_by_location_path("covent garden")%>
 						</li>
 						<li>
-							<a href="#" title="">Covent Garden Hotels</a>
+							<%= link_to "Hounslow", browse_by_location_path("hounslow")%>
 						</li>
 						<li>
-							<a href="#" title="">Notting Hill Hotels</a>
+							<%= link_to "Paddington", browse_by_location_path("paddington")%>
 						</li>
 						<li>
-							<a href="#" title="">Hyde Park Hotels</a>
+							<%= link_to "Hydepark", browse_by_location_path("hyde park")%>
 						</li>
 						<li>
-							<a href="#" title="">Paddington Hotels</a>
+							<%= link_to "Kensington", browse_by_location_path("kensington")%>
 						</li>
 					</ul>				
 				</div>
@@ -130,7 +130,7 @@
 							</ul>
 					</div>
 				</div>
-				<div class="one-third last">
+				<div class="one-third">
 					<div class="small-box">
 						<div class="heading">
 							<h2 class="Shopping">Shopping</h2>
@@ -162,7 +162,7 @@
         				</div>
         				<div class="details">
         					<h3><%= link_to hotel.name , details_path(hotel.name) %></h3>
-        					<div class="loc"><%= hotel.area %></div>
+        					<div class="loc"><%= hotel.location.name %></div>
         					<div class="s<%= hotel.star %>"></div>
         					<div class="reviews"><%= link_to "Reviews (#{hotel.reviews.count})", hotel_reviews_path(hotel) %></div>
         				</div>
