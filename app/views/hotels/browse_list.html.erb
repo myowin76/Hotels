@@ -19,7 +19,7 @@
 							<ul>
 								<% @hotel_types.each do |hotel_type|%>
 									<li>
-										<%= link_to hotel_type.name , find_by_hotel_type_in_location_path(params[:location_name],hotel_type.name) %>
+										<%= link_to hotel_type.name , browse_by_hotel_type_in_location_path(params[:location_name], hotel_type.name) %>
 									</li>
 								<% end %>
 							</ul>

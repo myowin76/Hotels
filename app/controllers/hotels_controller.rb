@@ -155,10 +155,18 @@ class HotelsController < ApplicationController
       render "browse_list"      
   end
 
+  def browse_by_hotel_type_in_location
+    @top_hotels=Hotel.find(:all, :order => 'star desc', :limit => 5)    
+    location = Location.find_by_name(params[:location_name]) if params[:location_name]
+  	hotel_type = HotelType.find_by_name(params[:type_name]) if params[:type_name]
+  	@hotels = Hotel.find(:all, :conditions => ['location_id LIKE ? OR hotel_type_id LIKE ?', location.id, hotel_type.id])
+  	render "browse_list"
+    
+  end
   def find_by_hotel_type_in_location
       @top_hotels=Hotel.find(:all, :order => 'star desc', :limit => 5)    
-      location = Location.find_by_name(params[:location_name])
-    	hotel_type = HotelType.find_by_name(params[:type_name])
+      location = Location.find_by_name(params[:location_name]) if params[:location_name]
+    	hotel_type = HotelType.find_by_name(params[:type_name]) if params[:type_name]
     	@hotels = Hotel.find(:all, :conditions => ['location_id LIKE ? OR hotel_type_id LIKE ?', location.id, hotel_type.id])
     	render "browse_list_deals"
   end
