@@ -177,7 +177,7 @@ background:none;border:1px solid #cdcdcd;height:auto;padding:18px;height:168px;f
 .guides .summary{float:right;width:368px;}
 .terms p,.guides p{padding-bottom:12px;}
 .guides .left-area{width:580px;float:right;}
-.guides .left-area .information, .terms{padding:24px 18px 0;}
+.guides .left-area .information, .content .terms{padding:24px 18px 0;}
 .guides .left-area .information a{text-decoration:underline;}
 
 /* login page */
@@ -269,7 +269,7 @@ background:url(../images/backgrounds/down-shadow.jpg) repeat-x;line-height:30px;
 .details .hotel-details .fb-like{float:left;background:url(../images/backgrounds/down-shadow.jpg) repeat-x center top;width:100%;padding:10px 0;height:22px;}
 
 .details .add-room-type{text-decoration:underline;}
-.details .overview, .details .hotel-facilities, .details .room-types, .details .direction, .details .terms {float:left;padding-top:18px;width:100%;line-height:16px;}
+.details .overview, .details .hotel-facilities, .details .room-types, .details .direction, .details .terms {float:left;padding-top:18px;width:100%;line-height:16px;padding-left:0;}
 
 .details .hotel-facilities ul li{float:left;padding-left:18px;background:url(../images/square-blue.jpg) no-repeat 0 4px;width:262px;padding-bottom:8px;}
 

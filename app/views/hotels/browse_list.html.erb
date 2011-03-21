@@ -28,6 +28,7 @@
 					<div class="win-box-bottom"></div>
 					<% end %>
 				<% else %>
+					<% unless @hotels.blank? %>
 					<div class="win-box-top"></div>
 					<div class="win-box">
 						<div class="info">
@@ -44,7 +45,8 @@
 							</ul>
 						</div>
 					</div>
-					<div class="win-box-bottom"></div>					
+					<div class="win-box-bottom"></div>
+					<% end %>					
 				<% end %>
 				<div class="top-rated">
 					<div class="heading">

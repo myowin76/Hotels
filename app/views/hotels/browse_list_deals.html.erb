@@ -65,7 +65,7 @@
 								<div class="loc">
 									<%= hotel.location.name %>
 								</div>
-								<div class="s&lt;%= hotel.star %&gt;"></div>
+								<div class="s<%= hotel.star %>"></div>
 								<div class="reviews">
 									<%= link_to "Reviews (#{hotel.reviews.count})", hotel_reviews_path(hotel) %>
 								</div>
