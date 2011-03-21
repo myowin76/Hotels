@@ -39,7 +39,7 @@
 							<ul>
 								<% @hotels.each do |h| %>
 								<li>
-									<%=link_to h.location.name, find_by_hotel_type_in_location_path(h.location.name) %>
+									<%=link_to h.location.name, find_by_location_path(h.location.name) %>
 								</li><% end %>
 							</ul>
 						</div>

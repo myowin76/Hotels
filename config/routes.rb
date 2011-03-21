@@ -40,11 +40,12 @@ Hotels::Application.routes.draw do
   match "/terms" => "home#terms"
   match "/privacy" => "home#privacy"
   
-  match "/deals" => "hotels#deals", :as =>"deals"
+
 #  match "/deals/:location_name" => "hotels#find_by_location", :as => "find_by_location" 
 
   match "/deals/:location_name/:type_name" => "hotels#find_by_hotel_type_in_location", :as => "find_by_hotel_type_in_location"     
   match "/deals/:location_name" => "hotels#find_by_location", :as => "find_by_location"   
+    match "/deals" => "hotels#deals", :as =>"deals"
   root :to => "home#index"
   
 end
