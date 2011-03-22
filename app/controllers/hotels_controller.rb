@@ -1,5 +1,5 @@
 class HotelsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:search, :browse, :show, :deals, :browse_by_location, :find_by_hotel_type_in_location,:find_by_location_of_hotel_type]
+  before_filter :authenticate_user!, :except => [:search, :browse, :show, :deals, :browse_by_location, :find_by_location, :find_by_hotel_type_in_location,:find_by_location_of_hotel_type, :browse_by_hotel_type_in_location]
   def index
     @menu_state_d = "class='active'"
     @top_hotels=Hotel.find(:all, :limit => 4, :order => 'star desc' )
