@@ -1,15 +1,6 @@
 		<div class="left-area">
 			<div class="win-box">
 				<div class="admin">
-					<% if admin_user? %>
-					<h2>
-						Admin
-					</h2>
-					<ul>
-						<li>
-							<%= link_to "Back to List", hotels_path %>
-						</li>
-					</ul><% else %>
 					<h2>
 						Menu
 					</h2>
@@ -17,7 +8,7 @@
 						<li>
 							<%= link_to "Back to Profile", user_profile_path %>
 						</li>
-					</ul><% end %>
+					</ul>
 				</div>
 			</div><%= render :partial => 'shared/admin_menu' %>
 		</div>

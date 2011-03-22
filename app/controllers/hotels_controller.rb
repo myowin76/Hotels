@@ -91,7 +91,6 @@ class HotelsController < ApplicationController
 		end
     
     @all_facilities = Facility.all
-  	#@hotel.owner_id = current_user.id if current_user
   	checked_h_facilities = get_hotel_facilities_from(params[:hotel_facility_list])
   	removed_h_facilities = @all_facilities - checked_h_facilities
     
