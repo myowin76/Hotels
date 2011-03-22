@@ -23,7 +23,9 @@ Hotels::Application.routes.draw do
   
 
   get "home/index"
+  match "hotels/search/:location_name" => "hotels#browse_by_location", :as =>  "search_by_location"
   match "hotels/search" => "hotels#search", :as =>  "search_by"
+  
   match "/contact-us" => "messages#new", :as=> "contact_us"
   match "/travel-guides" => "home#guides", :as=> "guides"
   match "/thankyou" => "messages#thankyou"

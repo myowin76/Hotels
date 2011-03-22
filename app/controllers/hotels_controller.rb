@@ -133,7 +133,10 @@ class HotelsController < ApplicationController
   def browse
     @top_hotels=Hotel.find(:all, :order => 'star desc', :limit => 5)
   	hotel_type = HotelType.find_by_name(params[:type_name])
-
+    @all_hotels = Hotel.all
+    @all_hotels.each do |h|
+      @locations = h.location
+    end
     @hotels = Hotel.find_all_by_hotel_type_id(hotel_type.id)
     render "browse_list"
   end

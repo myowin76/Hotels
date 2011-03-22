@@ -15,7 +15,7 @@
 		    		</div>
 					<ul>
 					  <% @hotel_types.each do |hotel_type|%>  				
-						  <li><%= link_to hotel_type.name , browse_by_path(hotel_type.name) %></li>
+						  <li><%= link_to hotel_type.name , search_by_location_path(hotel_type.name) %></li>
 					  <% end %>
 					</ul>
 				</div>
@@ -23,23 +23,7 @@
 			<div class="win-box-bottom"></div>  
 		    	
 			<% else %>
-				<% if params[:location_name]%>
-				<div class="win-box-top"></div>
-			    <div class="win-box">
-			    	<div class="info">			
-						<div class="heading">
-			    			<h2 class="top-location" title="Filter by Hotel Types">Filter by Hotel Types</h2>
-			    		</div>
-						<ul>
-						  <% @hotel_types.each do |hotel_type|%>  				
-							  <li><%= link_to hotel_type.name , browse_by_path(hotel_type.name) %></li>
-						  <% end %>
-						</ul>
-					</div>
-			    </div>
-				<div class="win-box-bottom"></div>  
 				
-				<% else %>
 				<div class="win-box-top"></div>
 			    <div class="win-box">
 			    	<div class="info">	
@@ -53,7 +37,7 @@
 					</ul>
 					</div>
 			    </div>					
-				<% end %>
+
 			<% end %>
     <div class="top-rated">
       <div class="heading">
