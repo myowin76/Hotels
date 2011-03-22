@@ -38,11 +38,10 @@
 								</h2>
 							</div>
 							<ul>
-								<% for l in @locations %>
+								<% @hotels.each do |h| %>
 								<li>
-									<%=link_to l.name, find_by_location_of_hotel_type_path(params[:type_name],h.location.name) %>
-								</li>
-								<% end %>
+									<%=link_to h.location.name, find_by_location_of_hotel_type_path(params[:type_name],h.location.name) %>
+								</li><% end %>
 							</ul>
 						</div>
 					</div>
