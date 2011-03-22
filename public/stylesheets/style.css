@@ -123,7 +123,7 @@ body { font-family: Helvetica, Arial, sans-serif; font-size: 13px;color:#282828;
 .list-block .box .details{float:left;margin-left:10px;width:511px;min-height:50px;}
 .listing .list-block .box .details{float:left;margin-left:10px;width:432px;min-height:50px;}
 .list-block .box .details h3{display:inline;font-size:18px;overflow:hidden;padding-right:110px;}
-.list-block .box .details h3 a{color:#F07A07;font-size:16px;}
+.list-block .box .details h3 a{color:#F07A07;font-size:16px;font-family:"Rockwell Std", Rockwell, Arial;}
 .list-block .loc{float:left;width:100%;padding-bottom:5px;}
 .listing .list-block .view{float:left;width:100px;}
 .list-block .price{float:right;font-weight:bold;}
